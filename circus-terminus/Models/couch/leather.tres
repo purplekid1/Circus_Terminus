@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+; The skin for Models/couch/Couch.fbx.
+;
+; Wired to the model through the IMPORTER, not by a script and not by a
+; material_override in the prop: Couch.fbx.import maps its "Leather" material
+; to this file. The chair does the same with its own -- both FBX files happen
+; to name their material "Leather", but the mapping is per-file so they do not
+; collide.
+
+[ext_resource type="Texture2D" path="res://Models/couch/LeathCouch.png" id="1_albedo"]
+[ext_resource type="Texture2D" path="res://Models/couch/leathCouchNormal.png" id="2_normal"]
+[ext_resource type="Texture2D" path="res://Models/couch/leathcouchrough.png" id="3_rough"]
+
+[resource]
+resource_name = "Leather"
+albedo_texture = ExtResource("1_albedo")
+roughness_texture = ExtResource("3_rough")
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource("2_normal")

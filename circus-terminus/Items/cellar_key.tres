@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/ItemData.gd" id="1_item"]
+[ext_resource type="PackedScene" path="res://Scenes/items/it_key_hall.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_item")
+id = "cellar_key"
+display_name = "Cellar Key"
+description = "Long, black with rust, and it was under a heap of sacking. It opens the gate at the foot of the stairs."
+color = Color(0.86, 0.72, 0.42, 1)
+model = ExtResource("2_model")
+icon_distance = 0.19
+icon_lift = 0.014

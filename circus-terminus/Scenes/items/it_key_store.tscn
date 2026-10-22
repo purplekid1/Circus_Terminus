@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+
+[node name="StoreKey" type="CSGCombiner3D"]
+
+[node name="KeyBow_1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.04545, 0.01360, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0170
+height = 0.0055
+sides = 16
+
+[node name="KeyBowEye_2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.04545, 0.01360, 0.00000)
+operation = 2
+material = ExtResource("Mat_brass")
+radius = 0.0092
+height = 0.0164
+sides = 16
+
+[node name="KeyBowFoot_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.03185, 0.01360, 0.00000)
+material = ExtResource("Mat_brass")
+size = Vector3(0.0119, 0.0089, 0.0055)
+
+[node name="KeyShank_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.000000, -1.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.01360, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0034
+height = 0.0620
+sides = 10
+
+[node name="KeyCollar_5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.000000, -1.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.01116, 0.01360, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0055
+height = 0.0074
+sides = 10
+
+[node name="KeyBit_6" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.02263, 0.00423, 0.00000)
+material = ExtResource("Mat_brass")
+size = Vector3(0.0186, 0.0223, 0.0055)
+
+[node name="KeyWard_7" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.01612, -0.00202, 0.00000)
+operation = 2
+material = ExtResource("Mat_brass")
+size = Vector3(0.0035, 0.0100, 0.0136)
+
+[node name="KeyWard_8" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.02449, -0.00604, 0.00000)
+operation = 2
+material = ExtResource("Mat_brass")
+size = Vector3(0.0035, 0.0100, 0.0136)
+
+[node name="KeyTip_9" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.000000, -1.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.03410, 0.01360, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0034
+height = 0.0099
+sides = 8

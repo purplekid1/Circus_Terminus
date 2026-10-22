@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://Meshes/steps_porch_Steps.res" id="1_8tyg3"]
+
+[sub_resource type="BoxShape3D" id="Box_Ramp"]
+size = Vector3(6, 3, 1.4987)
+
+[node name="PorchSteps" type="Node3D" unique_id=317240106]
+
+[node name="Ramp" type="StaticBody3D" parent="." unique_id=447731273]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp" unique_id=662488138]
+transform = Transform3D(1, 0, 0, 0, 0.948683, -0.316228, 0, 0.316228, 0.948683, 0, -1.66, 4.2365)
+shape = SubResource("Box_Ramp")
+
+[node name="Steps" type="MeshInstance3D" parent="." unique_id=2052955411]
+mesh = ExtResource("1_8tyg3")

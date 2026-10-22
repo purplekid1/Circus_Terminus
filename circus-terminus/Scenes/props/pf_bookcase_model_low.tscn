@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bs5otex3ngtc4"]
+
+[ext_resource type="ArrayMesh" path="res://Meshes/bookshelf_case.res" id="1_case"]
+[ext_resource type="ArrayMesh" path="res://Meshes/bookshelf_books_low.res" id="2_books"]
+[ext_resource type="Texture2D" uid="uid://owlvru6djmpd" path="res://Models/bookshelf/Shelftext.png" id="3_pko4l"]
+[ext_resource type="Material" uid="uid://t3k3355m6007" path="res://Materials/Mat_walnut.tres" id="3_walnut"]
+[ext_resource type="Material" path="res://Materials/Mat_bookspine.tres" id="4_spine"]
+[ext_resource type="Material" path="res://Materials/Mat_bookpage.tres" id="5_page"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rb3qc"]
+albedo_texture = ExtResource("3_pko4l")
+
+[sub_resource type="BoxShape3D" id="Box_case"]
+size = Vector3(2.4, 1.5747, 0.4497)
+
+[node name="BookcaseModelLow" type="Node3D" unique_id=1984855772]
+
+[node name="Model" type="Node3D" parent="." unique_id=2132508324]
+transform = Transform3D(0, 0, -0.372613, 0, 0.372613, 0, 0.372613, 0, 0, 0, 0.003, 0.185)
+
+[node name="Case" type="MeshInstance3D" parent="Model" unique_id=1034000231]
+material_override = ExtResource("3_walnut")
+mesh = ExtResource("1_case")
+surface_material_override/0 = SubResource("StandardMaterial3D_rb3qc")
+
+[node name="Books" type="MeshInstance3D" parent="Model" unique_id=1313490814]
+mesh = ExtResource("2_books")
+surface_material_override/0 = ExtResource("4_spine")
+surface_material_override/1 = ExtResource("5_page")
+
+[node name="Body" type="StaticBody3D" parent="." unique_id=969982586]
+
+[node name="Box" type="CollisionShape3D" parent="Body" unique_id=254014660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7903, 0.0149)
+shape = SubResource("Box_case")

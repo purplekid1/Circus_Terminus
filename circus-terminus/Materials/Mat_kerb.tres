@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://33jmxi8i1wxt"]
+
+[ext_resource type="Shader" uid="uid://du250v1ugjyd1" path="res://Scripts/ground.gdshader" id="1_g"]
+
+[resource]
+resource_name = "Mat_kerb"
+render_priority = 0
+shader = ExtResource("1_g")
+shader_parameter/pattern = 1
+shader_parameter/tint_a = Color(0.36, 0.355, 0.335, 1)
+shader_parameter/tint_b = Color(0.315, 0.31, 0.295, 1)
+shader_parameter/joint_tint = Color(0.1, 0.1, 0.09, 1)
+shader_parameter/tile_size = 0.6
+shader_parameter/joint_width = 0.03
+shader_parameter/roughness_lo = 0.7
+shader_parameter/roughness_hi = 0.98
+shader_parameter/bump = 0.8
+shader_parameter/weathering = 0.3
+shader_parameter/weather_scale = 0.09
+shader_parameter/weather_tint = Color(0.14, 0.15, 0.12, 1)

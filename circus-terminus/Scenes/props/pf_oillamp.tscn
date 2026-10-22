@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_glass.tres" id="Mat_glass"]
+[ext_resource type="Material" path="res://Materials/Mat_shade.tres" id="Mat_shade"]
+
+[node name="OilLamp" type="CSGCombiner3D"]
+
+[node name="LampFoot_1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.02000, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0700
+height = 0.0400
+sides = 10
+
+[node name="LampStem_2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.10000, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0220
+height = 0.1400
+sides = 8
+
+[node name="LampFount_3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.21000, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0650
+height = 0.1000
+sides = 10
+
+[node name="LampChimney_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.34000, 0.00000)
+material = ExtResource("Mat_glass")
+radius = 0.0450
+height = 0.1800
+sides = 10
+
+[node name="LampShade_5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.47000, 0.00000)
+material = ExtResource("Mat_shade")
+radius = 0.1100
+height = 0.1200
+sides = 10

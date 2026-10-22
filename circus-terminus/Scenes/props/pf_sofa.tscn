@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_velvet.tres" id="Mat_velvet"]
+[ext_resource type="Material" path="res://Materials/Mat_walnut.tres" id="Mat_walnut"]
+
+[node name="Sofa" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="SofaBase_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.2900, 0.0000)
+material = ExtResource("Mat_velvet")
+size = Vector3(2.3000, 0.2400, 0.9200)
+
+[node name="SofaBack_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.7600, -0.4000)
+material = ExtResource("Mat_velvet")
+size = Vector3(2.3000, 0.8000, 0.1600)
+
+[node name="SofaArm_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0600, 0.5700, -0.0200)
+material = ExtResource("Mat_velvet")
+size = Vector3(0.1800, 0.3600, 0.8800)
+
+[node name="SofaArm_4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0600, 0.5700, -0.0200)
+material = ExtResource("Mat_velvet")
+size = Vector3(0.1800, 0.3600, 0.8800)
+
+[node name="SofaCushion_5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6667, 0.4700, 0.0300)
+material = ExtResource("Mat_velvet")
+size = Vector3(0.6267, 0.1600, 0.7200)
+
+[node name="SofaCushion_6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.4700, 0.0300)
+material = ExtResource("Mat_velvet")
+size = Vector3(0.6267, 0.1600, 0.7200)
+
+[node name="SofaCushion_7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6667, 0.4700, 0.0300)
+material = ExtResource("Mat_velvet")
+size = Vector3(0.6267, 0.1600, 0.7200)
+
+[node name="SofaFoot_8" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -1.01000, 0.06000, -0.34000)
+material = ExtResource("Mat_walnut")
+radius = 0.0350
+height = 0.1200
+sides = 6
+
+[node name="SofaFoot_9" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 1.01000, 0.06000, -0.34000)
+material = ExtResource("Mat_walnut")
+radius = 0.0350
+height = 0.1200
+sides = 6
+
+[node name="SofaFoot_10" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -1.01000, 0.06000, 0.34000)
+material = ExtResource("Mat_walnut")
+radius = 0.0350
+height = 0.1200
+sides = 6
+
+[node name="SofaFoot_11" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 1.01000, 0.06000, 0.34000)
+material = ExtResource("Mat_walnut")
+radius = 0.0350
+height = 0.1200
+sides = 6

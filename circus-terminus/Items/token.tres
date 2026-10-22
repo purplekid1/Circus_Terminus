@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://Scripts/ItemData.gd" id="1_item"]
+[ext_resource type="PackedScene" path="res://Scenes/items/it_token.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_item")
+id = "token"
+display_name = "Brass Token"
+description = "Stamped for a ride nobody is running. The turnstile wants three."
+color = Color(0.93, 0.74, 0.34, 1)
+model = ExtResource("2_model")
+icon_lift = 0.004
+is_equipment = false

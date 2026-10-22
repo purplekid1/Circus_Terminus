@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_mahog.tres" id="Mat_mahog"]
+[ext_resource type="Material" path="res://Materials/Mat_velvet.tres" id="Mat_velvet"]
+[ext_resource type="Material" path="res://Materials/Mat_walnut.tres" id="Mat_walnut"]
+
+[node name="Desk" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="DeskTop_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.7600, 0.0000)
+material = ExtResource("Mat_mahog")
+size = Vector3(2.0000, 0.0600, 1.0000)
+
+[node name="DeskLeather_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.7950, 0.0000)
+material = ExtResource("Mat_velvet")
+size = Vector3(1.7800, 0.0100, 0.8400)
+
+[node name="DeskPed_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7400, 0.3500, 0.0000)
+material = ExtResource("Mat_mahog")
+size = Vector3(0.4800, 0.7000, 0.9000)
+
+[node name="DeskPed_4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7400, 0.3500, 0.0000)
+material = ExtResource("Mat_mahog")
+size = Vector3(0.4800, 0.7000, 0.9000)
+
+[node name="DeskDrawer_5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7400, 0.1800, 0.4600)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.4200, 0.1600, 0.0300)
+
+[node name="DeskDrawer_6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7400, 0.1800, 0.4600)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.4200, 0.1600, 0.0300)
+
+[node name="DeskPull_7" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.74000, 0.18000, 0.49000)
+material = ExtResource("Mat_brass")
+radius = 0.0180
+height = 0.0500
+sides = 8
+
+[node name="DeskPull_8" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.74000, 0.18000, 0.49000)
+material = ExtResource("Mat_brass")
+radius = 0.0180
+height = 0.0500
+sides = 8
+
+[node name="DeskDrawer_9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7400, 0.3800, 0.4600)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.4200, 0.1600, 0.0300)
+
+[node name="DeskDrawer_10" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7400, 0.3800, 0.4600)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.4200, 0.1600, 0.0300)
+
+[node name="DeskPull_11" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.74000, 0.38000, 0.49000)
+material = ExtResource("Mat_brass")
+radius = 0.0180
+height = 0.0500
+sides = 8
+
+[node name="DeskPull_12" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.74000, 0.38000, 0.49000)
+material = ExtResource("Mat_brass")
+radius = 0.0180
+height = 0.0500
+sides = 8
+
+[node name="DeskDrawer_13" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7400, 0.5800, 0.4600)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.4200, 0.1600, 0.0300)
+
+[node name="DeskDrawer_14" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7400, 0.5800, 0.4600)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.4200, 0.1600, 0.0300)
+
+[node name="DeskPull_15" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.74000, 0.58000, 0.49000)
+material = ExtResource("Mat_brass")
+radius = 0.0180
+height = 0.0500
+sides = 8
+
+[node name="DeskPull_16" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.74000, 0.58000, 0.49000)
+material = ExtResource("Mat_brass")
+radius = 0.0180
+height = 0.0500
+sides = 8

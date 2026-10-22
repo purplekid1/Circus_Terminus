@@ -1,0 +1,58 @@
+[gd_resource type="Environment" format=3 uid="uid://cnightenv0001"]
+
+[ext_resource type="Material" uid="uid://bnightsky00m1" path="res://Materials/sky_night.tres" id="1_skymat"]
+
+[sub_resource type="Sky" id="Sky_night"]
+sky_material = ExtResource("1_skymat")
+process_mode = 2
+
+[resource]
+resource_name = "Night"
+background_mode = 2
+sky = SubResource("Sky_night")
+ambient_light_source = 3
+ambient_light_color = Color(0.29, 0.36, 0.52, 1)
+ambient_light_sky_contribution = 0.55
+ambient_light_energy = 0.34
+reflected_light_source = 2
+tonemap_mode = 3
+tonemap_exposure = 1.05
+tonemap_white = 6.0
+ssao_enabled = true
+ssao_radius = 0.9
+ssao_intensity = 2.6
+ssao_power = 1.6
+ssao_detail = 0.6
+ssao_horizon = 0.05
+ssao_light_affect = 0.15
+ssao_ao_channel_affect = 0.3
+ssil_enabled = true
+ssil_radius = 3.5
+ssil_intensity = 1.25
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.85
+glow_bloom = 0.12
+glow_hdr_threshold = 0.92
+fog_enabled = true
+fog_light_color = Color(0.0134195695, 0.017822353, 0.028895179, 1)
+fog_light_energy = 0.8
+fog_sun_scatter = 0.12
+fog_aerial_perspective = 0.25
+fog_sky_affect = 0.25
+fog_height = 1.0
+fog_height_density = 0.04
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.016
+volumetric_fog_albedo = Color(0.5418768, 0.67093736, 0.71873623, 1)
+volumetric_fog_emission = Color(0.012, 0.015, 0.024, 1)
+volumetric_fog_emission_energy = 0.4
+volumetric_fog_gi_inject = 0.6
+volumetric_fog_anisotropy = 0.35
+volumetric_fog_length = 48.0
+volumetric_fog_ambient_inject = 0.12
+volumetric_fog_sky_affect = 0.3
+volumetric_fog_temporal_reprojection_amount = 0.92
+adjustment_enabled = true
+adjustment_contrast = 1.06
+adjustment_saturation = 0.92

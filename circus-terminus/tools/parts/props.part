@@ -1,0 +1,334 @@
+[node name="CellarPit" type="Node3D" parent="." unique_id=513433603]
+
+[node name="PitFloor" type="CSGBox3D" parent="CellarPit" unique_id=1351308926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -3.7, -37.75)
+material = ExtResource("Mat_stone")
+use_collision = true
+size = Vector3(4.8, 0.2, 7.5)
+
+[node name="PitWestWall" type="CSGBox3D" parent="CellarPit" unique_id=1753224178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4, -1.95, -37.7)
+material = ExtResource("Mat_stone")
+use_collision = true
+size = Vector3(0.4, 3.7, 7.6)
+
+[node name="PitEastWall" type="CSGBox3D" parent="CellarPit" unique_id=480397060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6, -1.95, -37.7)
+material = ExtResource("Mat_stone")
+use_collision = true
+size = Vector3(0.4, 3.7, 7.6)
+
+[node name="PitBackWall" type="CSGBox3D" parent="CellarPit" unique_id=1910976415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1.95, -41.7)
+material = ExtResource("Mat_stone")
+use_collision = true
+size = Vector3(4.8, 3.7, 0.4)
+
+[node name="Ramp" type="StaticBody3D" parent="CellarPit" unique_id=1483475666]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CellarPit/Ramp" unique_id=210460886]
+transform = Transform3D(1, 0, 0, 0, 0.7713, -0.6363, 0, 0.6363, 0.7713, -10, -3.8746, -40.01)
+shape = SubResource("Box_pitramp")
+
+[node name="StormDoor" parent="." unique_id=529923806 instance=ExtResource("5_storm")]
+transform = Transform3D(0, 1, 0, 0, 0, 1, 1, 0, 0, -10, -0.28, -41.5)
+examine_lines = Array[String](["Storm doors. Rusted, but they give."])
+
+[node name="CellarDoor" parent="." unique_id=1924569745 instance=ExtResource("1_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6, -3.6, -34)
+open_angle = 100.0
+prompt = "Cellar door"
+
+[node name="FrontDoor" parent="." unique_id=722650715 instance=ExtResource("1_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.555, 0, 0)
+open_angle = -100.0
+locked = true
+locked_prompt = "Bolted from the inside"
+prompt = "Front door"
+examine_lines = Array[String](["Bolted. From the inside, by the feel of it.", "There has to be another way in."])
+
+[node name="BackDoor" parent="." unique_id=1755007888 instance=ExtResource("1_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.445, 0, -34)
+open_angle = 100.0
+locked = true
+prompt = "Back door"
+examine_lines = Array[String](["Locked too. Of course it is."])
+
+[node name="StudyDoor" parent="." unique_id=1203740357 instance=ExtResource("1_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.555, 3.6, -22)
+open_angle = -95.0
+locked = true
+key_id = "study_key"
+prompt = "Study door"
+examine_lines = Array[String](["Locked. There is a key for this somewhere in the house."])
+
+[node name="Generator" type="Node3D" parent="." unique_id=657209588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -3.6, -18)
+script = ExtResource("7_gen")
+targets = Array[NodePath]([NodePath("../Lights")])
+fuel_id = "fuel"
+fuel_prompt = "No fuel in it"
+prompt = "Pull the starter"
+examine_lines = Array[String](["A generator. Stone cold."])
+
+[node name="Body" type="StaticBody3D" parent="Generator" unique_id=763965839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Generator/Body" unique_id=225529015]
+shape = SubResource("Box_gen")
+
+[node name="Hull" type="CSGBox3D" parent="Generator/Body" unique_id=1507440661]
+material = ExtResource("Mat_stone")
+size = Vector3(1.7, 1.2, 1.1)
+
+[node name="FuelCan" parent="." unique_id=543563379 instance=ExtResource("2_pick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -3.6, -30)
+item = ExtResource("11_fuel")
+prompt = "Fuel can"
+
+[node name="KitchenCounter" type="CSGBox3D" parent="." unique_id=1199282227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.46, -19)
+material = ExtResource("Mat_wood")
+use_collision = true
+size = Vector3(6, 0.92, 0.9)
+
+[node name="Magnifier" parent="." unique_id=25514513 instance=ExtResource("2_pick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.92, -19)
+item = ExtResource("10_glass")
+grants_magnifier = true
+prompt = "Odd magnifying glass"
+examine_lines = Array[String](["Someone left this out on the counter.", "It is heavier than glass has any right to be."])
+
+[node name="BureauKey" parent="." unique_id=1842504595 instance=ExtResource("2_pick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 0.92, -19)
+item = ExtResource("13_bkey")
+prompt = "Small key"
+examine_lines = Array[String](["Far too small for a door."])
+
+[node name="Crowbar" parent="." unique_id=165077442 instance=ExtResource("2_pick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.92, -27.2)
+item = ExtResource("12_crow")
+prompt = "Crowbar"
+examine_lines = Array[String](["That will shift most things."])
+
+[node name="StairDebris" type="Node3D" parent="." unique_id=733117785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.5)
+script = ExtResource("14_obst")
+tool_id = "crowbar"
+need_tool_prompt = "Too heavy to shift by hand"
+shift = Vector3(0, -4, 0)
+blockers = Array[NodePath]([NodePath("Block/CollisionShape3D")])
+cleared_lines = Array[String](["That is the way up clear."])
+prompt = "Haul the wreckage clear"
+examine_lines = Array[String](["A bookcase came down across the stairs.", "I need something to lever it with."])
+
+[node name="Block" type="StaticBody3D" parent="StairDebris" unique_id=1633468261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StairDebris/Block" unique_id=1269500468]
+shape = SubResource("Box_debris")
+
+[node name="CaseBack" type="CSGBox3D" parent="StairDebris" unique_id=1577693411]
+transform = Transform3D(0.9848, 0.1736, 0, -0.1736, 0.9848, 0, 0, 0, 1, 0, 1.15, 0)
+material = ExtResource("Mat_walnut")
+size = Vector3(4.6, 0.12, 1.15)
+
+[node name="CaseSideA" type="CSGBox3D" parent="StairDebris" unique_id=1084920141]
+transform = Transform3D(0.9848, 0.1736, 0, -0.1736, 0.9848, 0, 0, 0, 1, 0, 1.53, -0.55)
+material = ExtResource("Mat_walnut")
+size = Vector3(4.6, 0.68, 0.08)
+
+[node name="CaseSideB" type="CSGBox3D" parent="StairDebris" unique_id=812895103]
+transform = Transform3D(0.9848, 0.1736, 0, -0.1736, 0.9848, 0, 0, 0, 1, 0, 1.53, 0.55)
+material = ExtResource("Mat_walnut")
+size = Vector3(4.6, 0.68, 0.08)
+
+[node name="CaseShelf" type="CSGBox3D" parent="StairDebris" unique_id=812895104]
+transform = Transform3D(0.9848, 0.1736, 0, -0.1736, 0.9848, 0, 0, 0, 1, -0.1, 1.5, 0)
+material = ExtResource("Mat_walnut")
+size = Vector3(4.3, 0.06, 1.02)
+
+[node name="CaseShelf2" type="CSGBox3D" parent="StairDebris" unique_id=812895105]
+transform = Transform3D(0.9563, -0.2924, 0, 0.2924, 0.9563, 0, 0, 0, 1, 1.35, 2.05, 0.18)
+material = ExtResource("Mat_walnut")
+size = Vector3(2.1, 0.06, 0.95)
+
+[node name="SpiltBooks" type="CSGBox3D" parent="StairDebris" unique_id=812895106]
+transform = Transform3D(0.9962, 0.0872, 0, -0.0872, 0.9962, 0, 0, 0, 1, -1.5, 0.62, -0.2)
+material = ExtResource("Mat_book")
+size = Vector3(1.5, 0.48, 0.66)
+
+[node name="SpiltBooks2" type="CSGBox3D" parent="StairDebris" unique_id=812895107]
+transform = Transform3D(0.9848, -0.1736, 0, 0.1736, 0.9848, 0, 0, 0, 1, 1.1, 0.5, 0.35)
+material = ExtResource("Mat_book2")
+size = Vector3(1.1, 0.34, 0.6)
+
+[node name="SpiltBooks3" type="CSGBox3D" parent="StairDebris" unique_id=812895108]
+transform = Transform3D(0.9397, 0.342, 0, -0.342, 0.9397, 0, 0, 0, 1, -0.2, 2.15, 0.1)
+material = ExtResource("Mat_book3")
+size = Vector3(0.9, 0.3, 0.55)
+
+[node name="ClockCase" type="CSGBox3D" parent="." unique_id=1132085300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4, 1.15, -19)
+material = ExtResource("Mat_wood")
+use_collision = true
+size = Vector3(0.6, 2.3, 1.1)
+
+[node name="ClockFace" parent="." unique_id=405662833 instance=ExtResource("15_read")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -6.02, 1.75, -19)
+text = "The hands have stopped. Twenty past four, and the case is cold."
+prompt = "The clock"
+examine_lines = Array[String](["It stopped a long time ago."])
+
+[node name="PortraitA" parent="." unique_id=2115525903 instance=ExtResource("15_read")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 6.78, 5.5, -7)
+text = "A sour-looking man in a high collar. Brass plate underneath: 1894."
+prompt = "Portrait"
+
+[node name="PortraitB" parent="." unique_id=1555176339 instance=ExtResource("15_read")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 6.78, 5.5, -10)
+text = "A woman with her hand on a globe. The plate reads 1912."
+prompt = "Portrait"
+
+[node name="PortraitC" parent="." unique_id=503156576 instance=ExtResource("15_read")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 6.78, 5.5, -13)
+text = "A girl, painted last of the three. 1930, and the paint is barely aged."
+prompt = "Portrait"
+examine_lines = Array[String](["The newest of them, by a long way."])
+
+[node name="SafeNote" parent="." unique_id=1341551439 instance=ExtResource("15_read")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.78, 5.2, -18)
+text = "In order, left to right: the hour the clock died. The last figure on the newest portrait. And however many marks she cut into the bureau."
+requires_lens = true
+prompt = "Pinned note"
+examine_lines = Array[String](["Her handwriting is tiny. I need the glass for this."])
+
+[node name="Bureau" parent="." unique_id=1948049168 instance=ExtResource("16_bureau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -9.8)
+locked = true
+key_id = "bureau_key"
+reveals = Array[NodePath]([NodePath("Lid/TallyClue")])
+examine_lines = Array[String](["Locked, and the keyhole is barely bigger than a pin."])
+
+; Backed onto the office's north wall (interior face z -21.85) and facing the
+; room. It was yawed 180 and standing a metre off the wall, which pointed the
+; dials INTO the plaster: you walked up to a plain iron box and the focus
+; camera dropped you behind it. The safe is built facing +Z, its carcass is
+; 0.62 deep, so z = -21.85 + 0.31 puts its back against the wall.
+[node name="Vault" parent="." unique_id=571653891 instance=ExtResource("3_safe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 3.6, -21.54)
+contents = ExtResource("9_studykey")
+examine_lines = Array[String](["A wall safe. Three dials, and no note anywhere near it."])
+
+[node name="StudyEnd" type="Area3D" parent="." unique_id=265850813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1, -25)
+script = ExtResource("6_end")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StudyEnd" unique_id=1066088695]
+shape = SubResource("Box_end")
+
+[node name="TalkArrive" type="Area3D" parent="." unique_id=1305579664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+script = ExtResource("8_talk")
+lines = Array[String](["So this is the place.", "Every light is out. Nobody has been here in a long while."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TalkArrive" unique_id=1197801812]
+shape = SubResource("Box_trigger")
+
+[node name="TalkCellar" type="Area3D" parent="." unique_id=121001492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -2.6, -31)
+script = ExtResource("8_talk")
+lines = Array[String](["Pitch black down here.", "If there is a generator, it will be against a wall somewhere."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TalkCellar" unique_id=209093999]
+shape = SubResource("Box_trigger")
+
+[node name="TalkLanding" type="Area3D" parent="." unique_id=601196670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6, -18)
+script = ExtResource("8_talk")
+lines = Array[String](["Portraits all down one wall.", "Whoever lived here wanted to be remembered in order."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TalkLanding" unique_id=320541274]
+shape = SubResource("Box_trigger")
+
+[node name="Deck" type="Node3D" parent="." unique_id=1535096688]
+
+[node name="Front" type="CSGBox3D" parent="Deck" unique_id=1796811760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 1.95)
+material = ExtResource("Mat_deck")
+use_collision = true
+size = Vector3(40, 0.3, 4.1)
+
+[node name="Back" type="CSGBox3D" parent="Deck" unique_id=1947380117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.15, -35.95)
+material = ExtResource("Mat_deck")
+use_collision = true
+size = Vector3(32, 0.3, 4.1)
+
+[node name="East" type="CSGBox3D" parent="Deck" unique_id=1618416424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, -0.15, -17)
+material = ExtResource("Mat_deck")
+use_collision = true
+size = Vector3(4, 0.3, 34)
+
+[node name="RailFrontWest" type="CSGBox3D" parent="Deck" unique_id=389717205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1, 0.5, 3.9)
+material = ExtResource("Mat_deck")
+use_collision = true
+size = Vector3(15.8, 1, 0.2)
+
+[node name="RailFrontEast" type="CSGBox3D" parent="Deck" unique_id=291692938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1, 0.5, 3.9)
+material = ExtResource("Mat_deck")
+use_collision = true
+size = Vector3(15.8, 1, 0.2)
+
+[node name="RailEast" type="CSGBox3D" parent="Deck" unique_id=1014078218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9, 0.5, -17)
+material = ExtResource("Mat_deck")
+use_collision = true
+size = Vector3(0.2, 1, 34)
+
+[node name="BlockedWest" type="CSGBox3D" parent="Deck" unique_id=808586985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.1, 0)
+material = ExtResource("Mat_wood")
+use_collision = true
+size = Vector3(6, 2.5, 0.3)
+
+[node name="BlockedWestSide" type="CSGBox3D" parent="Deck" unique_id=874408793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8, 1.1, -17)
+material = ExtResource("Mat_wood")
+use_collision = true
+size = Vector3(0.3, 2.5, 34)
+
+[node name="SideYard" type="Node3D" parent="." unique_id=272602599]
+
+[node name="Fence" type="CSGBox3D" parent="SideYard" unique_id=1366560383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0.75, -20)
+material = ExtResource("Mat_wood")
+use_collision = true
+size = Vector3(11, 2.1, 0.3)
+
+[node name="FenceOuter" type="CSGBox3D" parent="SideYard" unique_id=2139770135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.8, 0.75, -20)
+material = ExtResource("Mat_wood")
+use_collision = true
+size = Vector3(0.3, 2.1, 36)
+
+[node name="Crate" type="CSGBox3D" parent="SideYard" unique_id=1009589135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0.6, -18.7)
+material = ExtResource("Mat_wood")
+use_collision = true
+size = Vector3(1.3, 1.2, 1.3)
+
+[node name="Crate2" type="CSGBox3D" parent="SideYard" unique_id=2060299960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0.35, -17.4)
+material = ExtResource("Mat_wood")
+use_collision = true
+size = Vector3(1.3, 0.7, 1.1)
+
+[node name="Grimoire" parent="." unique_id=418822901 instance=ExtResource("18_grim")]
+transform = Transform3D(0.990268, 0, -0.139173, 0, 1, 0, 0.139173, 0, 0.990268, 11.05, 4.395, -13.72)
+prompt = "The open book"
+examine_lines = Array[String](["It is open, and it is warm.", "Nothing else in this house is warm."])
+passages = Array[String](["The hand is not the same on every page. Two people wrote this, and the second one was in a hurry.", "\"The house keeps what it is given. Give it something it wants and it will open a door for you.\"", "\"Three figures, taken from three of its own things. It will not answer to a number you simply guessed.\"", "The last entry is a single line, pressed so hard the nib went through: \"Do not go up after dark.\""])

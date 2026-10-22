@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dlsmeyd4om7je"]
+
+[ext_resource type="Shader" uid="uid://du250v1ugjyd1" path="res://Scripts/ground.gdshader" id="1_g"]
+
+[resource]
+resource_name = "Mat_estatewall"
+render_priority = 0
+shader = ExtResource("1_g")
+shader_parameter/pattern = 5
+shader_parameter/tint_a = Color(0.245, 0.238, 0.222, 1)
+shader_parameter/tint_b = Color(0.195, 0.19, 0.18, 1)
+shader_parameter/joint_tint = Color(0.09, 0.09, 0.082, 1)
+shader_parameter/tile_size = 0.85
+shader_parameter/joint_width = 0.045
+shader_parameter/roughness_lo = 0.72
+shader_parameter/roughness_hi = 1.0
+shader_parameter/bump = 1.4
+shader_parameter/weathering = 0.5
+shader_parameter/weather_scale = 0.05
+shader_parameter/weather_tint = Color(0.12, 0.14, 0.1, 1)

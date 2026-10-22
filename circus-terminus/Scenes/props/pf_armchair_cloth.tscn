@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_cloth.tres" id="Mat_cloth"]
+[ext_resource type="Material" path="res://Materials/Mat_walnut.tres" id="Mat_walnut"]
+
+[node name="ArmchairCloth" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="ChairBase_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.3200, 0.0000)
+material = ExtResource("Mat_cloth")
+size = Vector3(0.8600, 0.2200, 0.8400)
+
+[node name="ChairCushion_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.4800, 0.0400)
+material = ExtResource("Mat_cloth")
+size = Vector3(0.7000, 0.1600, 0.6800)
+
+[node name="ChairBack_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.8000, -0.3600)
+material = ExtResource("Mat_cloth")
+size = Vector3(0.8600, 0.8000, 0.1800)
+
+[node name="ChairArm_4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3700, 0.6000, -0.0200)
+material = ExtResource("Mat_cloth")
+size = Vector3(0.1600, 0.3400, 0.8000)
+
+[node name="ChairArm_5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3700, 0.6000, -0.0200)
+material = ExtResource("Mat_cloth")
+size = Vector3(0.1600, 0.3400, 0.8000)
+
+[node name="ChairFoot_6" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.34000, 0.07000, -0.32000)
+material = ExtResource("Mat_walnut")
+radius = 0.0350
+height = 0.1400
+sides = 6
+
+[node name="ChairFoot_7" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.34000, 0.07000, -0.32000)
+material = ExtResource("Mat_walnut")
+radius = 0.0350
+height = 0.1400
+sides = 6
+
+[node name="ChairFoot_8" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.34000, 0.07000, 0.32000)
+material = ExtResource("Mat_walnut")
+radius = 0.0350
+height = 0.1400
+sides = 6
+
+[node name="ChairFoot_9" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.34000, 0.07000, 0.32000)
+material = ExtResource("Mat_walnut")
+radius = 0.0350
+height = 0.1400
+sides = 6

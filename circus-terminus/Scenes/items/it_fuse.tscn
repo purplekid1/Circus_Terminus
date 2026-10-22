@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_glass.tres" id="Mat_glass"]
+[ext_resource type="Material" path="res://Materials/Mat_porcelain.tres" id="Mat_porcelain"]
+
+[node name="Fuse" type="CSGCombiner3D"]
+
+[node name="FuseBody_1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.000000, -1.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.01400, 0.00000)
+material = ExtResource("Mat_porcelain")
+radius = 0.0135
+height = 0.0540
+sides = 14
+
+[node name="FuseRib_2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.000000, -1.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.01400, 0.00000)
+material = ExtResource("Mat_porcelain")
+radius = 0.0160
+height = 0.0080
+sides = 14
+
+[node name="FuseCap_3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.000000, -1.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.03100, 0.01400, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0146
+height = 0.0130
+sides = 14
+
+[node name="FuseCap_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.000000, -1.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.03100, 0.01400, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0146
+height = 0.0130
+sides = 14
+
+[node name="FuseWindow_5" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.02600, 0.00000)
+material = ExtResource("Mat_glass")
+size = Vector3(0.0240, 0.0060, 0.0110)

@@ -1,0 +1,248 @@
+[gd_scene load_steps=18 format=3]
+
+; The big top door. It does not open -- see Scripts/FallDoor.gd.
+;
+; THE HIERARCHY IS THE POINT. This node is the HINGE, at ground level. Pivot
+; turns about it. The panel hangs off Pivot already offset by half its height,
+; so rotating Pivot swings the door about its own bottom edge instead of about
+; wherever the geometry happens to sit. That is the whole reason this is real
+; nodes and not the CSG everything else in the level is made of -- see the note
+; at the top of the script.
+;
+; Nine metres across and eight tall, because it is a door in a place built for
+; something three metres tall and it has to read as far too big to shift by
+; hand. That is also why a switch exists.
+
+[ext_resource type="Script" path="res://Scripts/FallDoor.gd" id="1_fall"]
+[ext_resource type="Material" path="res://Materials/Mat_wood.tres" id="2_wood"]
+[ext_resource type="Material" path="res://Materials/Mat_iron.tres" id="3_iron"]
+
+[sub_resource type="BoxMesh" id="Mesh_panel"]
+size = Vector3(9, 8, 0.35)
+
+[sub_resource type="BoxMesh" id="Mesh_ledge"]
+size = Vector3(9.3, 0.55, 0.16)
+
+[sub_resource type="BoxMesh" id="Mesh_brace"]
+size = Vector3(11.4, 0.5, 0.14)
+
+[sub_resource type="BoxMesh" id="Mesh_strap"]
+size = Vector3(2.6, 0.34, 0.12)
+
+[sub_resource type="BoxShape3D" id="Shape_panel"]
+size = Vector3(9, 8, 0.35)
+
+[sub_resource type="BoxMesh" id="Mesh_grit"]
+size = Vector3(0.16, 0.05, 0.22)
+
+; Billboarded, and reading its colour from the particle, so the fade is per
+; grain rather than the whole cloud dimming at once.
+; A radial falloff, so each particle is a soft puff rather than a square.
+;
+; Without this every grain is a flat quad at uniform alpha, and two hundred of
+; them overlapping read as a stack of translucent boxes -- which is exactly
+; what the first version looked like. The texture is generated rather than
+; painted: a white-to-clear radial gradient is all a dust sprite has ever been.
+[sub_resource type="Gradient" id="Grad_soft"]
+offsets = PackedFloat32Array(0, 0.45, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.55, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="Tex_soft"]
+gradient = SubResource("Grad_soft")
+width = 96
+height = 96
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="Mat_dust"]
+transparency = 1
+blend_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.46, 0.41, 0.34, 0.42)
+albedo_texture = SubResource("Tex_soft")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="Mesh_puff"]
+material = SubResource("Mat_dust")
+size = Vector2(1.6, 1.6)
+
+[sub_resource type="Gradient" id="Grad_dust"]
+offsets = PackedFloat32Array(0, 0.25, 1)
+colors = PackedColorArray(0.5, 0.45, 0.37, 0, 0.47, 0.42, 0.35, 0.62, 0.4, 0.36, 0.3, 0)
+
+[sub_resource type="GradientTexture1D" id="Tex_dust"]
+gradient = SubResource("Grad_dust")
+
+; THE FALL, AS AN ANIMATION RATHER THAN AS CODE.
+;
+; This was a tween plus an `await` on a SceneTreeTimer: the door turned in one
+; script, the dust went off in another line further down, and the relationship
+; between the two -- the thing that actually sells it -- existed only as the
+; number 0.82 buried in an export. Nobody could see it, and tuning it meant
+; editing GDScript and re-running the game.
+;
+; As an animation the whole choreography is one editable resource. The five
+; rotation keys are a quadratic ease-in, which over eight tenths of a second is
+; close enough to gravity that the eye does not argue. The two method tracks
+; fire the dust and the landing, and you can drag them.
+[sub_resource type="Animation" id="Anim_fall"]
+resource_name = "fall"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.21, 0.43, 0.64, 0.85),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.1025, 0, 0), Vector3(-0.4102, 0, 0), Vector3(-0.9229, 0, 0), Vector3(-1.6406, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7, 0.87),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_burst"
+}, {
+"args": [],
+"method": &"_landed"
+}]
+}
+
+; Where it ends up, for a door that is meant to start already down.
+[sub_resource type="Animation" id="Anim_down"]
+resource_name = "down"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.6406, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="Lib_fall"]
+_data = {
+&"down": SubResource("Anim_down"),
+&"fall": SubResource("Anim_fall")
+}
+
+[node name="FallDoor" type="Node3D"]
+script = ExtResource("1_fall")
+dust = NodePath("Dust")
+grit = NodePath("Grit")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("Lib_fall")
+}
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Panel" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("Mesh_panel")
+surface_material_override/0 = ExtResource("2_wood")
+
+; Three ledges and a diagonal: a braced door, which is what a door this size
+; has to be, and what stops nine metres of flat panel reading as a wall.
+[node name="LedgeLow" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.26)
+mesh = SubResource("Mesh_ledge")
+surface_material_override/0 = ExtResource("2_wood")
+
+[node name="LedgeMid" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0.26)
+mesh = SubResource("Mesh_ledge")
+surface_material_override/0 = ExtResource("2_wood")
+
+[node name="LedgeHigh" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.9, 0.26)
+mesh = SubResource("Mesh_ledge")
+surface_material_override/0 = ExtResource("2_wood")
+
+[node name="Brace" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(0.766, -0.643, 0, 0.643, 0.766, 0, 0, 0, 1, 0, 4, 0.3)
+mesh = SubResource("Mesh_brace")
+surface_material_override/0 = ExtResource("2_wood")
+
+[node name="StrapLow" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 1.1, 0.34)
+mesh = SubResource("Mesh_strap")
+surface_material_override/0 = ExtResource("3_iron")
+
+[node name="StrapHigh" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 6.9, 0.34)
+mesh = SubResource("Mesh_strap")
+surface_material_override/0 = ExtResource("3_iron")
+
+[node name="Body" type="StaticBody3D" parent="Pivot"]
+
+[node name="Shape" type="CollisionShape3D" parent="Pivot/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("Shape_panel")
+
+; ---- the moment it lands ---------------------------------------------------
+; Both of these sit where the TOP of the door ends up, not where the hinge is:
+; the dust is thrown by the far edge slamming into the dirt, four metres away
+; from the pivot on the far side.
+
+[node name="Dust" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -3.6)
+emitting = false
+amount = 420
+lifetime = 3.6
+one_shot = true
+explosiveness = 0.92
+lifetime_randomness = 0.45
+mesh = SubResource("Mesh_puff")
+emission_shape = 3
+emission_box_extents = Vector3(5, 0.3, 1.6)
+direction = Vector3(0, 1, 0)
+spread = 84.0
+initial_velocity_min = 1.4
+initial_velocity_max = 5.2
+gravity = Vector3(0, -0.35, 0)
+damping_min = 0.9
+damping_max = 1.8
+scale_amount_min = 0.7
+scale_amount_max = 2.6
+color_ramp = SubResource("Tex_dust")
+
+; Splinters and dirt. Fast, heavy, and gone in a second -- the dust is the
+; picture, this is the impact.
+[node name="Grit" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, -3.6)
+emitting = false
+amount = 90
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.4
+mesh = SubResource("Mesh_grit")
+emission_shape = 3
+emission_box_extents = Vector3(4.4, 0.2, 0.9)
+direction = Vector3(0, 1, 0)
+spread = 58.0
+initial_velocity_min = 3.5
+initial_velocity_max = 9.0
+gravity = Vector3(0, -14, 0)
+angular_velocity_min = -420.0
+angular_velocity_max = 420.0
+scale_amount_min = 0.7
+scale_amount_max = 1.9

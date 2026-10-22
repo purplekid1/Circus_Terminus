@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://4f0rcpr525ri"]
+
+[ext_resource type="Texture2D" uid="uid://e34ut0ovhbxy" path="res://Materials/tex_fineN.tres" id="tex_fineN"]
+[ext_resource type="Texture2D" uid="uid://cbxa1jcu6jd7o" path="res://Materials/tex_fineR.tres" id="tex_fineR"]
+
+[resource]
+albedo_color = Color(0.58, 0.45, 0.19, 1)
+metallic = 0.7
+roughness = 0.7
+roughness_texture = ExtResource("tex_fineR")
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("tex_fineN")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true

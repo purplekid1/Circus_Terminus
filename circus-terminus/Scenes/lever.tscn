@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dy8cfjxc0kjuw"]
+
+[ext_resource type="Script" uid="uid://dx16ubitimdq4" path="res://Scripts/Lever.gd" id="1_lever"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_plate"]
+size = Vector3(0.34, 0.5, 0.24)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plate"]
+albedo_color = Color(0.2, 0.21, 0.23, 1)
+metallic = 0.6
+roughness = 0.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_plate"]
+size = Vector3(0.3, 0.46, 0.08)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rod"]
+albedo_color = Color(0.68, 0.2, 0.16, 1)
+metallic = 0.4
+roughness = 0.4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rod"]
+top_radius = 0.022
+bottom_radius = 0.022
+height = 0.32
+
+[node name="Lever" type="Node3D" unique_id=1229596720 groups=["interactable"]]
+script = ExtResource("1_lever")
+prompt = "lever"
+
+[node name="Body" type="StaticBody3D" parent="." unique_id=824631220]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body" unique_id=72046308]
+shape = SubResource("BoxShape3D_plate")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body" unique_id=436080538]
+material_override = SubResource("StandardMaterial3D_plate")
+mesh = SubResource("BoxMesh_plate")
+
+[node name="Handle" type="Node3D" parent="." unique_id=2039523717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03519267, 0.029163364)
+
+[node name="Rod" type="MeshInstance3D" parent="Handle" unique_id=1865956031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11783944, -0.0023088008)
+material_override = SubResource("StandardMaterial3D_rod")
+mesh = SubResource("CylinderMesh_rod")

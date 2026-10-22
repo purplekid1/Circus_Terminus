@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bjppr1jd4c08c"]
+
+[ext_resource type="Script" uid="uid://dqbydwbu4rshe" path="res://Scripts/ItemData.gd" id="1_item"]
+[ext_resource type="PackedScene" path="res://Scenes/items/it_key_bureau.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_item")
+id = "bureau_key"
+display_name = "Bureau Key"
+description = "Tiny. Made for a piece of furniture, not a door."
+color = Color(0.9, 0.84, 0.5, 1)
+model = ExtResource("2_model")
+icon_distance = 0.1
+icon_lift = 0.008

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dhf4cvfwmu7jw"]
+
+[ext_resource type="Texture2D" uid="uid://cxvs6kjityuy0" path="res://Materials/tex_medN.tres" id="tex_medN"]
+
+[resource]
+albedo_color = Color(0.36, 0.38, 0.36, 1)
+roughness = 0.9
+normal_enabled = true
+normal_scale = 1.3
+normal_texture = ExtResource("tex_medN")
+uv1_scale = Vector3(0.8, 0.8, 0.8)
+uv1_triplanar = true

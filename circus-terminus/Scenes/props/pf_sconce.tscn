@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_candle.tres" id="Mat_candle"]
+
+[node name="Sconce" type="CSGCombiner3D"]
+
+[node name="SconcePlate_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.0000, 0.0300)
+material = ExtResource("Mat_brass")
+size = Vector3(0.1600, 0.3000, 0.0500)
+
+[node name="SconceArm_2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 0.000000, -1.000000, 0.000000, 1.000000, 0.000000, 0.00000, 0.06000, 0.13000)
+material = ExtResource("Mat_brass")
+radius = 0.0140
+height = 0.2200
+sides = 6
+
+[node name="SconceCup_3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.12000, 0.22000)
+material = ExtResource("Mat_brass")
+radius = 0.0450
+height = 0.0500
+sides = 8
+
+[node name="SconceCandle_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.24000, 0.22000)
+material = ExtResource("Mat_candle")
+radius = 0.0200
+height = 0.1800
+sides = 8

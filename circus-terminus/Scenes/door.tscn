@@ -1,0 +1,204 @@
+[gd_scene format=3 uid="uid://cumceln8hk70f"]
+
+[ext_resource type="Script" uid="uid://di6wm26f4oyby" path="res://Scripts/Door.gd" id="1_door"]
+[ext_resource type="Material" uid="uid://dgt10gn7hnm63" path="res://Materials/Mat_mahog.tres" id="2_mahog"]
+[ext_resource type="Material" uid="uid://t3k3355m6007" path="res://Materials/Mat_walnut.tres" id="3_walnut"]
+[ext_resource type="Material" uid="uid://dskk51p7s52fm" path="res://Materials/Mat_brass.tres" id="4_brass"]
+[ext_resource type="Material" uid="uid://co33r0dnskr7d" path="res://Materials/Mat_iron.tres" id="5_iron"]
+
+[sub_resource type="BoxShape3D" id="Shape_panel"]
+size = Vector3(1.2969, 2.1, 0.09)
+
+[sub_resource type="BoxMesh" id="Mesh_back"]
+size = Vector3(1.2969, 2.1, 0.02)
+
+[sub_resource type="BoxMesh" id="Mesh_stile"]
+size = Vector3(0.14, 2.1, 0.055)
+
+[sub_resource type="BoxMesh" id="Mesh_railwide"]
+size = Vector3(1.2969, 0.26, 0.055)
+
+[sub_resource type="BoxMesh" id="Mesh_raillock"]
+size = Vector3(1.2969, 0.22, 0.055)
+
+[sub_resource type="BoxMesh" id="Mesh_railtop"]
+size = Vector3(1.2969, 0.16, 0.055)
+
+[sub_resource type="BoxMesh" id="Mesh_muntin"]
+size = Vector3(0.1, 2.1, 0.055)
+
+[sub_resource type="BoxMesh" id="Mesh_stick_low"]
+size = Vector3(0.428, 0.6, 0.038)
+
+[sub_resource type="BoxMesh" id="Mesh_field_low"]
+size = Vector3(0.368, 0.54, 0.03)
+
+[sub_resource type="BoxMesh" id="Mesh_stick_high"]
+size = Vector3(0.428, 0.8, 0.038)
+
+[sub_resource type="BoxMesh" id="Mesh_field_high"]
+size = Vector3(0.368, 0.74, 0.03)
+
+[sub_resource type="BoxMesh" id="Mesh_hinge"]
+size = Vector3(0.022, 0.1, 0.078)
+
+[sub_resource type="CylinderMesh" id="Mesh_rose"]
+top_radius = 0.042
+bottom_radius = 0.042
+height = 0.01
+radial_segments = 20
+
+[sub_resource type="CylinderMesh" id="Mesh_neck"]
+top_radius = 0.015
+bottom_radius = 0.019
+height = 0.05
+radial_segments = 14
+
+[sub_resource type="SphereMesh" id="Mesh_knob"]
+radius = 0.034
+height = 0.062
+radial_segments = 16
+rings = 10
+
+[sub_resource type="BoxMesh" id="Mesh_escutcheon"]
+size = Vector3(0.05, 0.07, 0.008)
+
+[node name="Door" type="Node3D" unique_id=817245921 groups=["interactable"]]
+script = ExtResource("1_door")
+prompt = "Door"
+
+[node name="Hinge" type="Node3D" parent="." unique_id=928834609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004639387, 0, 0)
+
+[node name="Panel" type="AnimatableBody3D" parent="Hinge" unique_id=1472798426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 1.05, 0)
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge/Panel" unique_id=1450607979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.117, 0, 0)
+shape = SubResource("Shape_panel")
+
+[node name="Back" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1792056218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.117, 0, -0.012)
+material_override = ExtResource("3_walnut")
+mesh = SubResource("Mesh_back")
+
+[node name="StileHinge" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1572014669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.461, 0, 0)
+material_override = ExtResource("2_mahog")
+mesh = SubResource("Mesh_stile")
+
+[node name="StileLock" type="MeshInstance3D" parent="Hinge/Panel" unique_id=6222545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.695, 0, 0)
+material_override = ExtResource("2_mahog")
+mesh = SubResource("Mesh_stile")
+
+[node name="RailBottom" type="MeshInstance3D" parent="Hinge/Panel" unique_id=560884084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.117, -0.92, 0)
+material_override = ExtResource("2_mahog")
+mesh = SubResource("Mesh_railwide")
+
+[node name="RailLock" type="MeshInstance3D" parent="Hinge/Panel" unique_id=272430782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.117, -0.05, 0)
+material_override = ExtResource("2_mahog")
+mesh = SubResource("Mesh_raillock")
+
+[node name="RailTop" type="MeshInstance3D" parent="Hinge/Panel" unique_id=728533127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.117, 0.97, 0)
+material_override = ExtResource("2_mahog")
+mesh = SubResource("Mesh_railtop")
+
+[node name="Muntin" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1838800904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.117, 0, 0)
+material_override = ExtResource("2_mahog")
+mesh = SubResource("Mesh_muntin")
+
+[node name="StickLowLeft" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1904019772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162, -0.475, 0)
+material_override = ExtResource("2_mahog")
+mesh = SubResource("Mesh_stick_low")
+
+[node name="FieldLowLeft" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1288088359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162, -0.475, 0)
+material_override = ExtResource("3_walnut")
+mesh = SubResource("Mesh_field_low")
+
+[node name="StickLowRight" type="MeshInstance3D" parent="Hinge/Panel" unique_id=698469863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.396, -0.475, 0)
+material_override = ExtResource("2_mahog")
+mesh = SubResource("Mesh_stick_low")
+
+[node name="FieldLowRight" type="MeshInstance3D" parent="Hinge/Panel" unique_id=116922819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.396, -0.475, 0)
+material_override = ExtResource("3_walnut")
+mesh = SubResource("Mesh_field_low")
+
+[node name="StickHighLeft" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1124495173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162, 0.475, 0)
+material_override = ExtResource("2_mahog")
+mesh = SubResource("Mesh_stick_high")
+
+[node name="FieldHighLeft" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1688163099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162, 0.475, 0)
+material_override = ExtResource("3_walnut")
+mesh = SubResource("Mesh_field_high")
+
+[node name="StickHighRight" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1950219600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.396, 0.475, 0)
+material_override = ExtResource("2_mahog")
+mesh = SubResource("Mesh_stick_high")
+
+[node name="FieldHighRight" type="MeshInstance3D" parent="Hinge/Panel" unique_id=424200357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.396, 0.475, 0)
+material_override = ExtResource("3_walnut")
+mesh = SubResource("Mesh_field_high")
+
+[node name="HingeLow" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1563360614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5315, -0.82, 0)
+material_override = ExtResource("5_iron")
+mesh = SubResource("Mesh_hinge")
+
+[node name="HingeMid" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1732099583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5315, 0.02, 0)
+material_override = ExtResource("5_iron")
+mesh = SubResource("Mesh_hinge")
+
+[node name="HingeHigh" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1281607823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5315, 0.86, 0)
+material_override = ExtResource("5_iron")
+mesh = SubResource("Mesh_hinge")
+
+[node name="RoseFront" type="MeshInstance3D" parent="Hinge/Panel" unique_id=63902381]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.6, 0.05, 0.03)
+material_override = ExtResource("4_brass")
+mesh = SubResource("Mesh_rose")
+
+[node name="NeckFront" type="MeshInstance3D" parent="Hinge/Panel" unique_id=291351312]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.6, 0.05, 0.058)
+material_override = ExtResource("4_brass")
+mesh = SubResource("Mesh_neck")
+
+[node name="KnobFront" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1928113293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.05, 0.1)
+material_override = ExtResource("4_brass")
+mesh = SubResource("Mesh_knob")
+
+[node name="RoseBack" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1589562376]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.6, 0.05, -0.03)
+material_override = ExtResource("4_brass")
+mesh = SubResource("Mesh_rose")
+
+[node name="NeckBack" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1075917727]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.6, 0.05, -0.058)
+material_override = ExtResource("4_brass")
+mesh = SubResource("Mesh_neck")
+
+[node name="KnobBack" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1926793362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.05, -0.1)
+material_override = ExtResource("4_brass")
+mesh = SubResource("Mesh_knob")
+
+[node name="Escutcheon" type="MeshInstance3D" parent="Hinge/Panel" unique_id=334785051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -0.07, 0.03)
+material_override = ExtResource("4_brass")
+mesh = SubResource("Mesh_escutcheon")

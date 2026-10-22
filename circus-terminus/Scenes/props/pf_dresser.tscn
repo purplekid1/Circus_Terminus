@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_mahog.tres" id="Mat_mahog"]
+[ext_resource type="Material" path="res://Materials/Mat_walnut.tres" id="Mat_walnut"]
+
+[node name="Dresser" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="DresserBody_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.4400, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(1.4000, 0.8800, 0.5500)
+
+[node name="DresserTop_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.9000, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(1.4600, 0.0400, 0.6000)
+
+[node name="DresserDrawer_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.1800, 0.2850)
+material = ExtResource("Mat_mahog")
+size = Vector3(1.2800, 0.2000, 0.0300)
+
+[node name="DresserPull_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.35000, 0.18000, 0.31500)
+material = ExtResource("Mat_brass")
+radius = 0.0200
+height = 0.0500
+sides = 8
+
+[node name="DresserPull_5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.35000, 0.18000, 0.31500)
+material = ExtResource("Mat_brass")
+radius = 0.0200
+height = 0.0500
+sides = 8
+
+[node name="DresserDrawer_6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.4200, 0.2850)
+material = ExtResource("Mat_mahog")
+size = Vector3(1.2800, 0.2000, 0.0300)
+
+[node name="DresserPull_7" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.35000, 0.42000, 0.31500)
+material = ExtResource("Mat_brass")
+radius = 0.0200
+height = 0.0500
+sides = 8
+
+[node name="DresserPull_8" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.35000, 0.42000, 0.31500)
+material = ExtResource("Mat_brass")
+radius = 0.0200
+height = 0.0500
+sides = 8
+
+[node name="DresserDrawer_9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.6600, 0.2850)
+material = ExtResource("Mat_mahog")
+size = Vector3(1.2800, 0.2000, 0.0300)
+
+[node name="DresserPull_10" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.35000, 0.66000, 0.31500)
+material = ExtResource("Mat_brass")
+radius = 0.0200
+height = 0.0500
+sides = 8
+
+[node name="DresserPull_11" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.35000, 0.66000, 0.31500)
+material = ExtResource("Mat_brass")
+radius = 0.0200
+height = 0.0500
+sides = 8

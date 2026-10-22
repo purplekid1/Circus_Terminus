@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/Readable.gd" id="1_read"]
+
+[sub_resource type="BoxShape3D" id="Box_read"]
+size = Vector3(0.62, 0.82, 0.08)
+
+[sub_resource type="BoxMesh" id="Mesh_read"]
+size = Vector3(0.6, 0.8, 0.06)
+
+[sub_resource type="StandardMaterial3D" id="Mat_frame"]
+albedo_color = Color(0.36, 0.28, 0.18, 1)
+roughness = 0.85
+
+[node name="Readable" type="Node3D" groups=["interactable"]]
+script = ExtResource("1_read")
+prompt = "Look closer"
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
+shape = SubResource("Box_read")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("Mesh_read")
+material_override = SubResource("Mat_frame")

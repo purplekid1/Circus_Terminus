@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bjuglw5jx4jyh"]
+
+[ext_resource type="Texture2D" uid="uid://cr5enw8rkx1a0" path="res://icon.svg" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://mb64015mhxlr" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="Material" uid="uid://cn3047dwomwx5" path="res://Vision/tag_enemy.tres" id="3_21xkr"]
+[ext_resource type="Material" uid="uid://d33oi0n5l2ole" path="res://Vision/tag_item.tres" id="5_21xkr"]
+[ext_resource type="Material" uid="uid://c18m4sfdn1bd2" path="res://Vision/tag_interactable.tres" id="6_6bp64"]
+[ext_resource type="PackedScene" uid="uid://bu7wcm3myos1v" path="res://Scenes/safe.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://brl3vakragnm6" path="res://Scenes/house.tscn" id="9_house"]
+[ext_resource type="Environment" uid="uid://cnightenv0001" path="res://Materials/env_night.tres" id="10_env"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gbba"]
+albedo_texture = ExtResource("1_bo1nx")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjvhh"]
+
+[node name="Main" type="Node3D" unique_id=154585565]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=854064037]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.14509805, 0.64705884, 1, 1)
+light_energy = 0.342
+light_indirect_energy = 0.452
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=360012758]
+environment = ExtResource("10_env")
+
+[node name="Ground" type="CSGBox3D" parent="." unique_id=1932563100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.046610355, -10)
+material_override = SubResource("StandardMaterial3D_8gbba")
+use_collision = true
+size = Vector3(10, 0.1, 30)
+
+[node name="Player" parent="." unique_id=740733005 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20023012, 1.5145395, 0.027495325)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1210080943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043070316, 0.48063803, 4.471991)
+size = Vector3(2, 1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1958466133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42702, 0.48063803, 2.471991)
+size = Vector3(1, 1, 5)
+material = SubResource("StandardMaterial3D_jjvhh")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1936772067 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4711504, 1.2853489, 0.63664174)
+material_overlay = ExtResource("3_21xkr")
+cast_shadow = 0
+size = Vector3(0.4560547, 0.6074219, 0.43847656)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1439404348 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5273943, 1.2172115, 1.7212706)
+material_overlay = ExtResource("6_6bp64")
+cast_shadow = 0
+size = Vector3(0.4560547, 0.6074219, 0.43847656)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=451098116 groups=["items"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5273943, 1.2172115, 2.7740555)
+material_overlay = ExtResource("5_21xkr")
+cast_shadow = 0
+size = Vector3(0.4560547, 0.6074219, 0.43847656)
+
+[node name="House" parent="." unique_id=1302079184 instance=ExtResource("9_house")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, -12)
+
+[node name="Safe" parent="." unique_id=1823563618 instance=ExtResource("7_6bp64")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.146914, 0.9607532, 4.2534604)

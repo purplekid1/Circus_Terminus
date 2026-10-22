@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://y4vtfctrw0ru"]
+
+[ext_resource type="Script" uid="uid://dqbydwbu4rshe" path="res://Scripts/ItemData.gd" id="1_item"]
+[ext_resource type="PackedScene" path="res://Scenes/items/it_battery.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_item")
+id = "battery"
+display_name = "Battery"
+description = "Spare cell for the torch. Cold, and heavier than it looks."
+color = Color(0.45, 0.9, 0.6, 1)
+model = ExtResource("2_model")
+icon_distance = 0.13
+icon_lift = 0.025
+stackable = true
+max_stack = 6

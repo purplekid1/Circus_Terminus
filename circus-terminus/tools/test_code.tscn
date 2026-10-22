@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+; A scene, not a --script tool: see the header of tools/test_vision.gd.
+
+[ext_resource type="Script" path="res://tools/test_code.gd" id="1_c"]
+
+[node name="TestCode" type="Node"]
+script = ExtResource("1_c")

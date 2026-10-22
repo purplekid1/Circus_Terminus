@@ -1,0 +1,327 @@
+[gd_scene format=3 uid="uid://dl1sfhmiourlf"]
+
+[ext_resource type="Script" uid="uid://cyworovgqurel" path="res://Scripts/InteractionHUD.gd" id="1_hud"]
+[ext_resource type="Shader" uid="uid://b8f20u0td382q" path="res://Scripts/tunnel.gdshader" id="2_tunnel"]
+
+[sub_resource type="StyleBoxFlat" id="Box_crosshair"]
+bg_color = Color(1, 1, 1, 0.75)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="Box_chip"]
+bg_color = Color(0, 0, 0, 0.5)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.22)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="Box_staminaframe"]
+bg_color = Color(0, 0, 0, 0.42)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.55)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="Box_staminafill"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="ShaderMaterial" id="Mat_tunnel"]
+shader = ExtResource("2_tunnel")
+shader_parameter/travel = 0.0
+shader_parameter/amount = 0.0
+shader_parameter/spin = 1.0
+shader_parameter/twist = 0.16
+shader_parameter/core = 1.5
+shader_parameter/core_size = 0.34
+shader_parameter/wall_dark = Color(0.04, 0.015, 0.03, 1)
+shader_parameter/wall_lit = Color(0.85, 0.38, 0.11, 1)
+shader_parameter/core_tint = Color(1, 0.94, 0.78, 1)
+
+[node name="HUD" type="CanvasLayer" unique_id=2058027848]
+script = ExtResource("1_hud")
+
+[node name="Crosshair" type="Panel" parent="." unique_id=1160978639]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Box_crosshair")
+
+[node name="Prompt" type="Label" parent="." unique_id=227113935]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = 44.0
+offset_right = 300.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 19
+horizontal_alignment = 1
+
+[node name="HiddenLabel" type="Label" parent="." unique_id=1080875956]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 34.0
+offset_right = 200.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.55, 0.95, 0.75, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 17
+text = "HIDDEN"
+horizontal_alignment = 1
+
+[node name="HeldFrame" type="Panel" parent="." unique_id=219090378]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -374.0
+offset_top = -105.0
+offset_right = -290.0
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Box_chip")
+
+[node name="HeldPanel" type="Panel" parent="." unique_id=481773505]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -96.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Box_chip")
+
+[node name="HeldCaption" type="Label" parent="HeldPanel" unique_id=1127533987]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 132.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.4)
+theme_override_font_sizes/font_size = 12
+text = "IN HAND"
+
+[node name="HeldName" type="Label" parent="HeldPanel" unique_id=1505292518]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 22.0
+offset_right = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+vertical_alignment = 1
+
+[node name="GearLabel" type="Label" parent="." unique_id=451128520]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -122.0
+offset_right = -30.0
+offset_bottom = -98.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.72, 0.86, 0.9, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 2
+
+[node name="Message" type="Label" parent="." unique_id=1884928272]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -430.0
+offset_top = -190.0
+offset_right = 430.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.94, 0.92, 0.84, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Hint" type="Label" parent="." unique_id=1123696560]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -104.0
+offset_right = 500.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.82, 0.8, 0.72, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 17
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Dialogue" type="Label" parent="." unique_id=544644371]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -470.0
+offset_top = -114.0
+offset_right = 470.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.82, 0.86, 0.95, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="StaminaBox" type="Control" parent="." unique_id=1642576004]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = 54.0
+offset_right = 95.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Frame" type="Panel" parent="StaminaBox" unique_id=1646063312]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Box_staminaframe")
+
+[node name="Fill" type="Panel" parent="StaminaBox" unique_id=1246666246]
+modulate = Color(0.78, 0.76, 0.68, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 189.0
+offset_bottom = 5.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Box_staminafill")
+
+[node name="Overlays" type="CanvasLayer" parent="." unique_id=1880387060]
+layer = 98
+
+[node name="Tunnel" type="ColorRect" parent="Overlays" unique_id=1104414484]
+visible = false
+material = SubResource("Mat_tunnel")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Flash" type="ColorRect" parent="Overlays" unique_id=1279329040]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="FadeLayer" type="CanvasLayer" parent="." unique_id=988071680]
+layer = 100
+
+[node name="Fade" type="ColorRect" parent="FadeLayer" unique_id=1018942103]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Closing" type="Label" parent="FadeLayer" unique_id=632508513]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+horizontal_alignment = 1
+vertical_alignment = 1

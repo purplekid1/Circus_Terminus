@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_marble.tres" id="Mat_marble"]
+
+[node name="PedestalBust" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="PedBase_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.0600, 0.0000)
+material = ExtResource("Mat_marble")
+size = Vector3(0.3400, 0.1200, 0.3400)
+
+[node name="PedShaft_2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.52500, 0.00000)
+material = ExtResource("Mat_marble")
+radius = 0.1100
+height = 1.0500
+sides = 10
+
+[node name="PedCap_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.0900, 0.0000)
+material = ExtResource("Mat_marble")
+size = Vector3(0.3200, 0.0800, 0.3200)
+
+[node name="BustNeck_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 1.20000, 0.00000)
+material = ExtResource("Mat_marble")
+radius = 0.0700
+height = 0.1400
+sides = 8
+
+[node name="BustHead_5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.3700, 0.0000)
+material = ExtResource("Mat_marble")
+size = Vector3(0.2000, 0.2400, 0.2200)
+
+[node name="BustShoulder_6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.1700, 0.0000)
+material = ExtResource("Mat_marble")
+size = Vector3(0.3400, 0.1400, 0.2200)

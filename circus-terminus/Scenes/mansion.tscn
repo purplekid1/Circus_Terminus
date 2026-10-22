@@ -1,0 +1,1846 @@
+[gd_scene format=3 uid="uid://dswhw08mfd8he"]
+
+[ext_resource type="PackedScene" uid="uid://cumceln8hk70f" path="res://Scenes/door.tscn" id="1_door"]
+[ext_resource type="ArrayMesh" uid="uid://bwy0e1l8rfy1f" path="res://Meshes/mansion_Shell.res" id="1_txd73"]
+[ext_resource type="Shape3D" uid="uid://b7flm1q2hmtkv" path="res://Meshes/mansion_Shell_col.res" id="2_h0gi1"]
+[ext_resource type="PackedScene" uid="uid://cq2ypkxv8ltd3" path="res://Scenes/pickup.tscn" id="2_pick"]
+[ext_resource type="ArrayMesh" uid="uid://pdqj2lj6lfxg" path="res://Meshes/mansion_MainStairs_Steps.res" id="3_nbyh1"]
+[ext_resource type="PackedScene" uid="uid://bu7wcm3myos1v" path="res://Scenes/safe.tscn" id="3_safe"]
+[ext_resource type="ArrayMesh" uid="uid://bxyg0e88q4f3n" path="res://Meshes/mansion_MainStairs_MainGuards.res" id="4_oxwd4"]
+[ext_resource type="ArrayMesh" uid="uid://dci1y2krvw8qy" path="res://Meshes/mansion_CellarStairs_Steps.res" id="5_kwflp"]
+[ext_resource type="PackedScene" path="res://Scenes/storm_door.tscn" id="5_storm"]
+[ext_resource type="ArrayMesh" uid="uid://bmq8da2n031iy" path="res://Meshes/mansion_CellarStairs_CellarGuards.res" id="6_vk0ty"]
+[ext_resource type="ArrayMesh" uid="uid://cvo1fk65spyk1" path="res://Meshes/mansion_CellarPit_PitFloor.res" id="7_e8b26"]
+[ext_resource type="Script" uid="uid://db7k25fr2vpkd" path="res://Scripts/Generator.gd" id="7_gen"]
+[ext_resource type="Shape3D" uid="uid://vh7oalsvry8n" path="res://Meshes/mansion_CellarPit_PitFloor_col.res" id="8_emls0"]
+[ext_resource type="Script" uid="uid://bpye31184pace" path="res://Scripts/DialogueTrigger.gd" id="8_talk"]
+[ext_resource type="ArrayMesh" uid="uid://b16xjwhywabrv" path="res://Meshes/mansion_CellarPit_PitWestWall.res" id="9_mor4d"]
+[ext_resource type="Resource" uid="uid://blmcxibfr7him" path="res://Items/study_key.tres" id="9_studykey"]
+[ext_resource type="Shape3D" uid="uid://iypek8cne0j5" path="res://Meshes/mansion_CellarPit_PitWestWall_col.res" id="10_fjnu7"]
+[ext_resource type="Resource" uid="uid://ck0gwqf276cim" path="res://Items/magnifier.tres" id="10_glass"]
+[ext_resource type="Resource" uid="uid://bkap5i61fkiwc" path="res://Items/fuel.tres" id="11_fuel"]
+[ext_resource type="ArrayMesh" uid="uid://crrjhsdwdwt68" path="res://Meshes/mansion_CellarPit_PitEastWall.res" id="11_x3meq"]
+[ext_resource type="Resource" uid="uid://qayfhwxhl2re" path="res://Items/crowbar.tres" id="12_crow"]
+[ext_resource type="Shape3D" uid="uid://buxeqhnp84spw" path="res://Meshes/mansion_CellarPit_PitEastWall_col.res" id="12_eyvep"]
+[ext_resource type="Resource" uid="uid://bjppr1jd4c08c" path="res://Items/bureau_key.tres" id="13_bkey"]
+[ext_resource type="ArrayMesh" uid="uid://bfam3cv6nwtcy" path="res://Meshes/mansion_CellarPit_PitBackWall.res" id="13_h0wqa"]
+[ext_resource type="Shape3D" uid="uid://djipkn3m8l3mg" path="res://Meshes/mansion_CellarPit_PitBackWall_col.res" id="14_gywgc"]
+[ext_resource type="Script" uid="uid://dyv4p8qabqnbn" path="res://Scripts/Obstacle.gd" id="14_obst"]
+[ext_resource type="PackedScene" path="res://Scenes/readable.tscn" id="15_read"]
+[ext_resource type="PackedScene" path="res://Scenes/bureau.tscn" id="16_bureau"]
+[ext_resource type="Script" uid="uid://d2sccwyytkeme" path="res://Scripts/FlickerLight.gd" id="17_flick"]
+[ext_resource type="PackedScene" uid="uid://drpnqu3pckbcl" path="res://Scenes/grimoire.tscn" id="18_grim"]
+[ext_resource type="PackedScene" path="res://Scenes/anim/book_ending.tscn" id="19_endanim"]
+[ext_resource type="Script" uid="uid://xr35rne25m37" path="res://Scripts/BookEnding.gd" id="19_ending"]
+[ext_resource type="ArrayMesh" uid="uid://85w0esu2slba" path="res://Meshes/mansion_KitchenCounter.res" id="23_yn42h"]
+[ext_resource type="Shape3D" uid="uid://c8fe0xrt1fmu2" path="res://Meshes/mansion_KitchenCounter_col.res" id="24_mhvst"]
+[ext_resource type="ArrayMesh" uid="uid://0sj6pcdbas41" path="res://Meshes/mansion_StairDebris_CaseBack.res" id="29_x6j1d"]
+[ext_resource type="ArrayMesh" uid="uid://der0r62onn06y" path="res://Meshes/mansion_StairDebris_CaseSideA.res" id="30_plb07"]
+[ext_resource type="ArrayMesh" uid="uid://de5h5frcrtwrx" path="res://Meshes/mansion_StairDebris_CaseSideB.res" id="31_6eayc"]
+[ext_resource type="ArrayMesh" uid="uid://bnilviiq85eab" path="res://Meshes/mansion_StairDebris_CaseShelf.res" id="32_gfrpv"]
+[ext_resource type="ArrayMesh" uid="uid://b16cshqof1hdi" path="res://Meshes/mansion_StairDebris_CaseShelf2.res" id="33_tx17p"]
+[ext_resource type="ArrayMesh" uid="uid://uaex7co0hwqo" path="res://Meshes/mansion_StairDebris_SpiltBooks.res" id="34_8wd6c"]
+[ext_resource type="ArrayMesh" uid="uid://ne2woir64bv1" path="res://Meshes/mansion_StairDebris_SpiltBooks2.res" id="35_a0ofx"]
+[ext_resource type="ArrayMesh" uid="uid://bekwgt0cjmq5i" path="res://Meshes/mansion_StairDebris_SpiltBooks3.res" id="36_ka5w5"]
+[ext_resource type="ArrayMesh" uid="uid://citqegh4d28ap" path="res://Meshes/mansion_Deck_Front.res" id="48_sbv4p"]
+[ext_resource type="Shape3D" uid="uid://b4hmvmiejl6g8" path="res://Meshes/mansion_Deck_Front_col.res" id="49_ma3hr"]
+[ext_resource type="ArrayMesh" uid="uid://do2abeb6hrewg" path="res://Meshes/mansion_Deck_Back.res" id="50_cmuaf"]
+[ext_resource type="Shape3D" uid="uid://c0vp61t0h1dhy" path="res://Meshes/mansion_Deck_Back_col.res" id="51_1ne8o"]
+[ext_resource type="ArrayMesh" uid="uid://03qialhkvb25" path="res://Meshes/mansion_Deck_East.res" id="52_84ir1"]
+[ext_resource type="Shape3D" uid="uid://ck11n4txuwjuk" path="res://Meshes/mansion_Deck_East_col.res" id="53_my73p"]
+[ext_resource type="ArrayMesh" uid="uid://b2uowusa6erpp" path="res://Meshes/mansion_Deck_RailFrontWest.res" id="54_54q45"]
+[ext_resource type="Shape3D" uid="uid://3mvg3clyqgut" path="res://Meshes/mansion_Deck_RailFrontWest_col.res" id="55_fsgam"]
+[ext_resource type="ArrayMesh" uid="uid://ykbqtiknvfoe" path="res://Meshes/mansion_Deck_RailFrontEast.res" id="56_rfdq1"]
+[ext_resource type="Shape3D" uid="uid://cyhdbxptwfy3l" path="res://Meshes/mansion_Deck_RailFrontEast_col.res" id="57_57pvv"]
+[ext_resource type="ArrayMesh" uid="uid://cyeamxv1sqcsk" path="res://Meshes/mansion_Deck_RailEast.res" id="58_2gcxi"]
+[ext_resource type="Shape3D" uid="uid://cs3pa6107ib4k" path="res://Meshes/mansion_Deck_RailEast_col.res" id="59_1tlkh"]
+[ext_resource type="ArrayMesh" uid="uid://clyxsoxjgpsqa" path="res://Meshes/mansion_Deck_BlockedWest.res" id="60_qh7w6"]
+[ext_resource type="Shape3D" uid="uid://vhqgvcbjw6lu" path="res://Meshes/mansion_Deck_BlockedWest_col.res" id="61_vfjl1"]
+[ext_resource type="ArrayMesh" uid="uid://4idwhw55nkgt" path="res://Meshes/mansion_Deck_BlockedWestSide.res" id="62_j4xah"]
+[ext_resource type="Shape3D" uid="uid://ctj33yecdsfwx" path="res://Meshes/mansion_Deck_BlockedWestSide_col.res" id="63_rd1tn"]
+[ext_resource type="ArrayMesh" uid="uid://ffplqfdhfe7j" path="res://Meshes/mansion_SideYard_Fence.res" id="64_5jsdm"]
+[ext_resource type="Shape3D" uid="uid://dup6g1mecpjls" path="res://Meshes/mansion_SideYard_Fence_col.res" id="65_xtwfn"]
+[ext_resource type="ArrayMesh" uid="uid://cgileqdsgwmuw" path="res://Meshes/mansion_SideYard_FenceOuter.res" id="66_5bhex"]
+[ext_resource type="Shape3D" uid="uid://bibutbtps5gg0" path="res://Meshes/mansion_SideYard_FenceOuter_col.res" id="67_yoa1l"]
+[ext_resource type="ArrayMesh" uid="uid://chw7rq4jyvtki" path="res://Meshes/mansion_SideYard_Crate.res" id="68_pt6ni"]
+[ext_resource type="Shape3D" uid="uid://b66orco516bnj" path="res://Meshes/mansion_SideYard_Crate_col.res" id="69_bguxl"]
+[ext_resource type="ArrayMesh" uid="uid://c1q4gw6w2qb67" path="res://Meshes/mansion_SideYard_Crate2.res" id="70_hnedg"]
+[ext_resource type="Shape3D" uid="uid://p6aqdvjwpqv2" path="res://Meshes/mansion_SideYard_Crate2_col.res" id="71_vhb08"]
+[ext_resource type="ArrayMesh" uid="uid://dxr7raao5yyuq" path="res://Meshes/mansion_Exterior.res" id="74_tycnj"]
+[ext_resource type="Shape3D" uid="uid://ccfqyv63pkcsi" path="res://Meshes/mansion_Exterior_col.res" id="75_0vaat"]
+[ext_resource type="ArrayMesh" uid="uid://catq5sl3dsea5" path="res://Meshes/mansion_Interior_Trim.res" id="76_ouqo4"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Curtains_Curtains_1.res" id="77_e3067"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Curtains_Curtains_2.res" id="78_2kl5e"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Curtains_Curtains_3.res" id="79_odlga"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Curtains_Curtains_4.res" id="80_m8uff"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Curtains_Curtains_5.res" id="81_rn620"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_HallDress_Picture_6.res" id="82_o7m6k"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_HallDress_Picture_7.res" id="83_l3ltw"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_HallDress_Rug_8.res" id="84_ryut3"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_HallDress_Picture_9.res" id="85_fbu5n"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_HallDress_Picture_10.res" id="86_kig6f"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_HallDress_Picture_11.res" id="87_6n1nl"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_HallDress_Papers_12.res" id="88_rf73u"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_HallDress_Rug_13.res" id="89_rnpc1"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_HallDress_ClothPile_14.res" id="90_2viul"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Living_DustSheet_21.res" id="113_5qfo6"]
+[ext_resource type="Shape3D" path="res://Meshes/mansion_Interior_Living_DustSheet_21_col.res" id="114_pxjfh"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_LivingDress_Rug_17.res" id="116_ec26x"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_LivingDress_Bottle_18.res" id="117_c4iag"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_LivingDress_Bottle_19.res" id="118_b61g2"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_LivingDress_Bottle_20.res" id="119_6wyjx"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Dining_Counter_24.res" id="132_qcu50"]
+[ext_resource type="Shape3D" path="res://Meshes/mansion_Interior_Dining_Counter_24_col.res" id="133_r8c3w"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_DiningDress_Rug_22.res" id="134_wcqcb"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_DiningDress_Papers_23.res" id="135_ensj4"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_DiningDress_Bottle_25.res" id="136_44c7m"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_DiningDress_Bottle_26.res" id="137_ktqu1"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_DiningDress_Picture_27.res" id="138_2fdww"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_LibraryDress_Rug_28.res" id="143_lefwi"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_LibraryDress_Papers_29.res" id="144_asuwn"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_LibraryDress_Picture_30.res" id="145_mb6k8"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Kitchen_Counter_31.res" id="156_g5x13"]
+[ext_resource type="Shape3D" path="res://Meshes/mansion_Interior_Kitchen_Counter_31_col.res" id="157_en3eq"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Kitchen_Counter_32.res" id="158_etdu4"]
+[ext_resource type="Shape3D" path="res://Meshes/mansion_Interior_Kitchen_Counter_32_col.res" id="159_i7n6o"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_KitchenDress_Bottle_33.res" id="160_1ylwq"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_KitchenDress_Bottle_34.res" id="161_m5f01"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_CorridorDress_Rug_35.res" id="174_rg5at"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_CorridorDress_Picture_36.res" id="175_ndexu"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_CorridorDress_Picture_37.res" id="176_kf2w8"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_CorridorDress_Picture_38.res" id="177_smn8w"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_CorridorDress_ClothPile_39.res" id="178_kvwtg"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Scullery_Counter_40.res" id="179_8sj3d"]
+[ext_resource type="Shape3D" path="res://Meshes/mansion_Interior_Scullery_Counter_40_col.res" id="180_ibk2v"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_ScullyDress_ClothPile_41.res" id="181_sdkyk"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_ScullyDress_Bottle_42.res" id="182_ntcw0"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_ScullyDress_Bottle_43.res" id="183_uuyri"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Bootroom_Counter_44.res" id="186_fymdo"]
+[ext_resource type="Shape3D" path="res://Meshes/mansion_Interior_Bootroom_Counter_44_col.res" id="187_37uh4"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_BootDress_ClothPile_45.res" id="188_41k6h"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_LandingDress_Rug_46.res" id="189_vuwh2"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_LandingDress_Rug_47.res" id="190_qe0of"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_LandingDress_Rug_48.res" id="191_fa0wo"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_LandingDress_ClothPile_49.res" id="192_aauj8"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Bed1_DustSheet_52.res" id="195_lh752"]
+[ext_resource type="Shape3D" path="res://Meshes/mansion_Interior_Bed1_DustSheet_52_col.res" id="196_sbd1n"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Bed1Dress_Rug_50.res" id="197_qkf1b"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Bed1Dress_Picture_51.res" id="198_jxcs0"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_OfficeDress_Rug_53.res" id="205_c4dpp"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_OfficeDress_Papers_54.res" id="206_pntac"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Bed2_DustSheet_57.res" id="207_aw41w"]
+[ext_resource type="Shape3D" path="res://Meshes/mansion_Interior_Bed2_DustSheet_57_col.res" id="208_s0xmf"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Bed2Dress_Rug_55.res" id="209_bjymk"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Bed2Dress_Picture_56.res" id="210_g0wf6"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Bed2Dress_ClothPile_58.res" id="211_7hvmy"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Nursery_DustSheet_60.res" id="214_2mwgi"]
+[ext_resource type="Shape3D" path="res://Meshes/mansion_Interior_Nursery_DustSheet_60_col.res" id="215_gj1g8"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_NurseryDress_Rug_59.res" id="216_mca6b"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_StudyDress_Rug_61.res" id="221_cf2wp"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_StudyDress_Papers_62.res" id="222_b6c10"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Cellar_Counter_63.res" id="225_wh830"]
+[ext_resource type="Shape3D" path="res://Meshes/mansion_Interior_Cellar_Counter_63_col.res" id="226_myjbf"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Cellar_Counter_64.res" id="227_pbohc"]
+[ext_resource type="Shape3D" path="res://Meshes/mansion_Interior_Cellar_Counter_64_col.res" id="228_qqx5h"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_Cellar_CoalHeap_65.res" id="229_6k1ky"]
+[ext_resource type="Shape3D" path="res://Meshes/mansion_Interior_Cellar_CoalHeap_65_col.res" id="230_027qj"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_CellarDress_Bottle_66.res" id="231_7d0iy"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_CellarDress_Bottle_67.res" id="232_d6vxr"]
+[ext_resource type="ArrayMesh" path="res://Meshes/mansion_Interior_CellarDress_ClothPile_68.res" id="233_ye8xy"]
+[ext_resource type="PackedScene" path="res://Scenes/cellar_gate.tscn" id="cellar_gate"]
+[ext_resource type="Resource" path="res://Items/cellar_key.tres" id="it_cellarkey"]
+[ext_resource type="PackedScene" uid="uid://c0occluders01" path="res://Scenes/occluders.tscn" id="occluders"]
+[ext_resource type="PackedScene" uid="uid://chsc8u1dnjgkn" path="res://Scenes/props/pf_armchair_leather.tscn" id="pf_armchair_leather"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_barrel.tscn" id="pf_barrel"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_bed_plain.tscn" id="pf_bed_plain"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_bed_poster.tscn" id="pf_bed_poster"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_bed_small.tscn" id="pf_bed_small"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_bookcase_model_low.tscn" id="pf_bookcase_model_low"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_bookcase_model_med.tscn" id="pf_bookcase_model_med"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_bookcase_model_tall.tscn" id="pf_bookcase_model_tall"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_bookstack.tscn" id="pf_bookstack"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_bust.tscn" id="pf_bust"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_candlestick.tscn" id="pf_candlestick"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_candlestick_tall.tscn" id="pf_candlestick_tall"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_chair_table.tscn" id="pf_chair_table"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_chandelier_model.tscn" id="pf_chandelier_model"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_clock.tscn" id="pf_clock"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_crate_lg.tscn" id="pf_crate_lg"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_crate_sm.tscn" id="pf_crate_sm"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_desk.tscn" id="pf_desk"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_dresser.tscn" id="pf_dresser"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_generator_model.tscn" id="pf_generator_model"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_oillamp_model.tscn" id="pf_oillamp_model"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_pedestal.tscn" id="pf_pedestal"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_piano.tscn" id="pf_piano"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_rack.tscn" id="pf_rack"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_range.tscn" id="pf_range"]
+[ext_resource type="PackedScene" uid="uid://c4cpl7hkvbdmf" path="res://Scenes/props/pf_sconce_lamp.tscn" id="pf_sconce_lamp"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_sink.tscn" id="pf_sink"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_sofa_leather.tscn" id="pf_sofa_leather"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_table_console.tscn" id="pf_table_console"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_table_dine.tscn" id="pf_table_dine"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_table_low.tscn" id="pf_table_low"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_table_side.tscn" id="pf_table_side"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_table_small.tscn" id="pf_table_small"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_table_work.tscn" id="pf_table_work"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_wardrobe.tscn" id="pf_wardrobe"]
+[ext_resource type="PackedScene" path="res://Scenes/props/pf_washstand.tscn" id="pf_washstand"]
+[ext_resource type="PackedScene" path="res://Scenes/steps_cellar.tscn" id="steps_cellar"]
+[ext_resource type="PackedScene" path="res://Scenes/steps_porch.tscn" id="steps_porch"]
+[ext_resource type="Script" uid="uid://ijlb50j1pexk" path="res://Scripts/SafeCode.gd" id="s_safecode"]
+[ext_resource type="Script" uid="uid://bgr1ns51eq3yi" path="res://Scripts/SearchSpot.gd" id="s_search"]
+
+[sub_resource type="BoxShape3D" id="Box_rampMainStairs"]
+size = Vector3(5, 4, 13.4201)
+
+[sub_resource type="BoxShape3D" id="Box_rampCellarStairs"]
+size = Vector3(4, 4, 7.8694)
+
+[sub_resource type="BoxShape3D" id="Box_pitramp"]
+size = Vector3(3.6, 4, 6.386)
+
+[sub_resource type="BoxShape3D" id="Box_coal"]
+size = Vector3(3.5, 1, 3.1)
+
+[sub_resource type="BoxShape3D" id="Box_crateW"]
+size = Vector3(1.4, 1.2, 1.1)
+
+[sub_resource type="BoxShape3D" id="Box_crateE"]
+size = Vector3(1.1, 1.2, 1.5)
+
+[sub_resource type="BoxShape3D" id="Box_bench"]
+size = Vector3(0.8, 1.1, 3.7)
+
+[sub_resource type="BoxShape3D" id="Box_barrels"]
+size = Vector3(0.9, 1, 2.1)
+
+[sub_resource type="BoxShape3D" id="Box_gen"]
+size = Vector3(1.5, 1.31, 0.96)
+
+[sub_resource type="BoxShape3D" id="Box_debris"]
+size = Vector3(5, 2.6, 1.6)
+
+[sub_resource type="BoxShape3D" id="Box_end"]
+size = Vector3(8, 3, 4)
+
+[sub_resource type="BoxShape3D" id="Box_trigger"]
+size = Vector3(6, 3, 4)
+
+[node name="Mansion" type="Node3D" unique_id=617166964]
+
+[node name="Shell" type="MeshInstance3D" parent="." unique_id=819137698]
+mesh = ExtResource("1_txd73")
+
+[node name="Body" type="StaticBody3D" parent="Shell" unique_id=2028922377]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shell/Body" unique_id=1091808241]
+shape = ExtResource("2_h0gi1")
+
+[node name="MainStairs" type="Node3D" parent="." unique_id=38285659]
+
+[node name="Ramp" type="StaticBody3D" parent="MainStairs" unique_id=1485452215]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainStairs/Ramp" unique_id=40629255]
+transform = Transform3D(1, 0, 0, 0, 0.959115, -0.283017, 0, 0.283017, 0.959115, 0, -0.2173, -10.3303)
+shape = SubResource("Box_rampMainStairs")
+
+[node name="Steps" type="MeshInstance3D" parent="MainStairs" unique_id=1784000593]
+mesh = ExtResource("3_nbyh1")
+
+[node name="MainGuards" type="MeshInstance3D" parent="MainStairs" unique_id=1318526049]
+mesh = ExtResource("4_oxwd4")
+
+[node name="CellarStairs" type="Node3D" parent="." unique_id=1004840148]
+
+[node name="Ramp" type="StaticBody3D" parent="CellarStairs" unique_id=1991528598]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CellarStairs/Ramp" unique_id=1387838137]
+transform = Transform3D(1, 0, 0, 0, 0.864789, 0.502136, 0, -0.502136, 0.864789, 12, -3.7053, -29.1984)
+shape = SubResource("Box_rampCellarStairs")
+
+[node name="Steps" type="MeshInstance3D" parent="CellarStairs" unique_id=21769616]
+mesh = ExtResource("5_kwflp")
+
+[node name="CellarGuards" type="MeshInstance3D" parent="CellarStairs" unique_id=286859616]
+mesh = ExtResource("6_vk0ty")
+
+[node name="CellarPit" type="Node3D" parent="." unique_id=513433603]
+
+[node name="PitFloor" type="MeshInstance3D" parent="CellarPit" unique_id=1728140448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -3.7, -37.75)
+mesh = ExtResource("7_e8b26")
+
+[node name="Body" type="StaticBody3D" parent="CellarPit/PitFloor" unique_id=800814608]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CellarPit/PitFloor/Body" unique_id=1457438479]
+shape = ExtResource("8_emls0")
+
+[node name="PitWestWall" type="MeshInstance3D" parent="CellarPit" unique_id=593019465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4, -1.95, -37.7)
+mesh = ExtResource("9_mor4d")
+
+[node name="Body" type="StaticBody3D" parent="CellarPit/PitWestWall" unique_id=115490165]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CellarPit/PitWestWall/Body" unique_id=391910593]
+shape = ExtResource("10_fjnu7")
+
+[node name="PitEastWall" type="MeshInstance3D" parent="CellarPit" unique_id=906798183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6, -1.95, -37.7)
+mesh = ExtResource("11_x3meq")
+
+[node name="Body" type="StaticBody3D" parent="CellarPit/PitEastWall" unique_id=2082168719]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CellarPit/PitEastWall/Body" unique_id=265231523]
+shape = ExtResource("12_eyvep")
+
+[node name="PitBackWall" type="MeshInstance3D" parent="CellarPit" unique_id=1961378049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1.95, -41.7)
+mesh = ExtResource("13_h0wqa")
+
+[node name="Body" type="StaticBody3D" parent="CellarPit/PitBackWall" unique_id=1162341320]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CellarPit/PitBackWall/Body" unique_id=1962619261]
+shape = ExtResource("14_gywgc")
+
+[node name="Ramp" type="StaticBody3D" parent="CellarPit" unique_id=1483475666]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CellarPit/Ramp" unique_id=210460886]
+transform = Transform3D(1, 0, 0, 0, 0.7713, -0.6363, 0, 0.6363, 0.7713, -10, -3.8746, -40.01)
+shape = SubResource("Box_pitramp")
+
+[node name="StormDoor" parent="." unique_id=529923806 instance=ExtResource("5_storm")]
+transform = Transform3D(0, 1, 0, 0, 0, 1, 1, 0, 0, -10, -0.28, -41.5)
+examine_lines = Array[String](["Storm doors. Rusted, but they give."])
+
+[node name="CellarDoor" parent="." unique_id=1924569745 instance=ExtResource("1_door")]
+transform = Transform3D(1.0771698, 0, 0, 0, 1.0327253, 0, 0, 0, 1, -10.599976, -3.6, -34)
+open_angle = 100.0
+prompt = "Cellar door"
+
+[node name="FrontDoor" parent="." unique_id=722650715 instance=ExtResource("1_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.555, 0, 0)
+open_angle = -100.0
+locked = true
+locked_prompt = "Bolted from the inside"
+prompt = "Front door"
+examine_lines = Array[String](["Bolted. From the inside, by the feel of it.", "There has to be another way in."])
+
+[node name="BackDoor" parent="." unique_id=1755007888 instance=ExtResource("1_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.445, 0, -34)
+open_angle = 100.0
+locked = true
+prompt = "Back door"
+examine_lines = Array[String](["Locked too. Of course it is."])
+
+[node name="StudyDoor" parent="." unique_id=1203740357 instance=ExtResource("1_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.555, 3.6, -22)
+open_angle = -95.0
+locked = true
+key_id = "study_key"
+prompt = "Study door"
+examine_lines = Array[String](["Locked. There is a key for this somewhere in the house."])
+
+[node name="CellarGate" parent="." unique_id=1834996153 instance=ExtResource("cellar_gate")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -3.6, -30.99)
+
+[node name="SearchCoal" type="Node3D" parent="." unique_id=188555037 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -3.18, -31.3)
+script = ExtResource("s_search")
+light_source = NodePath("../Generator")
+dark_prompt = "Coal heap - too dark"
+empty_prompt = "Nothing in the coal"
+dark_lines = Array[String](["Something black and shapeless. I would have to put my hands in it."])
+empty_lines = Array[String](["Half a ton of coal, and nothing in it but coal."])
+shift = Vector3(0, -0.04, 0)
+prompt = "Coal heap"
+examine_lines = Array[String](["Half a ton of coal, and someone has been through it."])
+
+[node name="Body" type="StaticBody3D" parent="SearchCoal" unique_id=868537464]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SearchCoal/Body" unique_id=677605848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.337225, 0, 7.0081844)
+shape = SubResource("Box_coal")
+
+[node name="SearchCrateWest" type="Node3D" parent="." unique_id=269129222 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -3.1, -25)
+script = ExtResource("s_search")
+light_source = NodePath("../Generator")
+dark_prompt = "Crate - too dark"
+empty_lines = Array[String](["Straw, and the smell of apples from forty years ago."])
+shift = Vector3(0.06, 0, 0.03)
+prompt = "Packing crate"
+
+[node name="Body" type="StaticBody3D" parent="SearchCrateWest" unique_id=517446774]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SearchCrateWest/Body" unique_id=862957423]
+shape = SubResource("Box_crateW")
+
+[node name="SearchCrateEast" type="Node3D" parent="." unique_id=665258340 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, -3.1, -8)
+script = ExtResource("s_search")
+light_source = NodePath("../Generator")
+dark_prompt = "Crate - too dark"
+empty_lines = Array[String](["Nailed shut, and light enough to lift with one hand. Empty."])
+shift = Vector3(-0.05, 0, 0.04)
+prompt = "Nailed crate"
+
+[node name="Body" type="StaticBody3D" parent="SearchCrateEast" unique_id=493038898]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SearchCrateEast/Body" unique_id=361352770]
+shape = SubResource("Box_crateE")
+
+[node name="SearchBench" type="Node3D" parent="." unique_id=521292490 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4, -3.14, -13)
+script = ExtResource("s_search")
+light_source = NodePath("../Generator")
+dark_prompt = "Workbench - too dark"
+empty_lines = Array[String](["Tools laid out in order, every one of them rusted into its place.", "Whoever kept this bench was gone before they thought to tidy it."])
+prompt = "Workbench"
+
+[node name="Body" type="StaticBody3D" parent="SearchBench" unique_id=2117276122]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SearchBench/Body" unique_id=176858844]
+shape = SubResource("Box_bench")
+
+[node name="SearchBarrels" type="Node3D" parent="." unique_id=1072800617 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6, -3.17, -23.6)
+script = ExtResource("s_search")
+contents = ExtResource("it_cellarkey")
+light_source = NodePath("../Generator")
+dark_prompt = "Barrels - too dark"
+empty_prompt = "Nothing else behind the barrels"
+empty_lines = Array[String](["Dry. Every one of them dry, and the hoops gone orange."])
+found_lines = Array[String](["Something metal, wedged down between a barrel and the wall.", "A key. Cold, and furred over with rust."])
+note_title = "The cellar key"
+note_body = "Wedged behind the barrels against the west wall. It opens the iron gate across the middle of the cellar -- hold it up and use the gate."
+prompt = "Row of barrels"
+
+[node name="Body" type="StaticBody3D" parent="SearchBarrels" unique_id=687969722]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SearchBarrels/Body" unique_id=734426006]
+shape = SubResource("Box_barrels")
+
+[node name="Generator" type="Node3D" parent="." unique_id=657209588]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 15.787856, -3.6, -0.7948868)
+script = ExtResource("7_gen")
+targets = Array[NodePath]([NodePath("../Lights")])
+fuel_id = "fuel"
+fuel_prompt = "No fuel in it"
+prompt = "Pull the starter"
+examine_lines = Array[String](["A generator. Stone cold."])
+
+[node name="Model" parent="Generator" unique_id=70690557 instance=ExtResource("pf_generator_model")]
+
+[node name="Body" type="StaticBody3D" parent="Generator" unique_id=763965839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.655, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Generator/Body" unique_id=225529015]
+shape = SubResource("Box_gen")
+
+[node name="FuelCan" parent="." unique_id=543563379 instance=ExtResource("2_pick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -3.6, -30)
+item = ExtResource("11_fuel")
+prompt = "Fuel can"
+
+[node name="KitchenCounter" type="MeshInstance3D" parent="." unique_id=1561621691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.46, -19)
+mesh = ExtResource("23_yn42h")
+
+[node name="Body" type="StaticBody3D" parent="KitchenCounter" unique_id=1942955662]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KitchenCounter/Body" unique_id=1971949225]
+shape = ExtResource("24_mhvst")
+
+[node name="Magnifier" parent="." unique_id=25514513 instance=ExtResource("2_pick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9298058, 0.7946872, -22.424831)
+item = ExtResource("10_glass")
+grants_magnifier = true
+prompt = "Odd magnifying glass"
+examine_lines = Array[String](["Someone left this out on the counter.", "It is heavier than glass has any right to be."])
+
+[node name="BureauKey" parent="." unique_id=1842504595 instance=ExtResource("2_pick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 0.92, -19)
+item = ExtResource("13_bkey")
+prompt = "Small key"
+examine_lines = Array[String](["Far too small for a door."])
+
+[node name="Crowbar" parent="." unique_id=165077442 instance=ExtResource("2_pick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.92, -26.648048)
+item = ExtResource("12_crow")
+prompt = "Crowbar"
+examine_lines = Array[String](["That will shift most things."])
+
+[node name="StairDebris" type="Node3D" parent="." unique_id=733117785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.5)
+script = ExtResource("14_obst")
+tool_id = "crowbar"
+need_tool_prompt = "Too heavy to shift by hand"
+shift = Vector3(0, -4, 0)
+blockers = Array[NodePath]([NodePath("Block/CollisionShape3D")])
+cleared_lines = Array[String](["That is the way up clear."])
+prompt = "Haul the wreckage clear"
+examine_lines = Array[String](["A bookcase came down across the stairs.", "I need something to lever it with."])
+
+[node name="Block" type="StaticBody3D" parent="StairDebris" unique_id=1633468261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StairDebris/Block" unique_id=1269500468]
+shape = SubResource("Box_debris")
+
+[node name="CaseBack" type="MeshInstance3D" parent="StairDebris" unique_id=739927062]
+transform = Transform3D(0.9848, 0.1736, 0, -0.1736, 0.9848, 0, 0, 0, 1, 0, 1.15, 0)
+mesh = ExtResource("29_x6j1d")
+
+[node name="CaseSideA" type="MeshInstance3D" parent="StairDebris" unique_id=1589825334]
+transform = Transform3D(0.9848, 0.1736, 0, -0.1736, 0.9848, 0, 0, 0, 1, 0, 1.53, -0.55)
+mesh = ExtResource("30_plb07")
+
+[node name="CaseSideB" type="MeshInstance3D" parent="StairDebris" unique_id=315258350]
+transform = Transform3D(0.9848, 0.1736, 0, -0.1736, 0.9848, 0, 0, 0, 1, 0, 1.53, 0.55)
+mesh = ExtResource("31_6eayc")
+
+[node name="CaseShelf" type="MeshInstance3D" parent="StairDebris" unique_id=1814847098]
+transform = Transform3D(0.9848, 0.1736, 0, -0.1736, 0.9848, 0, 0, 0, 1, -0.1, 1.5, 0)
+mesh = ExtResource("32_gfrpv")
+
+[node name="CaseShelf2" type="MeshInstance3D" parent="StairDebris" unique_id=403605566]
+transform = Transform3D(0.9563, -0.2924, 0, 0.2924, 0.9563, 0, 0, 0, 1, 1.35, 2.05, 0.18)
+mesh = ExtResource("33_tx17p")
+
+[node name="SpiltBooks" type="MeshInstance3D" parent="StairDebris" unique_id=1565708157]
+transform = Transform3D(0.9962, 0.0872, 0, -0.0872, 0.9962, 0, 0, 0, 1, -1.5, 0.62, -0.2)
+mesh = ExtResource("34_8wd6c")
+
+[node name="SpiltBooks2" type="MeshInstance3D" parent="StairDebris" unique_id=2056787382]
+transform = Transform3D(0.9848, -0.1736, 0, 0.1736, 0.9848, 0, 0, 0, 1, 1.1, 0.5, 0.35)
+mesh = ExtResource("35_a0ofx")
+
+[node name="SpiltBooks3" type="MeshInstance3D" parent="StairDebris" unique_id=1195758630]
+transform = Transform3D(0.9397, 0.342, 0, -0.342, 0.9397, 0, 0, 0, 1, -0.2, 2.15, 0.1)
+mesh = ExtResource("36_ka5w5")
+
+[node name="ClockFace" parent="." unique_id=405662833 instance=ExtResource("15_read")]
+transform = Transform3D(0, 0, 1, 0, 0.32329386, 0, -0.48032463, 0, 0, -6.3128257, 5.8788276, -19.201872)
+text = "The hands have stopped. Twenty past four, and the case is cold."
+prompt = "The clock"
+examine_lines = Array[String](["It stopped a long time ago."])
+
+[node name="PortraitA" parent="." unique_id=2115525903 instance=ExtResource("15_read")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 6.78, 5.5, -7)
+text = "A sour-looking man in a high collar. Brass plate underneath: 1894."
+prompt = "Portrait"
+
+[node name="PortraitB" parent="." unique_id=1555176339 instance=ExtResource("15_read")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 6.78, 5.5, -10)
+text = "A woman with her hand on a globe. The plate reads 1912."
+prompt = "Portrait"
+
+[node name="PortraitC" parent="." unique_id=503156576 instance=ExtResource("15_read")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 6.78, 5.5, -13)
+text = "A girl, painted last of the three. 1930, and the paint is barely aged."
+prompt = "Portrait"
+examine_lines = Array[String](["The newest of them, by a long way."])
+
+[node name="SafeNote" parent="." unique_id=1341551439 instance=ExtResource("15_read")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.78, 5.2, -18.852821)
+text = "In order, left to right: the hour the clock died. The last figure on the newest portrait. And however many marks she cut into the bureau."
+requires_lens = true
+prompt = "Pinned note"
+examine_lines = Array[String](["Her handwriting is tiny. I need the glass for this."])
+
+[node name="Bureau" parent="." unique_id=1948049168 instance=ExtResource("16_bureau")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.40752, 0, -9.057204)
+locked = true
+key_id = "bureau_key"
+reveals = Array[NodePath]([NodePath("Lid/TallyClue")])
+examine_lines = Array[String](["Locked, and the keyhole is barely bigger than a pin."])
+
+[node name="Vault" parent="." unique_id=571653891 instance=ExtResource("3_safe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 3.6, -21.54)
+contents = ExtResource("9_studykey")
+examine_lines = Array[String](["A wall safe. Three dials, and no note anywhere near it."])
+
+[node name="StudyEnd" type="Area3D" parent="." unique_id=265850813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1, -25)
+script = ExtResource("8_talk")
+lines = Array[String](["Something in here is lit.", "A book, open on the desk -- and the pages are the only thing in this house giving off any light at all.", "It is warm from here."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StudyEnd" unique_id=1066088695]
+shape = SubResource("Box_end")
+
+[node name="TalkArrive" type="Area3D" parent="." unique_id=1305579664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+script = ExtResource("8_talk")
+lines = Array[String](["So this is the place.", "Every light is out. Nobody has been here in a long while."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TalkArrive" unique_id=1197801812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25.980167)
+shape = SubResource("Box_trigger")
+
+[node name="TalkCellar" type="Area3D" parent="." unique_id=121001492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -2.6, -31)
+script = ExtResource("8_talk")
+lines = Array[String](["Pitch black down here.", "If there is a generator, it will be against a wall somewhere."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TalkCellar" unique_id=209093999]
+shape = SubResource("Box_trigger")
+
+[node name="TalkLanding" type="Area3D" parent="." unique_id=601196670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6, -18)
+script = ExtResource("8_talk")
+lines = Array[String](["Portraits all down one wall.", "Whoever lived here wanted to be remembered in order."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TalkLanding" unique_id=320541274]
+shape = SubResource("Box_trigger")
+
+[node name="PorchSteps" parent="." unique_id=1214994438 instance=ExtResource("steps_porch")]
+
+[node name="CellarSteps" parent="." unique_id=1968415457 instance=ExtResource("steps_cellar")]
+
+[node name="Deck" type="Node3D" parent="." unique_id=1535096688]
+
+[node name="Front" type="MeshInstance3D" parent="Deck" unique_id=1107253780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 1.95)
+mesh = ExtResource("48_sbv4p")
+
+[node name="Body" type="StaticBody3D" parent="Deck/Front" unique_id=1028057708]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Deck/Front/Body" unique_id=995925544]
+shape = ExtResource("49_ma3hr")
+
+[node name="Back" type="MeshInstance3D" parent="Deck" unique_id=1865153721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.15, -35.95)
+mesh = ExtResource("50_cmuaf")
+
+[node name="Body" type="StaticBody3D" parent="Deck/Back" unique_id=590004718]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Deck/Back/Body" unique_id=760551480]
+shape = ExtResource("51_1ne8o")
+
+[node name="East" type="MeshInstance3D" parent="Deck" unique_id=25266089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, -0.15, -17)
+mesh = ExtResource("52_84ir1")
+
+[node name="Body" type="StaticBody3D" parent="Deck/East" unique_id=1821647092]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Deck/East/Body" unique_id=913259262]
+shape = ExtResource("53_my73p")
+
+[node name="RailFrontWest" type="MeshInstance3D" parent="Deck" unique_id=1235189781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1, 0.5, 3.9)
+mesh = ExtResource("54_54q45")
+
+[node name="Body" type="StaticBody3D" parent="Deck/RailFrontWest" unique_id=657041996]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Deck/RailFrontWest/Body" unique_id=470920136]
+shape = ExtResource("55_fsgam")
+
+[node name="RailFrontEast" type="MeshInstance3D" parent="Deck" unique_id=756148966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1, 0.5, 3.9)
+mesh = ExtResource("56_rfdq1")
+
+[node name="Body" type="StaticBody3D" parent="Deck/RailFrontEast" unique_id=1681695067]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Deck/RailFrontEast/Body" unique_id=1001510883]
+shape = ExtResource("57_57pvv")
+
+[node name="RailEast" type="MeshInstance3D" parent="Deck" unique_id=120949083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9, 0.5, -17)
+mesh = ExtResource("58_2gcxi")
+
+[node name="Body" type="StaticBody3D" parent="Deck/RailEast" unique_id=1465476916]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Deck/RailEast/Body" unique_id=272526093]
+shape = ExtResource("59_1tlkh")
+
+[node name="BlockedWest" type="MeshInstance3D" parent="Deck" unique_id=223108367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.1, 0)
+mesh = ExtResource("60_qh7w6")
+
+[node name="Body" type="StaticBody3D" parent="Deck/BlockedWest" unique_id=1085585716]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Deck/BlockedWest/Body" unique_id=387275909]
+shape = ExtResource("61_vfjl1")
+
+[node name="BlockedWest2" type="MeshInstance3D" parent="Deck" unique_id=12485972]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.262606, 1.1, 1.0079582)
+mesh = ExtResource("60_qh7w6")
+
+[node name="Body" type="StaticBody3D" parent="Deck/BlockedWest2" unique_id=2111038647]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Deck/BlockedWest2/Body" unique_id=2056357934]
+shape = ExtResource("61_vfjl1")
+
+[node name="BlockedWestSide" type="MeshInstance3D" parent="Deck" unique_id=1318081861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8, 1.1, -17)
+mesh = ExtResource("62_j4xah")
+
+[node name="Body" type="StaticBody3D" parent="Deck/BlockedWestSide" unique_id=718090860]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Deck/BlockedWestSide/Body" unique_id=1754640721]
+shape = ExtResource("63_rd1tn")
+
+[node name="SideYard" type="Node3D" parent="." unique_id=272602599]
+
+[node name="Fence" type="MeshInstance3D" parent="SideYard" unique_id=1492694974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0.75, -20)
+mesh = ExtResource("64_5jsdm")
+
+[node name="Body" type="StaticBody3D" parent="SideYard/Fence" unique_id=1563196638]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SideYard/Fence/Body" unique_id=1053377475]
+shape = ExtResource("65_xtwfn")
+
+[node name="FenceOuter" type="MeshInstance3D" parent="SideYard" unique_id=9732900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.8, 0.75, -20)
+mesh = ExtResource("66_5bhex")
+
+[node name="Body" type="StaticBody3D" parent="SideYard/FenceOuter" unique_id=365355776]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SideYard/FenceOuter/Body" unique_id=125789252]
+shape = ExtResource("67_yoa1l")
+
+[node name="FenceOuter2" type="MeshInstance3D" parent="SideYard" unique_id=537981105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.8, 0.75, -20)
+mesh = ExtResource("66_5bhex")
+
+[node name="Body" type="StaticBody3D" parent="SideYard/FenceOuter2" unique_id=1790868521]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SideYard/FenceOuter2/Body" unique_id=49843586]
+shape = ExtResource("67_yoa1l")
+
+[node name="Crate" type="MeshInstance3D" parent="SideYard" unique_id=1288106243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0.6, -18.7)
+mesh = ExtResource("68_pt6ni")
+
+[node name="Body" type="StaticBody3D" parent="SideYard/Crate" unique_id=629416201]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SideYard/Crate/Body" unique_id=232730641]
+shape = ExtResource("69_bguxl")
+
+[node name="Crate2" type="MeshInstance3D" parent="SideYard" unique_id=1750892405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0.35, -17.4)
+mesh = ExtResource("70_hnedg")
+
+[node name="Body" type="StaticBody3D" parent="SideYard/Crate2" unique_id=2146092306]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SideYard/Crate2/Body" unique_id=1838461725]
+shape = ExtResource("71_vhb08")
+
+[node name="Grimoire" parent="." unique_id=418822901 instance=ExtResource("18_grim")]
+transform = Transform3D(-0.99026805, 0, 0.139173, 0, 1, 0, -0.139173, 0, -0.99026805, 0.033808697, 4.395, -26.788261)
+passages = Array[String](["The hand is not the same on every page. Two people wrote this, and the second one was in a hurry.", "\"The house keeps what it is given. Give it something it wants and it will open a door for you.\"", "\"Three figures, taken from three of its own things. It will not answer to a number you simply guessed.\"", "The last entry is a single line, pressed so hard the nib went through: \"Do not go up after dark.\""])
+ends_demo = true
+ending_path = NodePath("../BookEnding")
+examine_lines = Array[String](["It is open, and it is warm.", "Nothing else in this house is warm."])
+
+[node name="BookEnding" type="Node3D" parent="." unique_id=498733668]
+script = ExtResource("19_ending")
+book_path = NodePath("../Grimoire")
+next_level = "res://circus_level.tscn"
+
+[node name="Anim" parent="BookEnding" unique_id=914023441 instance=ExtResource("19_endanim")]
+
+[node name="Exterior" type="MeshInstance3D" parent="." unique_id=1384065367]
+mesh = ExtResource("74_tycnj")
+
+[node name="Body" type="StaticBody3D" parent="Exterior" unique_id=786980219]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exterior/Body" unique_id=276418209]
+shape = ExtResource("75_0vaat")
+
+[node name="Interior" type="Node3D" parent="." unique_id=1490966480]
+
+[node name="Trim" type="MeshInstance3D" parent="Interior" unique_id=906469836]
+mesh = ExtResource("76_ouqo4")
+
+[node name="Curtains" type="Node3D" parent="Interior" unique_id=2124871315]
+
+[node name="Curtains_1" type="MeshInstance3D" parent="Interior/Curtains" unique_id=760667881]
+mesh = ExtResource("77_e3067")
+
+[node name="Curtains_2" type="MeshInstance3D" parent="Interior/Curtains" unique_id=238958073]
+mesh = ExtResource("78_2kl5e")
+
+[node name="Curtains_3" type="MeshInstance3D" parent="Interior/Curtains" unique_id=1766021206]
+mesh = ExtResource("79_odlga")
+
+[node name="Curtains_4" type="MeshInstance3D" parent="Interior/Curtains" unique_id=1890033827]
+mesh = ExtResource("80_m8uff")
+
+[node name="Curtains_5" type="MeshInstance3D" parent="Interior/Curtains" unique_id=53342562]
+mesh = ExtResource("81_rn620")
+
+[node name="Hall" type="Node3D" parent="Interior" unique_id=1261725237]
+
+[node name="HallDress" type="Node3D" parent="Interior" unique_id=1543592500]
+
+[node name="Picture_6" type="MeshInstance3D" parent="Interior/HallDress" unique_id=1237911855]
+mesh = ExtResource("82_o7m6k")
+
+[node name="Picture_7" type="MeshInstance3D" parent="Interior/HallDress" unique_id=1369318098]
+mesh = ExtResource("83_l3ltw")
+
+[node name="Rug_8" type="MeshInstance3D" parent="Interior/HallDress" unique_id=2036774585]
+mesh = ExtResource("84_ryut3")
+
+[node name="Picture_9" type="MeshInstance3D" parent="Interior/HallDress" unique_id=1043480611]
+mesh = ExtResource("85_fbu5n")
+
+[node name="Picture_10" type="MeshInstance3D" parent="Interior/HallDress" unique_id=67145126]
+mesh = ExtResource("86_kig6f")
+
+[node name="Picture_11" type="MeshInstance3D" parent="Interior/HallDress" unique_id=989369376]
+mesh = ExtResource("87_6n1nl")
+
+[node name="Papers_12" type="MeshInstance3D" parent="Interior/HallDress" unique_id=1279868655]
+mesh = ExtResource("88_rf73u")
+
+[node name="Rug_13" type="MeshInstance3D" parent="Interior/HallDress" unique_id=1058203902]
+mesh = ExtResource("89_rnpc1")
+
+[node name="ClothPile_14" type="MeshInstance3D" parent="Interior/HallDress" unique_id=367453638]
+mesh = ExtResource("90_2viul")
+
+[node name="HallProps" type="Node3D" parent="Interior" unique_id=1544814168]
+
+[node name="Console_861" parent="Interior/HallProps" unique_id=1963430706 instance=ExtResource("pf_table_console")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -6.4591656, 0, -1.5)
+
+[node name="Console_862" parent="Interior/HallProps" unique_id=2118399421 instance=ExtResource("pf_table_console")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 6.519064, 0, -1.5)
+
+[node name="Candlestick_873" parent="Interior/HallProps" unique_id=1034089 instance=ExtResource("pf_candlestick_tall")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4591656, 0.79, -1.5)
+
+[node name="OilLamp_874" parent="Interior/HallProps" unique_id=1290309321 instance=ExtResource("pf_oillamp_model")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.519064, 0.79, -1.5)
+
+[node name="BookStack_875" parent="Interior/HallProps" unique_id=232141261 instance=ExtResource("pf_bookstack")]
+transform = Transform3D(0.978148, 0, 0.207912, 0, 1, 0, -0.207912, 0, 0.978148, -6.4266615, 0.79, -1.78)
+
+[node name="HallChair_878" parent="Interior/HallProps" unique_id=482463136 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -6.1, 0, -8.4)
+
+[node name="HallChair_879" parent="Interior/HallProps" unique_id=656985427 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -6.1, 0, -12.6)
+
+[node name="Bust_880" parent="Interior/HallProps" unique_id=2025021648 instance=ExtResource("pf_bust")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1, 0, -8.4)
+
+[node name="Pedestal_881" parent="Interior/HallProps" unique_id=618741281 instance=ExtResource("pf_pedestal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1, 0, -12.6)
+
+[node name="Sconce_897" parent="Interior/HallProps" unique_id=1794048302 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -6.78, 2.05, -6.249228)
+
+[node name="Sconce_898" parent="Interior/HallProps" unique_id=1261512824 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -6.78, 2.05, -15.4)
+
+[node name="Sconce_899" parent="Interior/HallProps" unique_id=1777717870 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 6.78, 2.05, -6.139715)
+
+[node name="Sconce_900" parent="Interior/HallProps" unique_id=1429748805 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 6.78, 2.05, -15.4)
+
+[node name="Bookcase_901" parent="Interior/HallProps" unique_id=268320987 instance=ExtResource("pf_bookcase_model_low")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2, 0, -21.6)
+
+[node name="HallTable_902" parent="Interior/HallProps" unique_id=38451767 instance=ExtResource("pf_table_console")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4, 0, -21.6)
+
+[node name="BookStack_905" parent="Interior/HallProps" unique_id=1080701926 instance=ExtResource("pf_bookstack")]
+transform = Transform3D(0.990268, 0, -0.139173, 0, 1, 0, 0.139173, 0, 0.990268, -3.85, 0.79, -21.65)
+
+[node name="Chandelier_908" parent="Interior/HallProps" unique_id=1575031945 instance=ExtResource("pf_chandelier_model")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, -18)
+
+[node name="Living" type="Node3D" parent="Interior" unique_id=1406096300]
+
+[node name="DustSheet_21" type="MeshInstance3D" parent="Interior/Living" unique_id=1698448186]
+mesh = ExtResource("113_5qfo6")
+
+[node name="Body" type="StaticBody3D" parent="Interior/Living/DustSheet_21" unique_id=1114395810]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interior/Living/DustSheet_21/Body" unique_id=1847524966]
+shape = ExtResource("114_pxjfh")
+
+[node name="LivingDress" type="Node3D" parent="Interior" unique_id=619680100]
+
+[node name="Rug_17" type="MeshInstance3D" parent="Interior/LivingDress" unique_id=436839646]
+mesh = ExtResource("116_ec26x")
+
+[node name="Bottle_18" type="MeshInstance3D" parent="Interior/LivingDress" unique_id=648208169]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17.353584, 0, 7.148131)
+mesh = ExtResource("117_c4iag")
+
+[node name="Bottle_19" type="MeshInstance3D" parent="Interior/LivingDress" unique_id=2112329100]
+mesh = ExtResource("118_b61g2")
+
+[node name="Bottle_20" type="MeshInstance3D" parent="Interior/LivingDress" unique_id=1023677555]
+mesh = ExtResource("119_6wyjx")
+
+[node name="LivingProps" type="Node3D" parent="Interior" unique_id=1299560884]
+
+[node name="Sofa_931" parent="Interior/LivingProps" unique_id=10386192 instance=ExtResource("pf_sofa_leather")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 10.1, 0, -5.4)
+
+[node name="Armchair_932" parent="Interior/LivingProps" unique_id=117468035 instance=ExtResource("pf_armchair_leather")]
+transform = Transform3D(-0.7071064, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.7071064, 13.50222, 0, -3.86122)
+
+[node name="Armchair_933" parent="Interior/LivingProps" unique_id=1401263532 instance=ExtResource("pf_armchair_leather")]
+transform = Transform3D(0.7071064, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071064, 13.530732, 0, -7.1532564)
+
+[node name="LowTable_934" parent="Interior/LivingProps" unique_id=120168562 instance=ExtResource("pf_table_low")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.953583, 0, -5.551869)
+
+[node name="BookStack_937" parent="Interior/LivingProps" unique_id=1284431851 instance=ExtResource("pf_bookstack")]
+transform = Transform3D(-0.27563703, 0, 0.961262, 0, 1, 0, -0.961262, 0, -0.27563703, 11.773583, 0.46, -5.801869)
+
+[node name="Piano_938" parent="Interior/LivingProps" unique_id=425342306 instance=ExtResource("pf_piano")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -10.4)
+
+[node name="Candlestick_939" parent="Interior/LivingProps" unique_id=2035922579 instance=ExtResource("pf_candlestick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3, 1.3, -10.4)
+
+[node name="Sideboard_940" parent="Interior/LivingProps" unique_id=871575918 instance=ExtResource("pf_dresser")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 7.55, 0, -9)
+
+[node name="Pedestal_948" parent="Interior/LivingProps" unique_id=323383561 instance=ExtResource("pf_pedestal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2, 0, -0.9305637)
+
+[node name="Dining" type="Node3D" parent="Interior" unique_id=807825138]
+
+[node name="Counter_24" type="MeshInstance3D" parent="Interior/Dining" unique_id=1614252163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6443248, 0, 0)
+mesh = ExtResource("132_qcu50")
+
+[node name="Body" type="StaticBody3D" parent="Interior/Dining/Counter_24" unique_id=1511657534]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interior/Dining/Counter_24/Body" unique_id=2083742813]
+shape = ExtResource("133_r8c3w")
+
+[node name="DiningDress" type="Node3D" parent="Interior" unique_id=881772817]
+
+[node name="Rug_22" type="MeshInstance3D" parent="Interior/DiningDress" unique_id=1763015567]
+mesh = ExtResource("134_wcqcb")
+
+[node name="Papers_23" type="MeshInstance3D" parent="Interior/DiningDress" unique_id=1844795080]
+mesh = ExtResource("135_ensj4")
+
+[node name="Bottle_25" type="MeshInstance3D" parent="Interior/DiningDress" unique_id=787396788]
+mesh = ExtResource("136_44c7m")
+
+[node name="Bottle_26" type="MeshInstance3D" parent="Interior/DiningDress" unique_id=1104820347]
+mesh = ExtResource("137_ktqu1")
+
+[node name="Picture_27" type="MeshInstance3D" parent="Interior/DiningDress" unique_id=958349506]
+mesh = ExtResource("138_2fdww")
+
+[node name="DiningProps" type="Node3D" parent="Interior" unique_id=1025326143]
+
+[node name="DiningTable_951" parent="Interior/DiningProps" unique_id=1169724833 instance=ExtResource("pf_table_dine")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -16.5)
+
+[node name="DiningChair_952" parent="Interior/DiningProps" unique_id=780758297 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 10.7, 0, -15.25)
+
+[node name="DiningChair_953" parent="Interior/DiningProps" unique_id=2106128765 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 12, 0, -15.25)
+
+[node name="DiningChair_954" parent="Interior/DiningProps" unique_id=547298345 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 13.3, 0, -15.25)
+
+[node name="DiningChair_955" parent="Interior/DiningProps" unique_id=1970770482 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7, 0, -17.75)
+
+[node name="DiningChair_956" parent="Interior/DiningProps" unique_id=1863092248 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -17.75)
+
+[node name="DiningChair_957" parent="Interior/DiningProps" unique_id=1975283352 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(0.970296, 0, 0.241922, 0, 1, 0, -0.241922, 0, 0.970296, 13.3, 0, -17.75)
+
+[node name="DiningChair_958" parent="Interior/DiningProps" unique_id=2099527397 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 9.95, 0, -16.5)
+
+[node name="DiningChair_959" parent="Interior/DiningProps" unique_id=1489173996 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 14.05, 0, -16.5)
+
+[node name="Candlestick_960" parent="Interior/DiningProps" unique_id=1016486877 instance=ExtResource("pf_candlestick_tall")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3, 0.76, -16.5)
+
+[node name="Candlestick_961" parent="Interior/DiningProps" unique_id=2096620594 instance=ExtResource("pf_candlestick_tall")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.76, -16.5)
+
+[node name="Candlestick_962" parent="Interior/DiningProps" unique_id=1743217929 instance=ExtResource("pf_candlestick_tall")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7, 0.76, -16.5)
+
+[node name="Chandelier_965" parent="Interior/DiningProps" unique_id=188760760 instance=ExtResource("pf_chandelier_model")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3.4, -16.5)
+
+[node name="Bookcase_966" parent="Interior/DiningProps" unique_id=1279281146 instance=ExtResource("pf_bookcase_model_med")]
+transform = Transform3D(-1, 0, 4.371139e-08, 0, 1, 0, -4.371139e-08, 0, -1, 15.064028, 0, -11.413924)
+
+[node name="BookStack_974" parent="Interior/DiningProps" unique_id=1081122084 instance=ExtResource("pf_bookstack")]
+transform = Transform3D(0.994522, 0, 0.104528, 0, 1, 0, -0.104528, 0, 0.994522, 13.2, 0.92, -21.55)
+
+[node name="Sideboard_975" parent="Interior/DiningProps" unique_id=7937384 instance=ExtResource("pf_dresser")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 7.52, 0, -19.6)
+
+[node name="Sconce_981" parent="Interior/DiningProps" unique_id=1681351254 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.78, 2.05, -19.4)
+
+[node name="Sconce_982" parent="Interior/DiningProps" unique_id=1451171912 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.78, 2.05, -14.436919)
+
+[node name="Library" type="Node3D" parent="Interior" unique_id=848214933]
+
+[node name="LibraryDress" type="Node3D" parent="Interior" unique_id=1862864405]
+
+[node name="Rug_28" type="MeshInstance3D" parent="Interior/LibraryDress" unique_id=1270532244]
+mesh = ExtResource("143_lefwi")
+
+[node name="Papers_29" type="MeshInstance3D" parent="Interior/LibraryDress" unique_id=592864935]
+mesh = ExtResource("144_asuwn")
+
+[node name="Picture_30" type="MeshInstance3D" parent="Interior/LibraryDress" unique_id=1847062245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2103624, 0, 0.18892813)
+mesh = ExtResource("145_mb6k8")
+
+[node name="LibraryProps" type="Node3D" parent="Interior" unique_id=531533630]
+
+[node name="Bookcase_983" parent="Interior/LibraryProps" unique_id=235480203 instance=ExtResource("pf_bookcase_model_tall")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -16.5, 0, -2.3)
+
+[node name="Bookcase_984" parent="Interior/LibraryProps" unique_id=1591493963 instance=ExtResource("pf_bookcase_model_tall")]
+transform = Transform3D(1, 0, -4.371139e-08, 0, 1, 0, 4.371139e-08, 0, 1, -9.7363, 0, -10.576347)
+
+[node name="Bookcase_985" parent="Interior/LibraryProps" unique_id=921460036 instance=ExtResource("pf_bookcase_model_tall")]
+transform = Transform3D(1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, 1, -14.115854, 0, -10.557961)
+
+[node name="Bookcase_986" parent="Interior/LibraryProps" unique_id=62560142 instance=ExtResource("pf_bookcase_model_med")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -7.4125633, 0, -2.3537412)
+
+[node name="Bookcase_987" parent="Interior/LibraryProps" unique_id=1418868853 instance=ExtResource("pf_bookcase_model_low")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -7.55, 0, -7.6)
+
+[node name="Desk_990" parent="Interior/LibraryProps" unique_id=2138648284 instance=ExtResource("pf_desk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2, 0, -5.6)
+
+[node name="DeskChair_991" parent="Interior/LibraryProps" unique_id=980518690 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -12.2, 0, -4.25)
+
+[node name="OilLamp_992" parent="Interior/LibraryProps" unique_id=255991312 instance=ExtResource("pf_oillamp_model")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9, 0.795, -5.8)
+
+[node name="BookStack_995" parent="Interior/LibraryProps" unique_id=1578436279 instance=ExtResource("pf_bookstack")]
+transform = Transform3D(0.978148, 0, -0.207912, 0, 1, 0, 0.207912, 0, 0.978148, -12.6, 0.795, -5.3)
+
+[node name="Armchair_996" parent="Interior/LibraryProps" unique_id=1912375339 instance=ExtResource("pf_armchair_leather")]
+transform = Transform3D(0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, 0.766044, -14.9, 0, -8.6)
+
+[node name="SideTable_997" parent="Interior/LibraryProps" unique_id=2113439762 instance=ExtResource("pf_table_side")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4, 0, -8.9)
+
+[node name="Candlestick_998" parent="Interior/LibraryProps" unique_id=1673576356 instance=ExtResource("pf_candlestick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4, 0.6, -8.9)
+
+[node name="BookStack_999" parent="Interior/LibraryProps" unique_id=1916536181 instance=ExtResource("pf_bookstack")]
+transform = Transform3D(0.913545, 0, 0.406737, 0, 1, 0, -0.406737, 0, 0.913545, -10.3, 0, -7.9)
+
+[node name="BookStack_1000" parent="Interior/LibraryProps" unique_id=1330780465 instance=ExtResource("pf_bookstack")]
+transform = Transform3D(0.987688, 0, -0.156434, 0, 1, 0, 0.156434, 0, 0.987688, -10.05, 0, -8.35)
+
+[node name="Sconce_1006" parent="Interior/LibraryProps" unique_id=729946532 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -16.78, 2.1, -9.2)
+
+[node name="Sconce_1007" parent="Interior/LibraryProps" unique_id=1560907530 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -7.18, 2.1, -9.2)
+
+[node name="Chandelier_1008" parent="Interior/LibraryProps" unique_id=1386463561 instance=ExtResource("pf_chandelier_model")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8, 3.4, -5.6)
+
+[node name="Kitchen" type="Node3D" parent="Interior" unique_id=662226196]
+
+[node name="Counter_31" type="MeshInstance3D" parent="Interior/Kitchen" unique_id=70326850]
+mesh = ExtResource("156_g5x13")
+
+[node name="Body" type="StaticBody3D" parent="Interior/Kitchen/Counter_31" unique_id=1334332403]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interior/Kitchen/Counter_31/Body" unique_id=1040420841]
+shape = ExtResource("157_en3eq")
+
+[node name="Counter_32" type="MeshInstance3D" parent="Interior/Kitchen" unique_id=290900771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18717766, 0, 2.2184887)
+mesh = ExtResource("158_etdu4")
+
+[node name="Body" type="StaticBody3D" parent="Interior/Kitchen/Counter_32" unique_id=1730553138]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interior/Kitchen/Counter_32/Body" unique_id=1134048760]
+shape = ExtResource("159_i7n6o")
+
+[node name="KitchenDress" type="Node3D" parent="Interior" unique_id=2087571923]
+
+[node name="Bottle_33" type="MeshInstance3D" parent="Interior/KitchenDress" unique_id=333137658]
+mesh = ExtResource("160_1ylwq")
+
+[node name="Bottle_34" type="MeshInstance3D" parent="Interior/KitchenDress" unique_id=659274373]
+mesh = ExtResource("161_m5f01")
+
+[node name="KitchenProps" type="Node3D" parent="Interior" unique_id=848502249]
+
+[node name="Range_1009" parent="Interior/KitchenProps" unique_id=1883441124 instance=ExtResource("pf_range")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -16.3, 0, -14.2)
+
+[node name="Sink_1010" parent="Interior/KitchenProps" unique_id=599310028 instance=ExtResource("pf_sink")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -16.35, 0, -17.6)
+
+[node name="PrepTable_1017" parent="Interior/KitchenProps" unique_id=1822726632 instance=ExtResource("pf_table_work")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 0, -16.3)
+
+[node name="KitchenChair_1018" parent="Interior/KitchenProps" unique_id=1042609837 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -10.25, 0, -16.3)
+
+[node name="KitchenChair_1019" parent="Interior/KitchenProps" unique_id=496650429 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -12.95, 0, -16.3)
+
+[node name="BookStack_1020" parent="Interior/KitchenProps" unique_id=708339515 instance=ExtResource("pf_bookstack")]
+transform = Transform3D(0.990268, 0, 0.139173, 0, 1, 0, -0.139173, 0, 0.990268, -11.2, 0.86, -16.3)
+
+[node name="Rack_1025" parent="Interior/KitchenProps" unique_id=1161970482 instance=ExtResource("pf_rack")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -7.4164033, 0, -20.12564)
+
+[node name="Barrel_1026" parent="Interior/KitchenProps" unique_id=980103198 instance=ExtResource("pf_barrel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2, 0, -21.1)
+
+[node name="Barrel_1027" parent="Interior/KitchenProps" unique_id=1905185498 instance=ExtResource("pf_barrel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3, 0, -21.2)
+
+[node name="Crate_1028" parent="Interior/KitchenProps" unique_id=1839369557 instance=ExtResource("pf_crate_sm")]
+transform = Transform3D(0.951057, 0, 0.309017, 0, 1, 0, -0.309017, 0, 0.951057, -9.2, 0, -12.6)
+
+[node name="Sconce_1029" parent="Interior/KitchenProps" unique_id=1205644458 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -7.18, 2.1, -13.6)
+
+[node name="Sconce_1030" parent="Interior/KitchenProps" unique_id=1559325056 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -7.18, 2.1, -20.4)
+
+[node name="Corridor" type="Node3D" parent="Interior" unique_id=1275010475]
+
+[node name="CorridorDress" type="Node3D" parent="Interior" unique_id=353031713]
+
+[node name="Rug_35" type="MeshInstance3D" parent="Interior/CorridorDress" unique_id=101327691]
+mesh = ExtResource("174_rg5at")
+
+[node name="Picture_36" type="MeshInstance3D" parent="Interior/CorridorDress" unique_id=1518881806]
+mesh = ExtResource("175_ndexu")
+
+[node name="Picture_37" type="MeshInstance3D" parent="Interior/CorridorDress" unique_id=1684697903]
+mesh = ExtResource("176_kf2w8")
+
+[node name="Picture_38" type="MeshInstance3D" parent="Interior/CorridorDress" unique_id=383190760]
+mesh = ExtResource("177_smn8w")
+
+[node name="ClothPile_39" type="MeshInstance3D" parent="Interior/CorridorDress" unique_id=676458847]
+mesh = ExtResource("178_kvwtg")
+
+[node name="CorridorProps" type="Node3D" parent="Interior" unique_id=396627250]
+
+[node name="HallTable_1033" parent="Interior/CorridorProps" unique_id=1832316111 instance=ExtResource("pf_table_console")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -14.6, 0, -22.7)
+
+[node name="HallTable_1034" parent="Interior/CorridorProps" unique_id=1394815715 instance=ExtResource("pf_table_console")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.901305, 0, -22.42892)
+
+[node name="OilLamp_1035" parent="Interior/CorridorProps" unique_id=1471544031 instance=ExtResource("pf_oillamp_model")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6, 0.79, -22.7)
+
+[node name="Sconce_1052" parent="Interior/CorridorProps" unique_id=1512592050 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.1, -25.8)
+
+[node name="Sconce_1053" parent="Interior/CorridorProps" unique_id=438268596 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.1, -25.8)
+
+[node name="Sconce_1054" parent="Interior/CorridorProps" unique_id=294673495 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 9, 2.1, -22.2)
+
+[node name="Scullery" type="Node3D" parent="Interior" unique_id=1069833289]
+
+[node name="Counter_40" type="MeshInstance3D" parent="Interior/Scullery" unique_id=1373603343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55195236)
+mesh = ExtResource("179_8sj3d")
+
+[node name="Body" type="StaticBody3D" parent="Interior/Scullery/Counter_40" unique_id=1278247516]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interior/Scullery/Counter_40/Body" unique_id=1862555433]
+shape = ExtResource("180_ibk2v")
+
+[node name="ScullyDress" type="Node3D" parent="Interior" unique_id=454704225]
+
+[node name="ClothPile_41" type="MeshInstance3D" parent="Interior/ScullyDress" unique_id=1070573155]
+mesh = ExtResource("181_sdkyk")
+
+[node name="Bottle_42" type="MeshInstance3D" parent="Interior/ScullyDress" unique_id=186065457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55195236)
+mesh = ExtResource("182_ntcw0")
+
+[node name="Bottle_43" type="MeshInstance3D" parent="Interior/ScullyDress" unique_id=1358069992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55195236)
+mesh = ExtResource("183_uuyri")
+
+[node name="ScullyProps" type="Node3D" parent="Interior" unique_id=1202336580]
+
+[node name="Sink_1060" parent="Interior/ScullyProps" unique_id=297420426 instance=ExtResource("pf_sink")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -16.3, 0, -30.4)
+
+[node name="Rack_1061" parent="Interior/ScullyProps" unique_id=1383900902 instance=ExtResource("pf_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.807189, 0, -33.2)
+
+[node name="Rack_1062" parent="Interior/ScullyProps" unique_id=81382982 instance=ExtResource("pf_rack")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -4.9996963, 0, -26.55)
+
+[node name="Rack_1063" parent="Interior/ScullyProps" unique_id=831684239 instance=ExtResource("pf_rack")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -2.6, 0, -29.4)
+
+[node name="Crate_1064" parent="Interior/ScullyProps" unique_id=181186949 instance=ExtResource("pf_crate_lg")]
+transform = Transform3D(0.978148, 0, 0.207912, 0, 1, 0, -0.207912, 0, 0.978148, -5.2, 0, -32.6)
+
+[node name="Crate_1065" parent="Interior/ScullyProps" unique_id=779089056 instance=ExtResource("pf_crate_sm")]
+transform = Transform3D(0.913545, 0, -0.406737, 0, 1, 0, 0.406737, 0, 0.913545, -6.35, 0, -31.75)
+
+[node name="Crate_1066" parent="Interior/ScullyProps" unique_id=210899303 instance=ExtResource("pf_crate_sm")]
+transform = Transform3D(0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, 0.766044, -4.7, 0, -31.25)
+
+[node name="Barrel_1067" parent="Interior/ScullyProps" unique_id=792750943 instance=ExtResource("pf_barrel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4, 0, -33.1)
+
+[node name="Barrel_1068" parent="Interior/ScullyProps" unique_id=1042031299 instance=ExtResource("pf_barrel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4, 0, -31.9)
+
+[node name="Bootroom" type="Node3D" parent="Interior" unique_id=1986558274]
+
+[node name="Counter_44" type="MeshInstance3D" parent="Interior/Bootroom" unique_id=871229582]
+mesh = ExtResource("186_fymdo")
+
+[node name="Body" type="StaticBody3D" parent="Interior/Bootroom/Counter_44" unique_id=818890197]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interior/Bootroom/Counter_44/Body" unique_id=914350830]
+shape = ExtResource("187_37uh4")
+
+[node name="BootDress" type="Node3D" parent="Interior" unique_id=1983748880]
+
+[node name="ClothPile_45" type="MeshInstance3D" parent="Interior/BootDress" unique_id=3654500]
+mesh = ExtResource("188_41k6h")
+
+[node name="BootProps" type="Node3D" parent="Interior" unique_id=986524365]
+
+[node name="Rack_1075" parent="Interior/BootProps" unique_id=682226717 instance=ExtResource("pf_rack")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -1.5438673, 0, -29)
+
+[node name="BootTable_1076" parent="Interior/BootProps" unique_id=304852239 instance=ExtResource("pf_table_console")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 4.6, 0, -26.6)
+
+[node name="Crate_1077" parent="Interior/BootProps" unique_id=973754564 instance=ExtResource("pf_crate_lg")]
+transform = Transform3D(0.970296, 0, -0.241922, 0, 1, 0, 0.241922, 0, 0.970296, 7.9655876, 0, -33.259636)
+
+[node name="Crate_1078" parent="Interior/BootProps" unique_id=2047167940 instance=ExtResource("pf_crate_sm")]
+transform = Transform3D(0.927184, 0, 0.374607, 0, 1, 0, -0.374607, 0, 0.927184, 8.005689, 1.139546, -33.471542)
+
+[node name="OilLamp_1082" parent="Interior/BootProps" unique_id=976128296 instance=ExtResource("pf_oillamp_model")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 0.79, -26.6)
+
+[node name="Sconce_1083" parent="Interior/BootProps" unique_id=955151325 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 9.097533, 2.1, -26.131304)
+
+[node name="Landing" type="Node3D" parent="Interior" unique_id=1929684981]
+
+[node name="LandingDress" type="Node3D" parent="Interior" unique_id=1147328924]
+
+[node name="Rug_46" type="MeshInstance3D" parent="Interior/LandingDress" unique_id=1239145666]
+mesh = ExtResource("189_vuwh2")
+
+[node name="Rug_47" type="MeshInstance3D" parent="Interior/LandingDress" unique_id=936705627]
+mesh = ExtResource("190_qe0of")
+
+[node name="Rug_48" type="MeshInstance3D" parent="Interior/LandingDress" unique_id=1556124818]
+mesh = ExtResource("191_fa0wo")
+
+[node name="ClothPile_49" type="MeshInstance3D" parent="Interior/LandingDress" unique_id=1445216910]
+mesh = ExtResource("192_aauj8")
+
+[node name="LandingProps" type="Node3D" parent="Interior" unique_id=1707054815]
+
+[node name="Clock_1086" parent="Interior/LandingProps" unique_id=235546240 instance=ExtResource("pf_clock")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -6.5, 3.6, -19.2)
+
+[node name="Console_1087" parent="Interior/LandingProps" unique_id=1117553041 instance=ExtResource("pf_table_console")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -6.527142, 3.6, -3)
+
+[node name="Console_1088" parent="Interior/LandingProps" unique_id=596540724 instance=ExtResource("pf_table_console")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 6.513542, 3.6, -19.6)
+
+[node name="OilLamp_1089" parent="Interior/LandingProps" unique_id=1763952294 instance=ExtResource("pf_oillamp_model")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.527142, 4.39, -3)
+
+[node name="Candlestick_1090" parent="Interior/LandingProps" unique_id=959277641 instance=ExtResource("pf_candlestick_tall")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.513542, 4.39, -19.6)
+
+[node name="Bookcase_1091" parent="Interior/LandingProps" unique_id=1369454847 instance=ExtResource("pf_bookcase_model_low")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2, 3.6, -21.6)
+
+[node name="Sconce_1098" parent="Interior/LandingProps" unique_id=734799932 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -6.78, 5.65, -6.33678)
+
+[node name="Sconce_1099" parent="Interior/LandingProps" unique_id=1896999121 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -6.78, 5.65, -14)
+
+[node name="Bed1" type="Node3D" parent="Interior" unique_id=1172070143]
+
+[node name="DustSheet_52" type="MeshInstance3D" parent="Interior/Bed1" unique_id=483988576]
+mesh = ExtResource("195_lh752")
+
+[node name="Body" type="StaticBody3D" parent="Interior/Bed1/DustSheet_52" unique_id=23909517]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interior/Bed1/DustSheet_52/Body" unique_id=1615231092]
+shape = ExtResource("196_sbd1n")
+
+[node name="Bed1Dress" type="Node3D" parent="Interior" unique_id=1919754778]
+
+[node name="Rug_50" type="MeshInstance3D" parent="Interior/Bed1Dress" unique_id=1330273132]
+mesh = ExtResource("197_qkf1b")
+
+[node name="Picture_51" type="MeshInstance3D" parent="Interior/Bed1Dress" unique_id=1979362168]
+mesh = ExtResource("198_jxcs0")
+
+[node name="Bed1Props" type="Node3D" parent="Interior" unique_id=504258359]
+
+[node name="Bed_1102" parent="Interior/Bed1Props" unique_id=1593785361 instance=ExtResource("pf_bed_poster")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 11.6, 3.6, -1.55)
+
+[node name="Nightstand_1105" parent="Interior/Bed1Props" unique_id=1430684250 instance=ExtResource("pf_table_side")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 10.2, 3.6, -1.6)
+
+[node name="Nightstand_1106" parent="Interior/Bed1Props" unique_id=555426237 instance=ExtResource("pf_table_side")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 13, 3.6, -1.6)
+
+[node name="Candlestick_1107" parent="Interior/Bed1Props" unique_id=290584205 instance=ExtResource("pf_candlestick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2, 4.2, -1.6)
+
+[node name="OilLamp_1108" parent="Interior/Bed1Props" unique_id=689015263 instance=ExtResource("pf_oillamp_model")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 4.2, -1.6)
+
+[node name="Wardrobe_1109" parent="Interior/Bed1Props" unique_id=685309711 instance=ExtResource("pf_wardrobe")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.1, 3.6, -8.6)
+
+[node name="Washstand_1110" parent="Interior/Bed1Props" unique_id=1095744336 instance=ExtResource("pf_washstand")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 8, 3.6, -8.2)
+
+[node name="Dresser_1111" parent="Interior/Bed1Props" unique_id=1298657057 instance=ExtResource("pf_dresser")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6, 3.6, -10.5)
+
+[node name="Office" type="Node3D" parent="Interior" unique_id=1894066528]
+
+[node name="OfficeDress" type="Node3D" parent="Interior" unique_id=960028801]
+
+[node name="Rug_53" type="MeshInstance3D" parent="Interior/OfficeDress" unique_id=498032514]
+mesh = ExtResource("205_c4dpp")
+
+[node name="Papers_54" type="MeshInstance3D" parent="Interior/OfficeDress" unique_id=925299772]
+mesh = ExtResource("206_pntac")
+
+[node name="OfficeProps" type="Node3D" parent="Interior" unique_id=746170629]
+
+[node name="Desk_1120" parent="Interior/OfficeProps" unique_id=587306043 instance=ExtResource("pf_desk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 3.6, -13.6)
+
+[node name="DeskChair_1121" parent="Interior/OfficeProps" unique_id=1359061788 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 11, 3.6, -12.2)
+
+[node name="OilLamp_1124" parent="Interior/OfficeProps" unique_id=1440423435 instance=ExtResource("pf_oillamp_model")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1, 4.395, -13.8)
+
+[node name="BookStack_1127" parent="Interior/OfficeProps" unique_id=903957036 instance=ExtResource("pf_bookstack")]
+transform = Transform3D(0.992546, 0, -0.121869, 0, 1, 0, 0.121869, 0, 0.992546, 11.9, 4.395, -13.9)
+
+[node name="Bookcase_1128" parent="Interior/OfficeProps" unique_id=1546870026 instance=ExtResource("pf_bookcase_model_med")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 7.55, 3.6, -14.052708)
+
+[node name="Bookcase_1129" parent="Interior/OfficeProps" unique_id=1302994154 instance=ExtResource("pf_bookcase_model_med")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9, 3.6, -21.6)
+
+[node name="Dresser_1130" parent="Interior/OfficeProps" unique_id=1134706623 instance=ExtResource("pf_dresser")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.35, 3.6, -14.8)
+
+[node name="Crate_1131" parent="Interior/OfficeProps" unique_id=613735495 instance=ExtResource("pf_crate_sm")]
+transform = Transform3D(0.898794, 0, 0.438371, 0, 1, 0, -0.438371, 0, 0.898794, 8.6, 3.6, -20.8)
+
+[node name="Sconce_1132" parent="Interior/OfficeProps" unique_id=2077187753 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.78, 5.65, -15.2)
+
+[node name="Bed2" type="Node3D" parent="Interior" unique_id=1953082558]
+
+[node name="DustSheet_57" type="MeshInstance3D" parent="Interior/Bed2" unique_id=530575262]
+mesh = ExtResource("207_aw41w")
+
+[node name="Body" type="StaticBody3D" parent="Interior/Bed2/DustSheet_57" unique_id=870598636]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interior/Bed2/DustSheet_57/Body" unique_id=2001794342]
+shape = ExtResource("208_s0xmf")
+
+[node name="Bed2Dress" type="Node3D" parent="Interior" unique_id=375322229]
+
+[node name="Rug_55" type="MeshInstance3D" parent="Interior/Bed2Dress" unique_id=1845582761]
+mesh = ExtResource("209_bjymk")
+
+[node name="Picture_56" type="MeshInstance3D" parent="Interior/Bed2Dress" unique_id=2108321964]
+mesh = ExtResource("210_g0wf6")
+
+[node name="ClothPile_58" type="MeshInstance3D" parent="Interior/Bed2Dress" unique_id=44022914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62855625, 0, 3.2038474)
+mesh = ExtResource("211_7hvmy")
+
+[node name="Bed2Props" type="Node3D" parent="Interior" unique_id=1198285909]
+
+[node name="Bed_1133" parent="Interior/Bed2Props" unique_id=1857762847 instance=ExtResource("pf_bed_plain")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -11.8, 3.6, -1.55)
+
+[node name="Nightstand_1136" parent="Interior/Bed2Props" unique_id=402781746 instance=ExtResource("pf_table_side")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -12.954594, 3.6, -0.58638096)
+
+[node name="Candlestick_1137" parent="Interior/Bed2Props" unique_id=2145540085 instance=ExtResource("pf_candlestick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.954594, 4.2, -0.58638096)
+
+[node name="Wardrobe_1138" parent="Interior/Bed2Props" unique_id=661214451 instance=ExtResource("pf_wardrobe")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -16.1, 3.6, -8.4)
+
+[node name="Dresser_1139" parent="Interior/Bed2Props" unique_id=1206213231 instance=ExtResource("pf_dresser")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -8, 3.6, -8.6)
+
+[node name="Washstand_1140" parent="Interior/Bed2Props" unique_id=1460695094 instance=ExtResource("pf_washstand")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6, 3.6, -10.45)
+
+[node name="Nursery" type="Node3D" parent="Interior" unique_id=899548425]
+
+[node name="DustSheet_60" type="MeshInstance3D" parent="Interior/Nursery" unique_id=2084729092]
+mesh = ExtResource("214_2mwgi")
+
+[node name="Body" type="StaticBody3D" parent="Interior/Nursery/DustSheet_60" unique_id=540633116]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interior/Nursery/DustSheet_60/Body" unique_id=826291242]
+shape = ExtResource("215_gj1g8")
+
+[node name="NurseryDress" type="Node3D" parent="Interior" unique_id=1495494311]
+
+[node name="Rug_59" type="MeshInstance3D" parent="Interior/NurseryDress" unique_id=1692113138]
+mesh = ExtResource("216_mca6b")
+
+[node name="NurseryProps" type="Node3D" parent="Interior" unique_id=223233739]
+
+[node name="Cot_1151" parent="Interior/NurseryProps" unique_id=389303513 instance=ExtResource("pf_bed_small")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -15.7, 3.6, -11.802454)
+
+[node name="Bookcase_1154" parent="Interior/NurseryProps" unique_id=1086571995 instance=ExtResource("pf_bookcase_model_low")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -7.55, 3.6, -13.6)
+
+[node name="Crate_1155" parent="Interior/NurseryProps" unique_id=1649760420 instance=ExtResource("pf_crate_sm")]
+transform = Transform3D(0.990268, 0, 0.139173, 0, 1, 0, -0.139173, 0, 0.990268, -9.8, 3.6, -20.4)
+
+[node name="Crate_1156" parent="Interior/NurseryProps" unique_id=383917834 instance=ExtResource("pf_crate_sm")]
+transform = Transform3D(0.927184, 0, -0.374607, 0, 1, 0, 0.374607, 0, 0.927184, -10.75, 3.6, -20.9)
+
+[node name="Crate_1157" parent="Interior/NurseryProps" unique_id=227985007 instance=ExtResource("pf_crate_sm")]
+transform = Transform3D(0.829038, 0, 0.559193, 0, 1, 0, -0.559193, 0, 0.829038, -9.95, 3.6, -19.7)
+
+[node name="Table_1158" parent="Interior/NurseryProps" unique_id=291148082 instance=ExtResource("pf_table_small")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -16.2, 3.6, -13.104057)
+
+[node name="Candlestick_1159" parent="Interior/NurseryProps" unique_id=967327309 instance=ExtResource("pf_candlestick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2, 4.3, -12.8527775)
+
+[node name="Dresser_1160" parent="Interior/NurseryProps" unique_id=853648233 instance=ExtResource("pf_dresser")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -12, 3.6, -11.6)
+
+[node name="Study" type="Node3D" parent="Interior" unique_id=13414708]
+
+[node name="StudyDress" type="Node3D" parent="Interior" unique_id=484269728]
+
+[node name="Rug_61" type="MeshInstance3D" parent="Interior/StudyDress" unique_id=30289150]
+mesh = ExtResource("221_cf2wp")
+
+[node name="Papers_62" type="MeshInstance3D" parent="Interior/StudyDress" unique_id=60510212]
+transform = Transform3D(-1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1, 0.008094182, 0, -53.807365)
+mesh = ExtResource("222_b6c10")
+
+[node name="StudyProps" type="Node3D" parent="Interior" unique_id=372000437]
+
+[node name="Bookcase_1164" parent="Interior/StudyProps" unique_id=1174633853 instance=ExtResource("pf_bookcase_model_tall")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -6.55, 3.6, -24.160007)
+
+[node name="Bookcase_1165" parent="Interior/StudyProps" unique_id=1652147622 instance=ExtResource("pf_bookcase_model_tall")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -6.55, 3.6, -27.93681)
+
+[node name="Bookcase_1166" parent="Interior/StudyProps" unique_id=1102919607 instance=ExtResource("pf_bookcase_model_tall")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 6.55, 3.6, -24.104343)
+
+[node name="Bookcase_1167" parent="Interior/StudyProps" unique_id=223944926 instance=ExtResource("pf_bookcase_model_tall")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 6.55, 3.6, -28.2)
+
+[node name="Bookcase_1168" parent="Interior/StudyProps" unique_id=1634756618 instance=ExtResource("pf_bookcase_model_med")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4, 3.6, -29.6)
+
+[node name="Desk_1171" parent="Interior/StudyProps" unique_id=169860118 instance=ExtResource("pf_desk")]
+transform = Transform3D(-1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1, 0.008095255, 3.6, -27.00737)
+
+[node name="DeskChair_1172" parent="Interior/StudyProps" unique_id=647500853 instance=ExtResource("pf_chair_table")]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0.008095255, 3.6, -28.50737)
+
+[node name="OilLamp_1173" parent="Interior/StudyProps" unique_id=1023150053 instance=ExtResource("pf_oillamp_model")]
+transform = Transform3D(-1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1, 0.8080952, 4.395, -26.80737)
+
+[node name="BookStack_1176" parent="Interior/StudyProps" unique_id=1952508453 instance=ExtResource("pf_bookstack")]
+transform = Transform3D(-0.95105696, 0, -0.30901706, 0, 1, 0, 0.30901706, 0, -0.95105696, -0.8419051, 4.395, -26.75737)
+
+[node name="Candlestick_1177" parent="Interior/StudyProps" unique_id=221893598 instance=ExtResource("pf_candlestick_tall")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 4.395, -26.45)
+
+[node name="Armchair_1178" parent="Interior/StudyProps" unique_id=845008337 instance=ExtResource("pf_armchair_leather")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 3.6, 3.6, -28.6)
+
+[node name="SideTable_1179" parent="Interior/StudyProps" unique_id=1809682412 instance=ExtResource("pf_table_side")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 3.6, -29.3)
+
+[node name="Candlestick_1180" parent="Interior/StudyProps" unique_id=898161372 instance=ExtResource("pf_candlestick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 4.2, -29.3)
+
+[node name="Chandelier_1181" parent="Interior/StudyProps" unique_id=1005221483 instance=ExtResource("pf_chandelier_model")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -26)
+
+[node name="Sconce_1182" parent="Interior/StudyProps" unique_id=885882242 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -6.78, 5.65, -26.023903)
+
+[node name="Sconce_1183" parent="Interior/StudyProps" unique_id=638589305 instance=ExtResource("pf_sconce_lamp")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 6.78, 5.65, -26.173824)
+
+[node name="Cellar" type="Node3D" parent="Interior" unique_id=1742974990]
+
+[node name="Counter_63" type="MeshInstance3D" parent="Interior/Cellar" unique_id=1561698575]
+mesh = ExtResource("225_wh830")
+
+[node name="Body" type="StaticBody3D" parent="Interior/Cellar/Counter_63" unique_id=499887359]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interior/Cellar/Counter_63/Body" unique_id=1276328912]
+shape = ExtResource("226_myjbf")
+
+[node name="Counter_64" type="MeshInstance3D" parent="Interior/Cellar" unique_id=1381364305]
+mesh = ExtResource("227_pbohc")
+
+[node name="Body" type="StaticBody3D" parent="Interior/Cellar/Counter_64" unique_id=660791277]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interior/Cellar/Counter_64/Body" unique_id=1078020537]
+shape = ExtResource("228_qqx5h")
+
+[node name="CoalHeap_65" type="MeshInstance3D" parent="Interior/Cellar" unique_id=1284083743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.361738, 0, 7.157259)
+mesh = ExtResource("229_6k1ky")
+
+[node name="Body" type="StaticBody3D" parent="Interior/Cellar/CoalHeap_65" unique_id=1421112026]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interior/Cellar/CoalHeap_65/Body" unique_id=1488184945]
+shape = ExtResource("230_027qj")
+
+[node name="CellarDress" type="Node3D" parent="Interior" unique_id=1267281115]
+
+[node name="Bottle_66" type="MeshInstance3D" parent="Interior/CellarDress" unique_id=1782167776]
+mesh = ExtResource("231_7d0iy")
+
+[node name="Bottle_67" type="MeshInstance3D" parent="Interior/CellarDress" unique_id=1757803987]
+mesh = ExtResource("232_d6vxr")
+
+[node name="ClothPile_68" type="MeshInstance3D" parent="Interior/CellarDress" unique_id=1118860077]
+mesh = ExtResource("233_ye8xy")
+
+[node name="CellarProps" type="Node3D" parent="Interior" unique_id=385153504]
+
+[node name="Rack_1184" parent="Interior/CellarProps" unique_id=284775855 instance=ExtResource("pf_rack")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -16.4, -3.6, -5)
+
+[node name="Rack_1185" parent="Interior/CellarProps" unique_id=1286182791 instance=ExtResource("pf_rack")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -16.4, -3.6, -9)
+
+[node name="Rack_1186" parent="Interior/CellarProps" unique_id=2043528790 instance=ExtResource("pf_rack")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -16.4, -3.6, -16)
+
+[node name="Rack_1187" parent="Interior/CellarProps" unique_id=58663277 instance=ExtResource("pf_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, -3.6, -0.6)
+
+[node name="Rack_1188" parent="Interior/CellarProps" unique_id=859460965 instance=ExtResource("pf_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, -3.6, -0.6)
+
+[node name="Rack_1189" parent="Interior/CellarProps" unique_id=370860980 instance=ExtResource("pf_rack")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.4, -3.6, -6.8)
+
+[node name="Rack_1190" parent="Interior/CellarProps" unique_id=1296474052 instance=ExtResource("pf_rack")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.8, -3.6, -8)
+
+[node name="Rack_1191" parent="Interior/CellarProps" unique_id=1497498609 instance=ExtResource("pf_rack")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -0.8, -3.6, -18)
+
+[node name="Crate_1192" parent="Interior/CellarProps" unique_id=913632108 instance=ExtResource("pf_crate_lg")]
+transform = Transform3D(0.961262, 0, 0.275637, 0, 1, 0, -0.275637, 0, 0.961262, -13.1, -3.6, -12)
+
+[node name="Crate_1193" parent="Interior/CellarProps" unique_id=84381859 instance=ExtResource("pf_crate_sm")]
+transform = Transform3D(0.882948, 0, -0.469472, 0, 1, 0, 0.469472, 0, 0.882948, -14.3, -3.6, -12.85)
+
+[node name="Crate_1194" parent="Interior/CellarProps" unique_id=1995699290 instance=ExtResource("pf_crate_sm")]
+transform = Transform3D(0.788011, 0, 0.615661, 0, 1, 0, -0.615661, 0, 0.788011, -11.9, -3.6, -12.65)
+
+[node name="Crate_1195" parent="Interior/CellarProps" unique_id=1954845295 instance=ExtResource("pf_crate_lg")]
+transform = Transform3D(0.978148, 0, -0.207912, 0, 1, 0, 0.207912, 0, 0.978148, 5.1, -3.6, -8)
+
+[node name="Crate_1196" parent="Interior/CellarProps" unique_id=1710004416 instance=ExtResource("pf_crate_sm")]
+transform = Transform3D(0.913545, 0, 0.406737, 0, 1, 0, -0.406737, 0, 0.913545, 6.35, -3.6, -8.75)
+
+[node name="Crate_1197" parent="Interior/CellarProps" unique_id=974449978 instance=ExtResource("pf_crate_sm")]
+transform = Transform3D(0.809017, 0, -0.587785, 0, 1, 0, 0.587785, 0, 0.809017, 4.75, -3.6, -9.55)
+
+[node name="Crate_1198" parent="Interior/CellarProps" unique_id=1582920510 instance=ExtResource("pf_crate_lg")]
+transform = Transform3D(0.990268, 0, 0.139173, 0, 1, 0, -0.139173, 0, 0.990268, -13, -3.6, -25)
+
+[node name="Crate_1199" parent="Interior/CellarProps" unique_id=1034783984 instance=ExtResource("pf_crate_lg")]
+transform = Transform3D(0.951057, 0, -0.309017, 0, 1, 0, 0.309017, 0, 0.951057, 7.4, -3.6, -25.2)
+
+[node name="Crate_1200" parent="Interior/CellarProps" unique_id=1969577039 instance=ExtResource("pf_crate_sm")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 8.65, -3.6, -25.8)
+
+[node name="Barrel_1201" parent="Interior/CellarProps" unique_id=1338319745 instance=ExtResource("pf_barrel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6, -3.6, -23)
+
+[node name="Barrel_1202" parent="Interior/CellarProps" unique_id=969763965 instance=ExtResource("pf_barrel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6, -3.6, -24.2)
+
+[node name="Barrel_1203" parent="Interior/CellarProps" unique_id=1143726676 instance=ExtResource("pf_barrel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6, -3.6, -20)
+
+[node name="Lights" type="Node3D" parent="." unique_id=1810301908]
+visible = false
+
+[node name="L_HallFront" type="OmniLight3D" parent="Lights" unique_id=1042600227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55, -1.9)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 1.05
+omni_range = 7.5
+
+[node name="L_HallStair" type="OmniLight3D" parent="Lights" unique_id=708986298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -9.5)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 1.1780452
+shadow_enabled = true
+shadow_bias = 0.06
+distance_fade_enabled = true
+distance_fade_shadow = 9.0
+distance_fade_length = 12.0
+omni_range = 12.0
+script = ExtResource("17_flick")
+base_energy = 1.45
+
+[node name="L_HallRear" type="OmniLight3D" parent="Lights" unique_id=1837645168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55, -18)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 1.3
+omni_range = 10.0
+
+[node name="L_Living" type="OmniLight3D" parent="Lights" unique_id=1006568838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.6, -5.4)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 1.25
+omni_range = 9.5
+
+[node name="L_LivingFire" type="OmniLight3D" parent="Lights" unique_id=370190345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1, 0.85, -5.4)
+light_color = Color(1, 0.52, 0.22, 1)
+light_energy = 0.6630081
+shadow_enabled = true
+shadow_bias = 0.06
+distance_fade_enabled = true
+distance_fade_shadow = 9.0
+distance_fade_length = 12.0
+omni_range = 4.5
+script = ExtResource("17_flick")
+base_energy = 0.8
+
+[node name="L_Dining" type="OmniLight3D" parent="Lights" unique_id=438274792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.6, -16.5)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 1.3
+omni_range = 9.5
+
+[node name="L_Library" type="OmniLight3D" parent="Lights" unique_id=1502119440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2.6, -5.6)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 1.2
+omni_range = 9.5
+
+[node name="L_Kitchen" type="OmniLight3D" parent="Lights" unique_id=1558608890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2.95, -16.5)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 0.91964084
+omni_range = 9.5
+script = ExtResource("17_flick")
+base_energy = 1.15
+
+[node name="L_KitchenEnd" type="OmniLight3D" parent="Lights" unique_id=684449259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2.95, -20.8)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 0.75
+omni_range = 6.0
+
+[node name="L_Corridor" type="OmniLight3D" parent="Lights" unique_id=1625337097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.95, -24)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 0.95
+omni_range = 8.0
+
+[node name="L_CorridorE" type="OmniLight3D" parent="Lights" unique_id=325980172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.95, -24)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 0.94967747
+omni_range = 8.0
+script = ExtResource("17_flick")
+base_energy = 0.95
+
+[node name="L_Scullery" type="OmniLight3D" parent="Lights" unique_id=409538107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.95, -30)
+light_color = Color(1, 0.84, 0.64, 1)
+omni_range = 8.5
+
+[node name="L_Bootroom" type="OmniLight3D" parent="Lights" unique_id=721066856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.95, -29.5)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 0.79284304
+omni_range = 8.5
+script = ExtResource("17_flick")
+base_energy = 1.05
+
+[node name="L_CellarHead" type="OmniLight3D" parent="Lights" unique_id=598720387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.4, -29)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="L_Landing" type="OmniLight3D" parent="Lights" unique_id=1199913335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3, -18)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 1.25
+shadow_enabled = true
+shadow_bias = 0.06
+distance_fade_enabled = true
+distance_fade_shadow = 9.0
+distance_fade_length = 12.0
+omni_range = 10.0
+
+[node name="L_LandingMid" type="OmniLight3D" parent="Lights" unique_id=1971843664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3, -8)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 0.8577219
+omni_range = 10.0
+script = ExtResource("17_flick")
+base_energy = 1.1
+
+[node name="L_Bed1" type="OmniLight3D" parent="Lights" unique_id=799644233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6.2, -5)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 1.1
+omni_range = 9.0
+
+[node name="L_Office" type="OmniLight3D" parent="Lights" unique_id=1387768625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 6.2, -16)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 1.1
+omni_range = 9.0
+
+[node name="L_Bed2" type="OmniLight3D" parent="Lights" unique_id=991829406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6.2, -5)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 0.8475009
+omni_range = 9.0
+script = ExtResource("17_flick")
+base_energy = 1.1
+
+[node name="L_Nursery" type="OmniLight3D" parent="Lights" unique_id=404407556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6.2, -16)
+light_color = Color(1, 0.84, 0.64, 1)
+omni_range = 9.0
+
+[node name="L_Study" type="OmniLight3D" parent="Lights" unique_id=155540072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3, -26)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 1.35
+shadow_enabled = true
+shadow_bias = 0.06
+distance_fade_enabled = true
+distance_fade_shadow = 9.0
+distance_fade_length = 12.0
+omni_range = 9.5
+
+[node name="L_CellarW" type="OmniLight3D" parent="Lights" unique_id=1838086510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.65, -8)
+light_color = Color(0.74, 0.82, 1, 1)
+light_energy = 0.6654671
+omni_range = 8.0
+script = ExtResource("17_flick")
+base_energy = 0.8
+
+[node name="L_CellarE" type="OmniLight3D" parent="Lights" unique_id=1375336115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.65, -9)
+light_color = Color(0.74, 0.82, 1, 1)
+light_energy = 0.8
+omni_range = 8.0
+
+[node name="L_CellarMid" type="OmniLight3D" parent="Lights" unique_id=2065302001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65, -18)
+light_color = Color(0.74, 0.82, 1, 1)
+light_energy = 0.53278875
+omni_range = 8.0
+script = ExtResource("17_flick")
+base_energy = 0.75
+
+[node name="L_CellarRear" type="OmniLight3D" parent="Lights" unique_id=1904373888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.65, -29)
+light_color = Color(0.74, 0.82, 1, 1)
+light_energy = 0.8
+omni_range = 9.0
+
+[node name="L_CellarGen" type="OmniLight3D" parent="Lights" unique_id=864881996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -2.2, -18)
+light_color = Color(1, 0.62, 0.3, 1)
+light_energy = 0.51711863
+shadow_enabled = true
+shadow_bias = 0.06
+distance_fade_enabled = true
+distance_fade_shadow = 9.0
+distance_fade_length = 12.0
+script = ExtResource("17_flick")
+base_energy = 0.6
+
+[node name="L_Porch" type="OmniLight3D" parent="Lights" unique_id=694353897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9, 3)
+light_color = Color(1, 0.84, 0.64, 1)
+light_energy = 0.80951506
+shadow_enabled = true
+shadow_bias = 0.06
+distance_fade_enabled = true
+distance_fade_shadow = 9.0
+distance_fade_length = 12.0
+omni_range = 8.0
+script = ExtResource("17_flick")
+base_energy = 1.0
+
+[node name="Occluders" parent="." unique_id=1240704023 instance=ExtResource("occluders")]
+
+[node name="SafeCode" type="Node" parent="." unique_id=269903463]
+script = ExtResource("s_safecode")
+safe = NodePath("../Vault")
+clock = NodePath("../ClockFace")
+portraits = Array[NodePath]([NodePath("../PortraitA"), NodePath("../PortraitB"), NodePath("../PortraitC")])
+tally = NodePath("../Bureau/Lid/TallyClue")

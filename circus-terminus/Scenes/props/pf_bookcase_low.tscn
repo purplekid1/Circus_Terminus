@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_walnut.tres" id="Mat_walnut"]
+
+[node name="BookcaseLow" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="CaseSide_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1700, 0.9500, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.0600, 1.9000, 0.4200)
+
+[node name="CaseSide_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1700, 0.9500, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.0600, 1.9000, 0.4200)
+
+[node name="CaseBack_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.9500, -0.1900)
+material = ExtResource("Mat_walnut")
+size = Vector3(2.4000, 1.9000, 0.0400)
+
+[node name="CasePlinth_4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.0700, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(2.4000, 0.1400, 0.4200)
+
+[node name="CaseCornice_5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.8500, 0.0200)
+material = ExtResource("Mat_walnut")
+size = Vector3(2.4800, 0.1000, 0.4600)
+
+[node name="CaseShelf_6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.4600, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(2.2600, 0.0300, 0.3700)
+
+[node name="CaseShelf_7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.7800, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(2.2600, 0.0300, 0.3700)
+
+[node name="CaseShelf_8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.1000, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(2.2600, 0.0300, 0.3700)
+
+[node name="CaseShelf_9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.4200, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(2.2600, 0.0300, 0.3700)

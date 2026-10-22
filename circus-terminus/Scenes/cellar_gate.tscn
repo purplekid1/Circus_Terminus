@@ -1,0 +1,47 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/Door.gd" id="1_door"]
+[ext_resource type="ArrayMesh" path="res://Meshes/cellar_gate_Screen.res" id="2_k25h7"]
+[ext_resource type="ArrayMesh" path="res://Meshes/cellar_gate_Hinge_Panel_Leaf.res" id="3_e8fer"]
+
+[sub_resource type="BoxShape3D" id="Shape_fixed"]
+size = Vector3(1.6, 2.4, 0.14)
+
+[sub_resource type="BoxShape3D" id="Shape_leaf"]
+size = Vector3(1.2, 2.24, 0.12)
+
+[node name="CellarGate" type="Node3D" unique_id=751240595 groups=["interactable"]]
+script = ExtResource("1_door")
+open_angle = -105.0
+swing_time = 0.7
+locked = true
+key_id = "cellar_key"
+locked_prompt = "Chained shut"
+prompt = "Iron gate"
+examine_lines = Array[String](["Bars right across the cellar, wall to wall. Someone did not want anyone getting past.", "There is a keyhole. Whatever opens it is down here with me."])
+
+[node name="Screen" type="MeshInstance3D" parent="." unique_id=269379214]
+mesh = ExtResource("2_k25h7")
+
+[node name="Solid" type="StaticBody3D" parent="." unique_id=757329028]
+
+[node name="West" type="CollisionShape3D" parent="Solid" unique_id=1109195017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.2, 0)
+shape = SubResource("Shape_fixed")
+
+[node name="East" type="CollisionShape3D" parent="Solid" unique_id=1494948132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.2, 0)
+shape = SubResource("Shape_fixed")
+
+[node name="Hinge" type="Node3D" parent="." unique_id=1109959053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0, 0)
+
+[node name="Panel" type="AnimatableBody3D" parent="Hinge" unique_id=1288816159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.2, 0)
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge/Panel" unique_id=1856610714]
+shape = SubResource("Shape_leaf")
+
+[node name="Leaf" type="MeshInstance3D" parent="Hinge/Panel" unique_id=1527017845]
+mesh = ExtResource("3_e8fer")

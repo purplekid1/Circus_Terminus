@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ciqq4ue0nyiyw"]
+
+[ext_resource type="PackedScene" uid="uid://culqy8ud4fnnw" path="res://Models/chandelier/Chandelier.fbx" id="1_model"]
+[ext_resource type="Material" uid="uid://dskk51p7s52fm" path="res://Materials/Mat_brass.tres" id="2_brass"]
+[ext_resource type="Material" uid="uid://c7tb7vf1v8v05" path="res://Materials/Mat_glass.tres" id="3_glass"]
+[ext_resource type="Material" uid="uid://bc35gal6hojrn" path="res://Materials/Mat_lamp.tres" id="4_qh6n7"]
+
+[node name="ChandelierModel" type="Node3D" unique_id=962742037]
+
+[node name="Model" parent="." unique_id=173458880 instance=ExtResource("1_model")]
+transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 0, 0.0912, 0)
+
+[node name="Chain" parent="Model" index="0" unique_id=1534115559]
+surface_material_override/0 = ExtResource("2_brass")
+
+[node name="Sphere" parent="Model" index="1" unique_id=826485220]
+surface_material_override/0 = ExtResource("3_glass")
+
+[node name="arms" parent="Model" index="2" unique_id=1242479377]
+surface_material_override/0 = ExtResource("2_brass")
+
+[node name="buld" parent="Model" index="3" unique_id=563312911]
+surface_material_override/0 = ExtResource("4_qh6n7")
+
+[editable path="Model"]

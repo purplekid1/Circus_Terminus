@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dam50u0qrh3yx"]
+
+[ext_resource type="Script" uid="uid://2e35yxhk5dr4" path="res://Scripts/HidingSpot.gd" id="1_hide"]
+[ext_resource type="PackedScene" uid="uid://cumceln8hk70f" path="res://Scenes/door.tscn" id="2_door"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_closet"]
+albedo_color = Color(0.29, 0.2, 0.14, 1)
+roughness = 0.9
+
+[node name="Closet" type="Node3D" unique_id=948168653 groups=["interactable"]]
+script = ExtResource("1_hide")
+inside_point = NodePath("Inside")
+exit_point = NodePath("Exit")
+door = NodePath("Door")
+exit_prompt = "Step out"
+prompt = "Hide in closet"
+
+[node name="Back" type="CSGBox3D" parent="." unique_id=389879168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.46)
+material_override = SubResource("StandardMaterial3D_closet")
+use_collision = true
+size = Vector3(1.2, 2.2, 0.08)
+
+[node name="SideLeft" type="CSGBox3D" parent="." unique_id=1348253234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56, 1.1, 0)
+material_override = SubResource("StandardMaterial3D_closet")
+use_collision = true
+size = Vector3(0.08, 2.2, 1)
+
+[node name="SideRight" type="CSGBox3D" parent="." unique_id=1894932947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56, 1.1, 0)
+material_override = SubResource("StandardMaterial3D_closet")
+use_collision = true
+size = Vector3(0.08, 2.2, 1)
+
+[node name="Top" type="CSGBox3D" parent="." unique_id=44766590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1642447, 0)
+material_override = SubResource("StandardMaterial3D_closet")
+use_collision = true
+size = Vector3(1.2, 0.08, 1)
+
+[node name="Door" parent="." unique_id=1136772600 instance=ExtResource("2_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53365517, 0, 0.5)
+open_angle = 110.0
+swing_time = 0.35
+prompt = "Closet door"
+enabled = false
+
+[node name="Inside" type="Marker3D" parent="." unique_id=617783311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.05)
+
+[node name="Exit" type="Marker3D" parent="." unique_id=1227703670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1.35)

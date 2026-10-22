@@ -1,0 +1,240 @@
+[gd_scene load_steps=7 format=3]
+
+[sub_resource type="Animation" id="Anim_cut_in"]
+resource_name = "cut_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Line:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Anim_cut_out"]
+resource_name = "cut_out"
+length = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Line:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Anim_hand_over"]
+resource_name = "hand_over"
+length = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BarTop:offset_bottom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [110.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BarBottom:offset_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-110.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fade:color:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skip:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1875),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Anim_title"]
+resource_name = "title"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 2.2, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="Lib_cuts"]
+_data = {
+&"cut_in": SubResource("Anim_cut_in"),
+&"cut_out": SubResource("Anim_cut_out"),
+&"hand_over": SubResource("Anim_hand_over")
+}
+
+[sub_resource type="AnimationLibrary" id="Lib_title"]
+_data = {
+&"title": SubResource("Anim_title")
+}
+
+[node name="IntroOverlay" type="CanvasLayer"]
+layer = 60
+
+[node name="Fade" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BarTop" type="ColorRect" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 110.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BarBottom" type="ColorRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -90.0
+offset_right = 600.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.88, 0.86, 0.8, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -560.0
+offset_top = -172.0
+offset_right = 560.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.86, 0.88, 0.94, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Skip" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -46.0
+offset_right = -28.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.45)
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 2
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("Lib_cuts")
+}
+
+[node name="TitleAnim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("Lib_title")
+}

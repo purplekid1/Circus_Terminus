@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b6mfwk7xilqs1"]
+
+[ext_resource type="Shader" uid="uid://dcdtjbg4fpjk" path="res://Scripts/VisionEffect.gdshader" id="1_j1opl"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_j1opl")

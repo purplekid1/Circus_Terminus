@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://db8q7ttkbv0x7"]
+
+[ext_resource type="PackedScene" uid="uid://dabgvjv50ijb5" path="res://Models/generator/Generator.fbx" id="1_model"]
+[ext_resource type="Material" uid="uid://d3djo64i3rd17" path="res://Materials/Mat_rust.tres" id="2_rust"]
+[ext_resource type="Material" uid="uid://bs5p6re1x2yiv" path="res://Materials/Mat_steel.tres" id="3_steel"]
+[ext_resource type="Material" uid="uid://co33r0dnskr7d" path="res://Materials/Mat_iron.tres" id="4_iron"]
+[ext_resource type="Material" uid="uid://dskk51p7s52fm" path="res://Materials/Mat_brass.tres" id="5_brass"]
+[ext_resource type="Material" path="res://rustedmetal.tres" id="5_ckpgf"]
+
+[node name="GeneratorModel" type="Node3D" unique_id=2069491416]
+
+[node name="Model" parent="." unique_id=1686647855 instance=ExtResource("1_model")]
+transform = Transform3D(0, 0, 0.47, 0, 0.47, 0, -0.47, 0, 0, 0, 0, 0)
+
+[node name="Cube" parent="Model" index="0" unique_id=1224011897]
+surface_material_override/0 = ExtResource("2_rust")
+
+[node name="Cube_001" parent="Model" index="1" unique_id=337706111]
+surface_material_override/0 = ExtResource("5_brass")
+
+[node name="Cube_002" parent="Model" index="2" unique_id=1182115128]
+surface_material_override/0 = ExtResource("4_iron")
+
+[node name="Cube_003" parent="Model" index="3" unique_id=818409359]
+surface_material_override/0 = ExtResource("5_brass")
+
+[node name="Cube_004" parent="Model" index="4" unique_id=1347564586]
+surface_material_override/0 = ExtResource("4_iron")
+
+[node name="Cube_005" parent="Model" index="5" unique_id=1952190881]
+surface_material_override/0 = ExtResource("4_iron")
+
+[node name="Cube_006" parent="Model" index="6" unique_id=1674048185]
+surface_material_override/0 = ExtResource("4_iron")
+
+[node name="Cube_007" parent="Model" index="7" unique_id=1781298126]
+surface_material_override/0 = ExtResource("5_brass")
+
+[node name="Cube_008" parent="Model" index="8" unique_id=2017666102]
+surface_material_override/0 = ExtResource("5_brass")
+
+[node name="Cylinder" parent="Model" index="9" unique_id=1587811715]
+material_override = ExtResource("5_ckpgf")
+surface_material_override/0 = ExtResource("3_steel")
+
+[node name="Cylinder_001" parent="Model" index="10" unique_id=1250517999]
+material_override = ExtResource("5_ckpgf")
+surface_material_override/0 = ExtResource("3_steel")
+
+[node name="Cylinder_002" parent="Model" index="11" unique_id=939859939]
+surface_material_override/0 = ExtResource("2_rust")
+
+[node name="Cylinder_003" parent="Model" index="12" unique_id=194333620]
+surface_material_override/0 = ExtResource("5_brass")
+
+[node name="Cylinder_004" parent="Model" index="13" unique_id=557050811]
+surface_material_override/0 = ExtResource("5_brass")
+
+[editable path="Model"]

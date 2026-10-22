@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_book.tres" id="Mat_book"]
+[ext_resource type="Material" path="res://Materials/Mat_book2.tres" id="Mat_book2"]
+[ext_resource type="Material" path="res://Materials/Mat_book3.tres" id="Mat_book3"]
+[ext_resource type="Material" path="res://Materials/Mat_walnut.tres" id="Mat_walnut"]
+
+[node name="BookcaseMed" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="CaseSide_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4700, 1.1000, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.0600, 2.2000, 0.4200)
+
+[node name="CaseSide_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4700, 1.1000, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.0600, 2.2000, 0.4200)
+
+[node name="CaseBack_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.1000, -0.1900)
+material = ExtResource("Mat_walnut")
+size = Vector3(3.0000, 2.2000, 0.0400)
+
+[node name="CasePlinth_4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.0700, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(3.0000, 0.1400, 0.4200)
+
+[node name="CaseCornice_5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 2.1500, 0.0200)
+material = ExtResource("Mat_walnut")
+size = Vector3(3.0800, 0.1000, 0.4600)
+
+[node name="CaseShelf_6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.4567, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(2.8600, 0.0300, 0.3700)
+
+[node name="CaseBooks_7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5827, 0.6067, -0.0200)
+material = ExtResource("Mat_book2")
+size = Vector3(1.2584, 0.2600, 0.2310)
+
+[node name="CaseBooks_8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7902, 0.5867, -0.0200)
+material = ExtResource("Mat_book2")
+size = Vector3(1.0296, 0.2200, 0.2310)
+
+[node name="CaseShelf_9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.7733, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(2.8600, 0.0300, 0.3700)
+
+[node name="CaseBooks_10" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5810, 0.9233, -0.0200)
+material = ExtResource("Mat_book")
+size = Vector3(1.2584, 0.2600, 0.2310)
+
+[node name="CaseShelf_11" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.0900, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(2.8600, 0.0300, 0.3700)
+
+[node name="CaseBooks_12" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5794, 1.2400, -0.0200)
+material = ExtResource("Mat_book2")
+size = Vector3(1.2584, 0.2600, 0.2310)
+
+[node name="CaseBooks_13" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7935, 1.2200, -0.0200)
+material = ExtResource("Mat_book2")
+size = Vector3(1.0296, 0.2200, 0.2310)
+
+[node name="CaseShelf_14" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.4067, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(2.8600, 0.0300, 0.3700)
+
+[node name="CaseBooks_15" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6777, 1.5567, -0.0200)
+material = ExtResource("Mat_book")
+size = Vector3(1.2584, 0.2600, 0.2310)
+
+[node name="CaseBooks_16" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6952, 1.5367, -0.0200)
+material = ExtResource("Mat_book")
+size = Vector3(1.0296, 0.2200, 0.2310)
+
+[node name="CaseShelf_17" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.7233, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(2.8600, 0.0300, 0.3700)
+
+[node name="CaseBooks_18" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6761, 1.8733, -0.0200)
+material = ExtResource("Mat_book2")
+size = Vector3(1.2584, 0.2600, 0.2310)
+
+[node name="CaseBooks_19" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6968, 1.8533, -0.0200)
+material = ExtResource("Mat_book3")
+size = Vector3(1.0296, 0.2200, 0.2310)

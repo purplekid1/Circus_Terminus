@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_grimoire.tres" id="Mat_grimoire"]
+[ext_resource type="Material" path="res://Materials/Mat_leaf.tres" id="Mat_leaf"]
+[ext_resource type="Material" path="res://Materials/Mat_leather.tres" id="Mat_leather"]
+[ext_resource type="Material" path="res://Materials/Mat_paper.tres" id="Mat_paper"]
+[ext_resource type="Material" path="res://Materials/Mat_sigil.tres" id="Mat_sigil"]
+
+[node name="Grimoire" type="CSGCombiner3D"]
+
+[node name="BookBoard_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.02750, 0.00000)
+material = ExtResource("Mat_grimoire")
+size = Vector3(0.3600, 0.0550, 0.2700)
+
+[node name="BookSpine_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.03150, 0.00000)
+material = ExtResource("Mat_leather")
+size = Vector3(0.0550, 0.0670, 0.2820)
+
+[node name="BookLeaf_3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999048, -0.043619, 0.000000, 0.043619, 0.999048, 0.000000, 0.000000, 0.000000, 1.000000, -0.09800, 0.06500, 0.00000)
+material = ExtResource("Mat_leaf")
+size = Vector3(0.1500, 0.0200, 0.2440)
+
+[node name="BookLeaf_4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999048, 0.043619, 0.000000, -0.043619, 0.999048, 0.000000, 0.000000, 0.000000, 1.000000, 0.09800, 0.06500, 0.00000)
+material = ExtResource("Mat_leaf")
+size = Vector3(0.1500, 0.0200, 0.2440)
+
+[node name="BookEdge_5" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.05900, 0.00000)
+material = ExtResource("Mat_paper")
+size = Vector3(0.3400, 0.0090, 0.2520)
+
+[node name="BookBoss_6" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.15400, 0.05700, 0.10900)
+material = ExtResource("Mat_brass")
+radius = 0.0120
+height = 0.0650
+sides = 8
+
+[node name="BookBoss_7" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.15400, 0.05700, -0.10900)
+material = ExtResource("Mat_brass")
+radius = 0.0120
+height = 0.0650
+sides = 8
+
+[node name="BookClasp_8" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.18400, 0.02750, 0.00000)
+material = ExtResource("Mat_brass")
+size = Vector3(0.0160, 0.0170, 0.0500)
+
+[node name="BookBoss_9" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.15400, 0.05700, 0.10900)
+material = ExtResource("Mat_brass")
+radius = 0.0120
+height = 0.0650
+sides = 8
+
+[node name="BookBoss_10" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.15400, 0.05700, -0.10900)
+material = ExtResource("Mat_brass")
+radius = 0.0120
+height = 0.0650
+sides = 8
+
+[node name="BookClasp_11" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.18400, 0.02750, 0.00000)
+material = ExtResource("Mat_brass")
+size = Vector3(0.0160, 0.0170, 0.0500)
+
+[node name="Sigil_12" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.09800, 0.07800, 0.00000)
+material = ExtResource("Mat_sigil")
+radius = 0.0520
+height = 0.0040
+sides = 20
+
+[node name="SigilEye_13" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.09800, 0.07800, 0.00000)
+operation = 2
+material = ExtResource("Mat_sigil")
+radius = 0.0410
+height = 0.0120
+sides = 20
+
+[node name="SigilSpoke_14" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.09800, 0.07800, 0.00000)
+material = ExtResource("Mat_sigil")
+size = Vector3(0.0900, 0.0030, 0.0060)
+
+[node name="SigilSpoke_15" type="CSGBox3D" parent="."]
+transform = Transform3D(0.707107, 0.000000, 0.707107, 0.000000, 1.000000, 0.000000, -0.707107, 0.000000, 0.707107, 0.09800, 0.07800, 0.00000)
+material = ExtResource("Mat_sigil")
+size = Vector3(0.0900, 0.0030, 0.0060)
+
+[node name="SigilSpoke_16" type="CSGBox3D" parent="."]
+transform = Transform3D(0.000000, 0.000000, 1.000000, 0.000000, 1.000000, 0.000000, -1.000000, 0.000000, 0.000000, 0.09800, 0.07800, 0.00000)
+material = ExtResource("Mat_sigil")
+size = Vector3(0.0900, 0.0030, 0.0060)
+
+[node name="SigilSpoke_17" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.707107, 0.000000, 0.707107, 0.000000, 1.000000, 0.000000, -0.707107, 0.000000, -0.707107, 0.09800, 0.07800, 0.00000)
+material = ExtResource("Mat_sigil")
+size = Vector3(0.0900, 0.0030, 0.0060)

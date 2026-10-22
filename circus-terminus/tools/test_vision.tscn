@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+
+; See the header of tools/test_vision.gd for why this is a scene and not a
+; --script tool: the bug it covers only exists in the real boot order.
+
+[ext_resource type="Script" path="res://tools/test_vision.gd" id="1_v"]
+
+[node name="TestVision" type="Node"]
+script = ExtResource("1_v")

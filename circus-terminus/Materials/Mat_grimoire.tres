@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhegkidsg4nkj"]
+
+[ext_resource type="Texture2D" uid="uid://dqn008ncj4lud" path="res://Materials/tex_grainN.tres" id="tex_grainN"]
+
+[resource]
+albedo_color = Color(0.11, 0.055, 0.045, 1)
+roughness = 0.68
+normal_enabled = true
+normal_texture = ExtResource("tex_grainN")
+uv1_scale = Vector3(3, 3, 3)
+uv1_triplanar = true

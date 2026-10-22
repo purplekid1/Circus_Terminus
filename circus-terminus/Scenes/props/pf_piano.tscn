@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_linen.tres" id="Mat_linen"]
+[ext_resource type="Material" path="res://Materials/Mat_mahog.tres" id="Mat_mahog"]
+
+[node name="Piano" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="PianoBody_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.6200, -0.0400)
+material = ExtResource("Mat_mahog")
+size = Vector3(1.5000, 1.2400, 0.5400)
+
+[node name="PianoLid_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.2700, -0.0400)
+material = ExtResource("Mat_mahog")
+size = Vector3(1.5600, 0.0600, 0.6200)
+
+[node name="PianoKeybed_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.7200, 0.2900)
+material = ExtResource("Mat_mahog")
+size = Vector3(1.3600, 0.1000, 0.2800)
+
+[node name="PianoKeys_4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.7750, 0.3300)
+material = ExtResource("Mat_linen")
+size = Vector3(1.2400, 0.0200, 0.2000)
+
+[node name="PianoFall_5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.9000, 0.2700)
+material = ExtResource("Mat_mahog")
+size = Vector3(1.3600, 0.2400, 0.0500)
+
+[node name="PianoLeg_6" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.63000, 0.30000, 0.21000)
+material = ExtResource("Mat_mahog")
+radius = 0.0450
+height = 0.6000
+sides = 8
+
+[node name="PianoLeg_7" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.63000, 0.30000, 0.21000)
+material = ExtResource("Mat_mahog")
+radius = 0.0450
+height = 0.6000
+sides = 8
+
+[node name="PianoPedal_8" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.08000, 0.29000)
+material = ExtResource("Mat_brass")
+radius = 0.0120
+height = 0.1600
+sides = 6

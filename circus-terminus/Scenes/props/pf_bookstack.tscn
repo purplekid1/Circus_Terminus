@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_book.tres" id="Mat_book"]
+[ext_resource type="Material" path="res://Materials/Mat_book3.tres" id="Mat_book3"]
+
+[node name="BookStack" type="CSGCombiner3D"]
+
+[node name="Book_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0134, 0.0220, -0.0134)
+material = ExtResource("Mat_book3")
+size = Vector3(0.2200, 0.0420, 0.1584)
+
+[node name="Book_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0128, 0.0670, -0.0128)
+material = ExtResource("Mat_book3")
+size = Vector3(0.2125, 0.0420, 0.1530)
+
+[node name="Book_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0121, 0.1120, -0.0121)
+material = ExtResource("Mat_book3")
+size = Vector3(0.2050, 0.0420, 0.1476)
+
+[node name="Book_4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0115, 0.1570, -0.0114)
+material = ExtResource("Mat_book")
+size = Vector3(0.1975, 0.0420, 0.1422)

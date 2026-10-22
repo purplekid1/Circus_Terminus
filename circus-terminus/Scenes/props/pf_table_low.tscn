@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_walnut.tres" id="Mat_walnut"]
+
+[node name="TableLow" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="TableTop_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.4300, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(1.1000, 0.0600, 0.7000)
+
+[node name="TableApron_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.3400, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.8800, 0.1000, 0.4800)
+
+[node name="TableLeg_3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.45000, 0.20000, -0.25000)
+material = ExtResource("Mat_walnut")
+radius = 0.0450
+height = 0.4000
+sides = 8
+
+[node name="TableLeg_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.45000, 0.20000, -0.25000)
+material = ExtResource("Mat_walnut")
+radius = 0.0450
+height = 0.4000
+sides = 8
+
+[node name="TableLeg_5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.45000, 0.20000, 0.25000)
+material = ExtResource("Mat_walnut")
+radius = 0.0450
+height = 0.4000
+sides = 8
+
+[node name="TableLeg_6" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.45000, 0.20000, 0.25000)
+material = ExtResource("Mat_walnut")
+radius = 0.0450
+height = 0.4000
+sides = 8

@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_label.tres" id="Mat_label"]
+
+[node name="Token" type="CSGCombiner3D"]
+
+[node name="TokenBody_1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.00250, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0280
+height = 0.0050
+sides = 20
+
+[node name="TokenRim_2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.00250, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0280
+height = 0.0062
+sides = 20
+
+[node name="TokenField_3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.00250, 0.00000)
+operation = 2
+material = ExtResource("Mat_brass")
+radius = 0.0245
+height = 0.0075
+sides = 20
+
+[node name="TokenFace_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.00250, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0245
+height = 0.0044
+sides = 20
+
+[node name="TokenHole_5" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.00250, 0.00000)
+operation = 2
+material = ExtResource("Mat_brass")
+size = Vector3(0.0080, 0.0200, 0.0080)
+
+[node name="TokenMark_6" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.00520, 0.01300)
+material = ExtResource("Mat_label")
+size = Vector3(0.0120, 0.0012, 0.0030)
+
+[node name="TokenMark_7" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.00520, -0.01300)
+material = ExtResource("Mat_label")
+size = Vector3(0.0120, 0.0012, 0.0030)

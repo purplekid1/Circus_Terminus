@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3]
+
+; The dining chair, from Models/tablechair/TableChair.fbx. Replaces pf_chair.
+;
+; SCALE 0.22 puts it at 0.48 x 0.91 x 0.44, against the 0.46 x 0.96 x 0.44 CSG
+; chair it replaces -- near enough that every one of the fifteen placements
+; still tucks under the table it was measured for.
+;
+; This one does NOT share the armchair's scale, and should not: the couch and
+; the club chair are one set built from the same model stretched, where a
+; mismatch in seat height reads instantly. A dining chair is a different piece
+; of furniture and is sized against the table instead.
+;
+; The FBX ships a DirectionalLight3D called Sun inside it. Fifteen of those in
+; one house would have flattened the lighting completely; TableChair.fbx.import
+; skips that node. It also maps both the model's materials -- "Wood" and
+; "Material.001" -- onto the single atlas they share.
+;
+; Measured from the mesh VERTICES, not get_aabb(), which through a rotated
+; transform returns the bound of the rotated box and is inflated.
+
+[ext_resource type="PackedScene" path="res://Models/tablechair/TableChair.fbx" id="1_model"]
+
+[sub_resource type="BoxShape3D" id="Shape_chair"]
+size = Vector3(0.477, 0.913, 0.44)
+
+[node name="ChairTable" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_model")]
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0.2532, 0)
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Shape" type="CollisionShape3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4565, 0)
+shape = SubResource("Shape_chair")

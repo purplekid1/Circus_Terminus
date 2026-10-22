@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3]
+
+; The thing in the woods. See Scripts/Stalker.gd for what it does.
+;
+; IT IS BUILT TO BE INVISIBLE. Every mesh here wears Ghost, which is unshaded
+; and 4% opaque, and every mesh has cast_shadow off. Both matter: an unlit
+; body still throws a shadow across the moonlit path, and a walking shadow
+; with nothing casting it gives the whole game away.
+;
+; So what the player actually gets, without the glass, is a smear that only
+; resolves when it crosses something bright. That is deliberate -- fully
+; invisible is unfair, plainly visible makes the magnifier pointless.
+;
+; The SILHOUETTE is the scare, because through the lens that is all there is:
+; a flat red shape. Hence three metres tall, narrow, arms past the knees, and
+; a head a size too small, tilted over.
+;
+; The group must be declared HERE and not only in _ready: VisionTags tags a
+; node when it enters the tree, which is earlier than any script of its own
+; can run.
+
+[ext_resource type="Script" path="res://Scripts/Stalker.gd" id="1_stalk"]
+[ext_resource type="AudioStream" path="res://Audio/sfx/stalker_idle.wav" id="2_idle"]
+
+; 0.45 made a capsule 0.9 m across for a body 0.3 m deep -- three times its
+; own thickness, which is what kept snagging it on trunks the probe then had
+; to report as "wedged". Narrow enough to match the silhouette, wide enough
+; that move_and_slide still resolves cleanly against bark.
+[sub_resource type="CapsuleShape3D" id="Cap_body"]
+radius = 0.32
+height = 2.6
+
+[sub_resource type="StandardMaterial3D" id="Ghost"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.07, 0.06, 0.08, 0.04)
+disable_receive_shadows = true
+
+[sub_resource type="CapsuleMesh" id="Mesh_leg"]
+material = SubResource("Ghost")
+radius = 0.12
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="Mesh_arm"]
+material = SubResource("Ghost")
+radius = 0.09
+height = 1.5
+
+[sub_resource type="BoxMesh" id="Mesh_torso"]
+material = SubResource("Ghost")
+size = Vector3(0.5, 1.1, 0.3)
+
+[sub_resource type="BoxMesh" id="Mesh_shoulder"]
+material = SubResource("Ghost")
+size = Vector3(0.92, 0.14, 0.28)
+
+[sub_resource type="BoxMesh" id="Mesh_head"]
+material = SubResource("Ghost")
+size = Vector3(0.26, 0.36, 0.24)
+
+[node name="Stalker" type="CharacterBody3D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_stalk")
+
+[node name="Body" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+shape = SubResource("Cap_body")
+
+; Sight is traced from here. At the origin it would be looking out of its
+; ankles and every tree root would count as cover.
+[node name="Eye" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.86, 0)
+
+[node name="LegL" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22, 0.9, 0)
+mesh = SubResource("Mesh_leg")
+cast_shadow = 0
+
+[node name="LegR" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22, 0.9, 0)
+mesh = SubResource("Mesh_leg")
+cast_shadow = 0
+
+[node name="Torso" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
+mesh = SubResource("Mesh_torso")
+cast_shadow = 0
+
+[node name="Shoulders" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72, 0)
+mesh = SubResource("Mesh_shoulder")
+cast_shadow = 0
+
+; Hanging to well below the knee. This is the single detail that stops the
+; silhouette reading as a person on stilts.
+[node name="ArmL" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 2, 0)
+mesh = SubResource("Mesh_arm")
+cast_shadow = 0
+
+[node name="ArmR" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 2, 0)
+mesh = SubResource("Mesh_arm")
+cast_shadow = 0
+
+; Rolled 18 degrees. A head held straight reads as a mannequin; a head held
+; over reads as listening.
+[node name="Head" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.951057, -0.309017, 0, 0.309017, 0.951057, 0, 0, 0, 1, 0, 2.96, 0.03)
+mesh = SubResource("Mesh_head")
+cast_shadow = 0
+
+; ITS VOICE, AND THE REASON THE MECHANIC IS FAIR.
+;
+; The player cannot see this thing, so if it were also silent the only way to
+; find one would be to walk the whole level with the lens up -- which is slow,
+; narrow and miserable, and would make the glass a tax rather than a tool.
+; Breathing gives them a reason to raise it at the right moment instead.
+;
+; unit_size is small and max_distance is 34: audible across a glade, gone by
+; the next one, so hearing it means "it is here" and not "there is one
+; somewhere in the woods". Attenuation is INVERSE_SQUARE, the honest one,
+; because the player is going to be judging range by ear and nothing else.
+[node name="Voice" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+stream = ExtResource("2_idle")
+volume_db = -9.0
+unit_size = 4.0
+max_distance = 34.0
+attenuation_model = 0
+bus = &"Sfx"
+autoplay = true

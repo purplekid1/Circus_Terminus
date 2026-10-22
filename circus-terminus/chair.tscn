@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://uvwtfj8foxfu"]
+
+[ext_resource type="PackedScene" uid="uid://dvhiwgev5axq2" path="res://Models/chair/Chair.fbx" id="1_no86n"]
+[ext_resource type="Texture2D" uid="uid://c1expjyoobqtu" path="res://Models/chair/LeatherMat.png" id="2_humtb"]
+[ext_resource type="Texture2D" uid="uid://pr8ttfb0ifnd" path="res://Models/chair/LeatherNormal.png" id="3_whm26"]
+[ext_resource type="Texture2D" uid="uid://na65k4d02jxh" path="res://Models/chair/LeatherRough.png" id="4_ylwc1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l25lx"]
+albedo_texture = ExtResource("2_humtb")
+metallic_specular = 0.35
+roughness_texture = ExtResource("4_ylwc1")
+normal_enabled = true
+normal_texture = ExtResource("3_whm26")
+
+[node name="Chair" unique_id=1869589105 instance=ExtResource("1_no86n")]
+
+[node name="Chair" parent="." index="0" unique_id=573385013]
+material_override = SubResource("StandardMaterial3D_l25lx")

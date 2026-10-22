@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_velvet.tres" id="Mat_velvet"]
+[ext_resource type="Material" path="res://Materials/Mat_walnut.tres" id="Mat_walnut"]
+
+[node name="Chair" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="Seat_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.4500, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.4600, 0.0500, 0.4400)
+
+[node name="SeatPad_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.4950, 0.0000)
+material = ExtResource("Mat_velvet")
+size = Vector3(0.4000, 0.0500, 0.3800)
+
+[node name="ChairBack_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.7900, -0.2000)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.4000, 0.5200, 0.0400)
+
+[node name="ChairPost_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.21000, 0.67000, -0.20000)
+material = ExtResource("Mat_walnut")
+radius = 0.0250
+height = 0.9600
+sides = 8
+
+[node name="ChairPost_5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.21000, 0.67000, -0.20000)
+material = ExtResource("Mat_walnut")
+radius = 0.0250
+height = 0.9600
+sides = 8
+
+[node name="ChairLeg_6" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.20000, 0.22500, 0.19000)
+material = ExtResource("Mat_walnut")
+radius = 0.0250
+height = 0.4500
+sides = 8
+
+[node name="ChairLeg_7" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.20000, 0.22500, 0.19000)
+material = ExtResource("Mat_walnut")
+radius = 0.0250
+height = 0.4500
+sides = 8

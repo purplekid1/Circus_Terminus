@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ck0gwqf276cim"]
+
+[ext_resource type="Script" uid="uid://dqbydwbu4rshe" path="res://Scripts/ItemData.gd" id="1_item"]
+[ext_resource type="PackedScene" path="res://Scenes/items/it_magnifier.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_item")
+id = "magnifier"
+display_name = "Magnifying Glass"
+description = "Someone left it on the counter. It shows more than it should."
+color = Color(0.62, 0.95, 0.88, 1)
+model = ExtResource("2_model")
+icon_lift = 0.01
+is_equipment = true

@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cicajof5lm82l"]
+
+[ext_resource type="Texture2D" uid="uid://cltmuyxipkfj5" path="res://Materials/tex_coarseR.tres" id="tex_coarseR"]
+
+[resource]
+albedo_color = Color(0.52, 0.53, 0.5, 1)
+metallic = 0.55
+roughness = 0.34
+normal_enabled = true
+normal_scale = 0.3
+normal_texture = ExtResource("tex_coarseR")
+uv1_scale = Vector3(0.8, 0.8, 0.8)
+uv1_triplanar = true

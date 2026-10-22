@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+; The skin for Models/chair/Chair.fbx.
+;
+; Wired to the model through the IMPORTER, not by a script and not by a
+; material_override in the prop scene: Chair.fbx.import maps its "Leather"
+; material to this file, so the mesh arrives already wearing it and anything
+; that instances the model gets it for free. Re-exporting the .fbx does not
+; disturb it.
+
+[ext_resource type="Texture2D" path="res://Models/chair/LeatherMat.png" id="1_albedo"]
+[ext_resource type="Texture2D" path="res://Models/chair/LeatherNormal.png" id="2_normal"]
+[ext_resource type="Texture2D" path="res://Models/chair/LeatherRough.png" id="3_rough"]
+
+[resource]
+resource_name = "Leather"
+albedo_texture = ExtResource("1_albedo")
+roughness_texture = ExtResource("3_rough")
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource("2_normal")

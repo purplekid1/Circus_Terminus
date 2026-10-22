@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://u6njljw7d38b"]
+
+[ext_resource type="Shader" uid="uid://du250v1ugjyd1" path="res://Scripts/ground.gdshader" id="1_g"]
+
+[resource]
+resource_name = "Mat_asphalt"
+render_priority = 0
+shader = ExtResource("1_g")
+shader_parameter/pattern = 0
+shader_parameter/tint_a = Color(0.055, 0.056, 0.06, 1)
+shader_parameter/tint_b = Color(0.085, 0.086, 0.092, 1)
+shader_parameter/joint_tint = Color(0.04, 0.04, 0.045, 1)
+shader_parameter/tile_size = 1.0
+shader_parameter/joint_width = 0.0
+shader_parameter/roughness_lo = 0.62
+shader_parameter/roughness_hi = 0.95
+shader_parameter/bump = 0.35
+shader_parameter/weathering = 0.45
+shader_parameter/weather_scale = 0.035
+shader_parameter/weather_tint = Color(0.05, 0.055, 0.06, 1)

@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cn3047dwomwx5"]
+
+[ext_resource type="Shader" uid="uid://bvuxl1d7uk8nu" path="res://Vision/vision_tag.gdshader" id="1_tag"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_tag")

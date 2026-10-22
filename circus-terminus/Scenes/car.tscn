@@ -1,0 +1,233 @@
+[gd_scene format=3 uid="uid://ccarintro001"]
+
+[ext_resource type="Script" uid="uid://ceej04m48jh06" path="res://Scripts/CarArrival.gd" id="1_car"]
+[ext_resource type="PackedScene" uid="uid://dr8yfy04qsblt" path="res://Models/car/Car.fbx" id="2_model"]
+[ext_resource type="Material" uid="uid://bax8cljpu7bdr" path="res://Materials/Mat_carnavy.tres" id="3_navy"]
+[ext_resource type="Material" uid="uid://cv4mu7gcia67e" path="res://Materials/Mat_carpaint.tres" id="5_black"]
+[ext_resource type="Material" uid="uid://n4wpy3a4olo5" path="res://Materials/Mat_tyre.tres" id="6_tyre"]
+[ext_resource type="Material" uid="uid://d1qcmaep7he52" path="res://Materials/Mat_chrome.tres" id="7_chrome"]
+
+[sub_resource type="Animation" id="Anim_approach"]
+resource_name = "approach"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:approach")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.271, 0.488, 0.657, 0.784, 0.875, 0.936, 0.973, 0.992, 0.999, 1.0]
+}
+
+[sub_resource type="Animation" id="Anim_settle"]
+resource_name = "settle"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TailGlow:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.0, 1.4]
+}
+
+[sub_resource type="Animation" id="Anim_shutdown"]
+resource_name = "shutdown"
+length = 2.65
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HeadBeamL:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [9.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HeadBeamR:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [9.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TailGlow:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.4, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CabinGlow:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 0.8, 2.2, 2.65),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.9, 0.9, 0.0]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.8, 2.65),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_announce_arrived"
+}, {
+"args": [],
+"method": &"_announce_closed"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="Lib_car"]
+_data = {
+&"approach": SubResource("Anim_approach"),
+&"settle": SubResource("Anim_settle"),
+&"shutdown": SubResource("Anim_shutdown")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6js8"]
+albedo_color = Color(0.6359895, 0.7592033, 0.96739465, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.26
+
+[sub_resource type="Gradient" id="Grad_dust"]
+offsets = PackedFloat32Array(0, 0.25, 1)
+colors = PackedColorArray(0.5, 0.47, 0.42, 0, 0.45, 0.42, 0.37, 0.5, 0.35, 0.33, 0.3, 0)
+
+[sub_resource type="GradientTexture1D" id="Tex_dust"]
+gradient = SubResource("Grad_dust")
+
+[sub_resource type="ParticleProcessMaterial" id="Proc_dust"]
+lifetime_randomness = 0.6
+emission_shape = 3
+emission_box_extents = Vector3(1.15, 0.05, 0.3)
+direction = Vector3(0, 0.4, 1)
+spread = 40.0
+initial_velocity_min = 0.4
+initial_velocity_max = 1.8
+gravity = Vector3(0, 0.12, 0)
+damping_min = 0.6
+damping_max = 1.6
+scale_min = 0.6
+scale_max = 2.6
+color_ramp = SubResource("Tex_dust")
+turbulence_enabled = true
+turbulence_noise_strength = 0.5
+turbulence_noise_scale = 1.6
+
+[sub_resource type="StandardMaterial3D" id="Mat_dustmote"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.5, 0.48, 0.44, 1)
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="Mesh_dustmote"]
+material = SubResource("Mat_dustmote")
+size = Vector2(0.55, 0.55)
+
+[node name="Car" type="Node3D" unique_id=860335673]
+script = ExtResource("1_car")
+
+[node name="Anim" type="AnimationPlayer" parent="." unique_id=2071006042]
+libraries/ = SubResource("Lib_car")
+
+[node name="Body" parent="." unique_id=418115647 instance=ExtResource("2_model")]
+transform = Transform3D(0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, 0.2894, 0)
+
+[node name="Cube" parent="Body" index="0" unique_id=1807685762]
+surface_material_override/0 = ExtResource("3_navy")
+surface_material_override/1 = SubResource("StandardMaterial3D_s6js8")
+
+[node name="Cube_001" parent="Body" index="1" unique_id=526625067]
+surface_material_override/0 = ExtResource("5_black")
+
+[node name="Cylinder" parent="Body" index="2" unique_id=1366917784]
+surface_material_override/0 = ExtResource("6_tyre")
+surface_material_override/2 = ExtResource("7_chrome")
+
+[node name="Cylinder_001" parent="Body" index="3" unique_id=1873155565]
+surface_material_override/0 = ExtResource("5_black")
+
+[node name="HeadBeamL" type="SpotLight3D" parent="." unique_id=247342996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46, 0.96, -2.12)
+light_color = Color(1, 0.95, 0.85, 1)
+light_energy = 9.0
+light_volumetric_fog_energy = 3.0
+shadow_enabled = true
+shadow_bias = 0.05
+spot_range = 42.0
+spot_attenuation = 1.1
+spot_angle = 31.0
+spot_angle_attenuation = 0.7
+
+[node name="HeadBeamR" type="SpotLight3D" parent="." unique_id=1164777728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46, 0.96, -2.12)
+light_color = Color(1, 0.95, 0.85, 1)
+light_energy = 9.0
+light_volumetric_fog_energy = 3.0
+spot_range = 42.0
+spot_attenuation = 1.1
+spot_angle = 31.0
+spot_angle_attenuation = 0.7
+
+[node name="TailGlow" type="OmniLight3D" parent="." unique_id=286568980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1610185, 2.2255545)
+light_color = Color(1, 0.16, 0.1, 1)
+light_energy = 1.4
+omni_range = 3.4
+omni_attenuation = 2.0
+
+[node name="CabinGlow" type="OmniLight3D" parent="." unique_id=664238110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32, 1.15)
+light_color = Color(1, 0.86, 0.6, 1)
+light_energy = 0.0
+omni_range = 2.6
+omni_attenuation = 2.4
+
+[node name="Dust" type="GPUParticles3D" parent="." unique_id=1855443902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 2.6)
+emitting = false
+amount = 60
+lifetime = 2.4
+randomness = 1.0
+visibility_aabb = AABB(-6, -1, -6, 12, 6, 12)
+process_material = SubResource("Proc_dust")
+draw_pass_1 = SubResource("Mesh_dustmote")
+
+[editable path="Body"]

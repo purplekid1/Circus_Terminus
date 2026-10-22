@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_enamel.tres" id="Mat_enamel"]
+[ext_resource type="Material" path="res://Materials/Mat_leather.tres" id="Mat_leather"]
+
+[node name="FuelCan" type="CSGCombiner3D"]
+
+[node name="CanBody_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.14000, 0.00000)
+material = ExtResource("Mat_enamel")
+size = Vector3(0.1700, 0.2800, 0.1150)
+
+[node name="CanShoulder_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.26800, 0.00000)
+material = ExtResource("Mat_enamel")
+size = Vector3(0.1420, 0.0320, 0.0890)
+
+[node name="CanSeam_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.14000, 0.00000)
+material = ExtResource("Mat_enamel")
+size = Vector3(0.1780, 0.2716, 0.0100)
+
+[node name="CanBrace_4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.848048, 0.529919, 0.000000, -0.529919, 0.848048, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.13440, -0.05950)
+material = ExtResource("Mat_enamel")
+size = Vector3(0.0130, 0.2016, 0.0080)
+
+[node name="CanBrace_5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.848048, 0.529919, 0.000000, -0.529919, 0.848048, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.13440, 0.05950)
+material = ExtResource("Mat_enamel")
+size = Vector3(0.0130, 0.2016, 0.0080)
+
+[node name="CanBrace_6" type="CSGBox3D" parent="."]
+transform = Transform3D(0.848048, -0.529919, 0.000000, 0.529919, 0.848048, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.13440, -0.05950)
+material = ExtResource("Mat_enamel")
+size = Vector3(0.0130, 0.2016, 0.0080)
+
+[node name="CanBrace_7" type="CSGBox3D" parent="."]
+transform = Transform3D(0.848048, -0.529919, 0.000000, 0.529919, 0.848048, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.13440, 0.05950)
+material = ExtResource("Mat_enamel")
+size = Vector3(0.0130, 0.2016, 0.0080)
+
+[node name="CanCap_8" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.04700, 0.29300, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0220
+height = 0.0200
+sides = 12
+
+[node name="CanCapNut_9" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.04700, 0.30600, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0120
+height = 0.0100
+sides = 6
+
+[node name="CanHandle_10" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.01400, 0.31200, 0.00000)
+material = ExtResource("Mat_enamel")
+size = Vector3(0.0900, 0.0120, 0.0140)
+
+[node name="CanHandleLeg_11" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.02800, 0.29600, 0.00000)
+material = ExtResource("Mat_enamel")
+size = Vector3(0.0120, 0.0360, 0.0140)
+
+[node name="CanHandleLeg_12" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.05600, 0.29600, 0.00000)
+material = ExtResource("Mat_enamel")
+size = Vector3(0.0120, 0.0360, 0.0140)
+
+[node name="CanGrip_13" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.01400, 0.31200, 0.00000)
+material = ExtResource("Mat_leather")
+size = Vector3(0.0520, 0.0160, 0.0180)

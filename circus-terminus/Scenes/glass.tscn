@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://biyhnctvc03ul"]
+
+[ext_resource type="Material" uid="uid://b6mfwk7xilqs1" path="res://Vision/VisionMaterial.tres" id="1_pyhl2"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_utj0p"]
+height = 0.001
+
+[sub_resource type="Animation" id="Animation_pyhl2"]
+resource_name = "Put_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2, -2, -1), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(3.1415927, 0, 0), Vector3(4.537856, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x0sly"]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a2nsn"]
+_data = {
+&"Put_up": SubResource("Animation_pyhl2"),
+&"RESET": SubResource("Animation_x0sly")
+}
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g4v7s"]
+height = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21xkr"]
+albedo_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+metallic = 1.0
+metallic_specular = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yf5fn"]
+top_radius = 0.4
+bottom_radius = 0.4
+height = 0.06
+
+[sub_resource type="Gradient" id="Gradient_d1ilt"]
+colors = PackedColorArray(0.23379248, 0.14519373, 0.0036688147, 1, 0.07827217, 0.051336206, 0.01519313, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hptm8"]
+noise_type = 2
+frequency = 0.0032
+fractal_octaves = 6
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pyhl2"]
+noise = SubResource("FastNoiseLite_hptm8")
+color_ramp = SubResource("Gradient_d1ilt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_344ge"]
+albedo_texture = SubResource("NoiseTexture2D_pyhl2")
+metallic = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_d0u6y"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 1.0
+
+[node name="Lens" type="Node3D" unique_id=518207044]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1703257912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1)
+material_override = ExtResource("1_pyhl2")
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_utj0p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MeshInstance3D" unique_id=50236094]
+libraries/ = SubResource("AnimationLibrary_a2nsn")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="MeshInstance3D" unique_id=1881970578]
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_g4v7s")
+material = SubResource("StandardMaterial3D_21xkr")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="MeshInstance3D/CSGMesh3D2" unique_id=161800470]
+material_override = SubResource("StandardMaterial3D_21xkr")
+cast_shadow = 0
+operation = 2
+mesh = SubResource("CylinderMesh_yf5fn")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="MeshInstance3D" unique_id=938634767]
+transform = Transform3D(1, 0, 0, 0, -4.371138e-08, -1, 0, 1, -4.371138e-08, 0, 0.035004854, -0.94794834)
+material_override = SubResource("StandardMaterial3D_344ge")
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_d0u6y")

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dan7xr8qug2k2"]
+
+[ext_resource type="Script" uid="uid://dqbydwbu4rshe" path="res://Scripts/ItemData.gd" id="1_item"]
+[ext_resource type="PackedScene" path="res://Scenes/items/it_fuse.tscn" id="2_model"]
+
+[resource]
+script = ExtResource("1_item")
+id = "fuse"
+display_name = "Ceramic Fuse"
+description = "Heavy, cold, and someone hid it."
+color = Color(0.6, 0.72, 1, 1)
+model = ExtResource("2_model")
+icon_distance = 0.15
+icon_lift = 0.014
+stackable = true
+max_stack = 4

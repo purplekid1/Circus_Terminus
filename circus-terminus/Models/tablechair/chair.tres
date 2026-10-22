@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+; The skin for Models/tablechair/TableChair.fbx.
+;
+; ONE material for BOTH of the model's surfaces. The FBX names them "Wood" and
+; "Material.001" and gives them different diffuse tints, but both are mapped to
+; the same atlas and the atlas already carries the colour -- the red seat in
+; one corner of it, the burl for the frame across the rest. So the tints would
+; only fight the texture. A neutral base lets the atlas do the work.
+;
+; No normal or roughness maps came with this one, so roughness is a flat value:
+; low-ish, because polished wood and tight upholstery both catch a little.
+
+[ext_resource type="Texture2D" path="res://Models/tablechair/Chair.png" id="1_atlas"]
+
+[resource]
+resource_name = "ChairAtlas"
+albedo_texture = ExtResource("1_atlas")
+roughness = 0.62

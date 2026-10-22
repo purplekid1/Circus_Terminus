@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_iron.tres" id="Mat_iron"]
+[ext_resource type="Material" path="res://Materials/Mat_wood.tres" id="Mat_wood"]
+
+[node name="ShelfRack" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="RackPost_1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -1.46000, 0.95000, -0.21000)
+material = ExtResource("Mat_iron")
+radius = 0.0250
+height = 1.9000
+sides = 6
+
+[node name="RackPost_2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 1.46000, 0.95000, -0.21000)
+material = ExtResource("Mat_iron")
+radius = 0.0250
+height = 1.9000
+sides = 6
+
+[node name="RackPost_3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -1.46000, 0.95000, 0.21000)
+material = ExtResource("Mat_iron")
+radius = 0.0250
+height = 1.9000
+sides = 6
+
+[node name="RackPost_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 1.46000, 0.95000, 0.21000)
+material = ExtResource("Mat_iron")
+radius = 0.0250
+height = 1.9000
+sides = 6
+
+[node name="RackShelf_5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.3000, 0.0000)
+material = ExtResource("Mat_wood")
+size = Vector3(3.0000, 0.0400, 0.5000)
+
+[node name="RackShelf_6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.8200, 0.0000)
+material = ExtResource("Mat_wood")
+size = Vector3(3.0000, 0.0400, 0.5000)
+
+[node name="RackShelf_7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.3400, 0.0000)
+material = ExtResource("Mat_wood")
+size = Vector3(3.0000, 0.0400, 0.5000)
+
+[node name="RackShelf_8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.8600, 0.0000)
+material = ExtResource("Mat_wood")
+size = Vector3(3.0000, 0.0400, 0.5000)

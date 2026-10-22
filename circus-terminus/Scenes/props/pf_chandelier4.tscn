@@ -1,0 +1,139 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_candle.tres" id="Mat_candle"]
+
+[node name="Chandelier4" type="CSGCombiner3D"]
+
+[node name="ChandChain_1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, -0.40000, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0120
+height = 0.8000
+sides = 6
+
+[node name="ChandHub_2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, -0.80000, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.1300
+height = 0.1600
+sides = 10
+
+[node name="ChandFinial_3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, -0.94000, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0550
+height = 0.1600
+sides = 8
+
+[node name="ChandArm_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.000000, 1.000000, 0.000000, -0.000000, 0.000000, -1.000000, -1.000000, 0.000000, 0.000000, 0.21000, -0.74000, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0160
+height = 0.4200
+sides = 6
+
+[node name="ChandRiser_5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.42000, -0.71000, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0140
+height = 0.1000
+sides = 6
+
+[node name="ChandCup_6" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.42000, -0.65000, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0500
+height = 0.0500
+sides = 8
+
+[node name="ChandCandle_7" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.42000, -0.53000, 0.00000)
+material = ExtResource("Mat_candle")
+radius = 0.0220
+height = 0.2000
+sides = 8
+
+[node name="ChandArm_8" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 0.000000, -1.000000, 0.000000, 1.000000, 0.000000, 0.00000, -0.74000, 0.21000)
+material = ExtResource("Mat_brass")
+radius = 0.0160
+height = 0.4200
+sides = 6
+
+[node name="ChandRiser_9" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, -0.71000, 0.42000)
+material = ExtResource("Mat_brass")
+radius = 0.0140
+height = 0.1000
+sides = 6
+
+[node name="ChandCup_10" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, -0.65000, 0.42000)
+material = ExtResource("Mat_brass")
+radius = 0.0500
+height = 0.0500
+sides = 8
+
+[node name="ChandCandle_11" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, -0.53000, 0.42000)
+material = ExtResource("Mat_candle")
+radius = 0.0220
+height = 0.2000
+sides = 8
+
+[node name="ChandArm_12" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.000000, -1.000000, 0.000000, 0.000000, 0.000000, -1.000000, 1.000000, 0.000000, 0.000000, -0.21000, -0.74000, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0160
+height = 0.4200
+sides = 6
+
+[node name="ChandRiser_13" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.42000, -0.71000, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0140
+height = 0.1000
+sides = 6
+
+[node name="ChandCup_14" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.42000, -0.65000, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0500
+height = 0.0500
+sides = 8
+
+[node name="ChandCandle_15" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.42000, -0.53000, 0.00000)
+material = ExtResource("Mat_candle")
+radius = 0.0220
+height = 0.2000
+sides = 8
+
+[node name="ChandArm_16" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-1.000000, -0.000000, 0.000000, 0.000000, -0.000000, -1.000000, 0.000000, -1.000000, 0.000000, -0.00000, -0.74000, -0.21000)
+material = ExtResource("Mat_brass")
+radius = 0.0160
+height = 0.4200
+sides = 6
+
+[node name="ChandRiser_17" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.00000, -0.71000, -0.42000)
+material = ExtResource("Mat_brass")
+radius = 0.0140
+height = 0.1000
+sides = 6
+
+[node name="ChandCup_18" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.00000, -0.65000, -0.42000)
+material = ExtResource("Mat_brass")
+radius = 0.0500
+height = 0.0500
+sides = 8
+
+[node name="ChandCandle_19" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.00000, -0.53000, -0.42000)
+material = ExtResource("Mat_candle")
+radius = 0.0220
+height = 0.2000
+sides = 8

@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_glass.tres" id="Mat_glass"]
+[ext_resource type="Material" path="res://Materials/Mat_walnut.tres" id="Mat_walnut"]
+
+[node name="Magnifier" type="CSGCombiner3D"]
+
+[node name="LensRim_1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.03000, 0.00900, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0580
+height = 0.0170
+sides = 24
+
+[node name="LensRimEye_2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.03000, 0.00900, 0.00000)
+operation = 2
+material = ExtResource("Mat_brass")
+radius = 0.0490
+height = 0.0510
+sides = 24
+
+[node name="LensGlass_3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.03000, 0.00900, 0.00000)
+material = ExtResource("Mat_glass")
+radius = 0.0500
+height = 0.0200
+sides = 24
+
+[node name="LensNeck_4" type="CSGBox3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.03600, 0.00900, 0.00000)
+material = ExtResource("Mat_brass")
+size = Vector3(0.0320, 0.0150, 0.0210)
+
+[node name="LensFerrule_5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.000000, -1.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.05900, 0.00900, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0130
+height = 0.0200
+sides = 12
+
+[node name="LensHandle_6" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.000000, -1.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.09900, 0.00900, 0.00000)
+material = ExtResource("Mat_walnut")
+radius = 0.0115
+height = 0.0640
+sides = 12
+
+[node name="LensSwell_7" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.000000, -1.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.11400, 0.00900, 0.00000)
+material = ExtResource("Mat_walnut")
+radius = 0.0145
+height = 0.0220
+sides = 12
+
+[node name="LensButt_8" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1330, 0.0090, 0.0000)
+material = ExtResource("Mat_brass")
+radius = 0.0125
+radial_segments = 12
+rings = 6

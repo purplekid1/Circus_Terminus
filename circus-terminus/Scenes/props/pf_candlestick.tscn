@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_candle.tres" id="Mat_candle"]
+
+[node name="Candlestick" type="CSGCombiner3D"]
+
+[node name="StickFoot_1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.01200, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0450
+height = 0.0240
+sides = 8
+
+[node name="StickStem_2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.08000, 0.00000)
+material = ExtResource("Mat_brass")
+radius = 0.0140
+height = 0.1600
+sides = 6
+
+[node name="Candle_3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.25000, 0.00000)
+material = ExtResource("Mat_candle")
+radius = 0.0180
+height = 0.1800
+sides = 8

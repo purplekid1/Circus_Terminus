@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_iron.tres" id="Mat_iron"]
+[ext_resource type="Material" path="res://Materials/Mat_wood.tres" id="Mat_wood"]
+
+[node name="Barrel" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="BarrelBody_1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.43000, 0.00000)
+material = ExtResource("Mat_wood")
+radius = 0.3200
+height = 0.8600
+sides = 12
+
+[node name="BarrelHoop_2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.17200, 0.00000)
+material = ExtResource("Mat_iron")
+radius = 0.3350
+height = 0.0500
+sides = 12
+
+[node name="BarrelHoop_3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.68800, 0.00000)
+material = ExtResource("Mat_iron")
+radius = 0.3350
+height = 0.0500
+sides = 12

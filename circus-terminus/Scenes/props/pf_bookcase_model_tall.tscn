@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="ArrayMesh" path="res://Meshes/bookshelf_case.res" id="1_case"]
+[ext_resource type="ArrayMesh" path="res://Meshes/bookshelf_books_tall.res" id="2_books"]
+[ext_resource type="Material" path="res://Materials/Mat_walnut.tres" id="3_walnut"]
+[ext_resource type="Material" path="res://Materials/Mat_bookspine.tres" id="4_spine"]
+[ext_resource type="Material" path="res://Materials/Mat_bookpage.tres" id="5_page"]
+
+[sub_resource type="BoxShape3D" id="Box_case"]
+size = Vector3(3.2000, 2.0995, 0.5997)
+
+[node name="BookcaseModelTall" type="Node3D"]
+
+[node name="Model" type="Node3D" parent="."]
+transform = Transform3D(0, 0, -0.496817, 0, 0.496817, 0, 0.496817, 0, 0, 0, 0.0040, 0.3066)
+
+[node name="Case" type="MeshInstance3D" parent="Model"]
+mesh = ExtResource("1_case")
+material_override = ExtResource("3_walnut")
+
+[node name="Books" type="MeshInstance3D" parent="Model"]
+mesh = ExtResource("2_books")
+surface_material_override/0 = ExtResource("4_spine")
+surface_material_override/1 = ExtResource("5_page")
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Box" type="CollisionShape3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0537, 0.0798)
+shape = SubResource("Box_case")

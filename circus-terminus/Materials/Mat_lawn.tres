@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://xu2fapwj8of2"]
+
+[ext_resource type="Shader" uid="uid://du250v1ugjyd1" path="res://Scripts/ground.gdshader" id="1_g"]
+
+[resource]
+resource_name = "Mat_lawn"
+render_priority = 0
+shader = ExtResource("1_g")
+shader_parameter/pattern = 3
+shader_parameter/tint_a = Color(0.055, 0.105, 0.045, 1)
+shader_parameter/tint_b = Color(0.085, 0.135, 0.055, 1)
+shader_parameter/joint_tint = Color(0.03, 0.05, 0.025, 1)
+shader_parameter/tile_size = 1.0
+shader_parameter/joint_width = 0.0
+shader_parameter/roughness_lo = 0.92
+shader_parameter/roughness_hi = 1.0
+shader_parameter/bump = 0.6
+shader_parameter/weathering = 0.55
+shader_parameter/weather_scale = 0.025
+shader_parameter/weather_tint = Color(0.1, 0.09, 0.05, 1)

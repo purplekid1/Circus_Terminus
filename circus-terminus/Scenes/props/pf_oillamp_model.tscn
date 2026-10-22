@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3]
+
+; The oil lamp, from Models/oillamp/OilLamp.fbx. Replaces pf_oillamp.
+;
+; NO TEXTURE WITH THIS ONE EITHER -- it reuses the house materials, the same
+; way the wall light does. The FBX ships its meshes with no material assigned
+; at all (Godot says "Parameter material is null" on import, which is exactly
+; that and is harmless), so all four are assigned here:
+;
+;   base and fount   Mat_brass, the brass the whole house is fitted out in
+;   chimney          Mat_glass
+;   wick             Mat_lamp, the emissive one, so a lit lamp reads as lit
+;   winder           Mat_brass
+;
+; Assigned on an editable instance rather than through the importer, because
+; there are no material names to map -- see Scenes/props/pf_sconce_lamp.tscn.
+;
+; SCALE 0.09 puts it at 0.18 x 0.53 x 0.18, against the CSG lamp it replaces,
+; which was 0.22 across the shade and 0.53 tall. The model already has its
+; origin on the base and centred, so there is no offset to correct, and it is
+; near enough radially symmetric that no yaw matters.
+;
+; No collider. The lamp it replaces had none either -- these stand on tables
+; and the player never walks into one.
+
+[ext_resource type="PackedScene" path="res://Models/oillamp/OilLamp.fbx" id="1_model"]
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="2_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_glass.tres" id="3_glass"]
+[ext_resource type="Material" path="res://Materials/Mat_lamp.tres" id="4_lamp"]
+
+[node name="OilLampModel" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_model")]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0)
+
+[node name="Cylinder" parent="Model" index="0"]
+surface_material_override/0 = ExtResource("2_brass")
+
+[node name="Cylinder_001" parent="Model" index="1"]
+surface_material_override/0 = ExtResource("3_glass")
+
+[node name="Cylinder_002" parent="Model" index="2"]
+surface_material_override/0 = ExtResource("4_lamp")
+
+[node name="Cylinder_003" parent="Model" index="3"]
+surface_material_override/0 = ExtResource("2_brass")
+
+[editable path="Model"]

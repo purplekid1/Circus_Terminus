@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_copper.tres" id="Mat_copper"]
+[ext_resource type="Material" path="res://Materials/Mat_enamel.tres" id="Mat_enamel"]
+[ext_resource type="Material" path="res://Materials/Mat_label.tres" id="Mat_label"]
+[ext_resource type="Material" path="res://Materials/Mat_steel.tres" id="Mat_steel"]
+
+[node name="Battery" type="CSGCombiner3D"]
+
+[node name="CellBody_1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.02500, 0.00000)
+material = ExtResource("Mat_steel")
+radius = 0.0130
+height = 0.0500
+sides = 14
+
+[node name="CellLabel_2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.02300, 0.00000)
+material = ExtResource("Mat_enamel")
+radius = 0.0134
+height = 0.0300
+sides = 14
+
+[node name="CellBand_3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.03600, 0.00000)
+material = ExtResource("Mat_label")
+radius = 0.0136
+height = 0.0050
+sides = 14
+
+[node name="CellRim_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.04850, 0.00000)
+material = ExtResource("Mat_steel")
+radius = 0.0127
+height = 0.0050
+sides = 14
+
+[node name="CellStud_5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 0.05300, 0.00000)
+material = ExtResource("Mat_copper")
+radius = 0.0052
+height = 0.0050
+sides = 10

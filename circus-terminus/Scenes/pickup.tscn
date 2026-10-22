@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq2ypkxv8ltd3"]
+
+[ext_resource type="Script" path="res://Scripts/Pickup.gd" id="1_pick"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pick"]
+size = Vector3(0.3, 0.22, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pick"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Pickup" type="Node3D" groups=["items"]]
+script = ExtResource("1_pick")
+prompt = "Take"
+
+[node name="Body" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
+shape = SubResource("BoxShape3D_pick")
+
+[node name="Visual" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
+
+[node name="Fallback" type="MeshInstance3D" parent="Visual"]
+cast_shadow = 0
+mesh = SubResource("BoxMesh_pick")

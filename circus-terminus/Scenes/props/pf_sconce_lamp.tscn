@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c4cpl7hkvbdmf"]
+
+[ext_resource type="PackedScene" uid="uid://vjwlir08cs4r" path="res://Models/walllight/WallLight.fbx" id="1_model"]
+[ext_resource type="Material" uid="uid://dskk51p7s52fm" path="res://Materials/Mat_brass.tres" id="2_brass"]
+[ext_resource type="Material" uid="uid://bc35gal6hojrn" path="res://Materials/Mat_lamp.tres" id="3_lamp"]
+[ext_resource type="Material" uid="uid://c7tb7vf1v8v05" path="res://Materials/Mat_glass.tres" id="4_hqqdl"]
+[ext_resource type="Material" uid="uid://4f0rcpr525ri" path="res://Materials/Mat_gild.tres" id="4_qolw4"]
+
+[node name="SconceLamp" type="Node3D" unique_id=578095148]
+
+[node name="Model" parent="." unique_id=580448600 instance=ExtResource("1_model")]
+transform = Transform3D(0, 0, -0.2223, 0, 0.2223, 0, 0.2223, 0, 0, 0, 0, 0)
+
+[node name="Cube" parent="Model" index="0" unique_id=1142453343]
+material_override = ExtResource("2_brass")
+surface_material_override/0 = ExtResource("2_brass")
+
+[node name="Cylinder" parent="Model" index="1" unique_id=77376868]
+material_override = ExtResource("2_brass")
+surface_material_override/0 = ExtResource("2_brass")
+
+[node name="Cylinder_001" parent="Model" index="2" unique_id=405424009]
+surface_material_override/0 = ExtResource("2_brass")
+
+[node name="Cylinder_002" parent="Model" index="3" unique_id=2092556662]
+material_override = ExtResource("4_hqqdl")
+surface_material_override/0 = ExtResource("4_hqqdl")
+
+[node name="Cylinder_003" parent="Model" index="4" unique_id=1968006912]
+surface_material_override/0 = ExtResource("3_lamp")
+
+[node name="Sphere" parent="Model" index="5" unique_id=905947558]
+surface_material_override/0 = ExtResource("4_qolw4")
+
+[editable path="Model"]

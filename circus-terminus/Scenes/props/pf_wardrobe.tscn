@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_mahog.tres" id="Mat_mahog"]
+[ext_resource type="Material" path="res://Materials/Mat_walnut.tres" id="Mat_walnut"]
+
+[node name="Wardrobe" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="WardBody_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.1000, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(1.5000, 2.2000, 0.6600)
+
+[node name="WardDoor_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3750, 1.1400, 0.3300)
+material = ExtResource("Mat_mahog")
+size = Vector3(0.7000, 1.8600, 0.0400)
+
+[node name="WardDoor_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3750, 1.1400, 0.3300)
+material = ExtResource("Mat_mahog")
+size = Vector3(0.7000, 1.8600, 0.0400)
+
+[node name="WardCornice_4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 2.2500, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(1.6200, 0.1200, 0.7600)
+
+[node name="WardPlinth_5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.0700, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(1.5600, 0.1400, 0.7000)
+
+[node name="WardKnob_6" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.06000, 1.10000, 0.36000)
+material = ExtResource("Mat_brass")
+radius = 0.0220
+height = 0.0600
+sides = 8
+
+[node name="WardKnob_7" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.06000, 1.10000, 0.36000)
+material = ExtResource("Mat_brass")
+radius = 0.0220
+height = 0.0600
+sides = 8

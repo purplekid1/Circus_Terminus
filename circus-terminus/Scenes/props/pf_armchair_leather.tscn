@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://chsc8u1dnjgkn"]
+
+[ext_resource type="PackedScene" uid="uid://dvhiwgev5axq2" path="res://Models/chair/Chair.fbx" id="1_model"]
+
+[sub_resource type="BoxShape3D" id="Shape_chair"]
+size = Vector3(1.0100098, 0.77980226, 0.86239624)
+
+[node name="ArmchairLeather" type="Node3D" unique_id=1448976556]
+
+[node name="Model" parent="." unique_id=390692616 instance=ExtResource("1_model")]
+transform = Transform3D(-1.5298985e-08, 0, -0.35, 0, 0.35, 0, 0.35, 0, -1.5298985e-08, 0, 0.35768113, 0.0653)
+
+[node name="Body" type="StaticBody3D" parent="." unique_id=813782707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.035581112, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="Body" unique_id=658063553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35134402, -0.008468628)
+shape = SubResource("Shape_chair")

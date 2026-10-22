@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_marble.tres" id="Mat_marble"]
+[ext_resource type="Material" path="res://Materials/Mat_porcelain.tres" id="Mat_porcelain"]
+[ext_resource type="Material" path="res://Materials/Mat_walnut.tres" id="Mat_walnut"]
+
+[node name="Washstand" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="WashBody_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.4000, 0.0000)
+material = ExtResource("Mat_walnut")
+size = Vector3(0.8600, 0.8000, 0.4600)
+
+[node name="WashTop_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.8300, 0.0000)
+material = ExtResource("Mat_marble")
+size = Vector3(0.9200, 0.0600, 0.5000)
+
+[node name="WashSplash_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 1.0000, -0.2200)
+material = ExtResource("Mat_marble")
+size = Vector3(0.9200, 0.2800, 0.0500)
+
+[node name="WashBasin_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.16000, 0.92000, 0.02000)
+material = ExtResource("Mat_porcelain")
+radius = 0.1700
+height = 0.1200
+sides = 12
+
+[node name="WashJug_5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.22000, 0.98000, 0.02000)
+material = ExtResource("Mat_porcelain")
+radius = 0.0900
+height = 0.2400
+sides = 10

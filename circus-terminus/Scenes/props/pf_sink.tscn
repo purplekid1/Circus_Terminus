@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Material" path="res://Materials/Mat_ash.tres" id="Mat_ash"]
+[ext_resource type="Material" path="res://Materials/Mat_brass.tres" id="Mat_brass"]
+[ext_resource type="Material" path="res://Materials/Mat_iron.tres" id="Mat_iron"]
+[ext_resource type="Material" path="res://Materials/Mat_porcelain.tres" id="Mat_porcelain"]
+
+[node name="Sink" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="SinkBasin_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.7400, 0.0000)
+material = ExtResource("Mat_porcelain")
+size = Vector3(1.0500, 0.3600, 0.5800)
+
+[node name="SinkWell_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.8600, 0.0000)
+material = ExtResource("Mat_ash")
+size = Vector3(0.9100, 0.1600, 0.4400)
+
+[node name="SinkLeg_3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, -0.42500, 0.28000, 0.00000)
+material = ExtResource("Mat_iron")
+radius = 0.0300
+height = 0.5600
+sides = 6
+
+[node name="SinkLeg_4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.42500, 0.28000, 0.00000)
+material = ExtResource("Mat_iron")
+radius = 0.0300
+height = 0.5600
+sides = 6
+
+[node name="SinkTap_5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 1.06000, -0.23000)
+material = ExtResource("Mat_brass")
+radius = 0.0180
+height = 0.2800
+sides = 8
+
+[node name="SinkSpout_6" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 0.000000, -1.000000, 0.000000, 1.000000, 0.000000, 0.00000, 1.19000, -0.12000)
+material = ExtResource("Mat_brass")
+radius = 0.0160
+height = 0.2400
+sides = 8
+
+[node name="SinkNose_7" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.00000, 1.14000, -0.02000)
+material = ExtResource("Mat_brass")
+radius = 0.0140
+height = 0.1000
+sides = 8
+
+[node name="SinkHandle_8" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.000000, 1.000000, 0.000000, -0.000000, 0.000000, -1.000000, -1.000000, 0.000000, 0.000000, 0.00000, 1.21000, -0.23000)
+material = ExtResource("Mat_brass")
+radius = 0.0120
+height = 0.1100
+sides = 6
